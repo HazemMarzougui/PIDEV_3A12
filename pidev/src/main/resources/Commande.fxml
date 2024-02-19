@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="412.0" prefWidth="927.0" styleClass="form_container" stylesheets="@css/styles.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.CommandeController">
+    <children>
+        <TextField fx:id="tf_prenom" layoutX="141.0" layoutY="69.0" />
+        <TextField fx:id="tf_nom" layoutX="140.0" layoutY="120.0" />
+        <TextField fx:id="tf_adresse" layoutX="142.0" layoutY="167.0" />
+        <TextField fx:id="tf_telephone" layoutX="141.0" layoutY="215.0" />
+        <TextField fx:id="tf_email" layoutX="141.0" layoutY="264.0" />
+        <Label layoutX="10.0" layoutY="73.0" prefHeight="18.0" prefWidth="46.0" text="Prénom" />
+        <Label layoutX="10.0" layoutY="124.0" prefHeight="18.0" prefWidth="46.0" text="Nom" />
+        <Label layoutX="6.0" layoutY="171.0" prefHeight="18.0" prefWidth="46.0" text="Adresse" />
+        <Label layoutX="6.0" layoutY="219.0" prefHeight="4.0" prefWidth="176.0" text="Numéro de téléphone" />
+        <Label layoutX="9.0" layoutY="268.0" prefHeight="18.0" prefWidth="46.0" text="Email" />
+        <TableView fx:id="tv_commande" layoutX="385.0" layoutY="59.0" onMouseClicked="#getData" prefHeight="240.0" prefWidth="454.0">
+            <columns>
+                <TableColumn fx:id="col_id" prefWidth="89.60003662109375" text="idcommande" />
+                <TableColumn fx:id="col_prenom" prefWidth="60.79998779296875" text="prénom" />
+                <TableColumn fx:id="col_nom" prefWidth="75.0" text="nom" />
+                <TableColumn fx:id="col_adresse" prefWidth="75.0" text="adresse" />
+                <TableColumn fx:id="col_telephone" prefWidth="75.0" text="téléphone" />
+                <TableColumn fx:id="col_email" prefWidth="75.0" text="email" />
+            </columns>
+        </TableView>
+        <Button fx:id="buttonajouter" layoutX="151.0" layoutY="321.0" mnemonicParsing="false" onAction="#AjouterCommande" prefHeight="26.0" prefWidth="88.0" text="Ajouter" />
+        <Button fx:id="buttonafficher" layoutX="277.0" layoutY="322.0" mnemonicParsing="false" onAction="#AfficherCommande" prefHeight="26.0" prefWidth="88.0" text="Afficher" />
+        <Button fx:id="buttonmodifier" layoutX="399.0" layoutY="322.0" mnemonicParsing="false" onAction="#ModifierCommande" prefHeight="26.0" prefWidth="88.0" text="Modifier" />
+        <Button fx:id="buttonsupprime" layoutX="529.0" layoutY="323.0" mnemonicParsing="false" onAction="#SupprimerCommande" prefHeight="26.0" prefWidth="88.0" text="supprimer" />
+      <Button layoutX="815.0" layoutY="371.0" mnemonicParsing="false" onAction="#retour" prefHeight="26.0" prefWidth="74.0" text="Retour" />
+    </children>
+</AnchorPane>

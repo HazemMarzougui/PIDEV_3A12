@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="490.0" prefWidth="888.0" styleClass="form_container" stylesheets="@css/styles.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.PanierController">
+    <children>
+
+        <Button fx:id="buttonafficher" layoutX="349.0" layoutY="379.0" mnemonicParsing="false" onAction="#afficherpanier" prefHeight="26.0" prefWidth="96.0" text="Afficher" />
+        <TextField fx:id="tf_idu" layoutX="166.0" layoutY="105.0" />
+        <TextField fx:id="tf_idpr" layoutX="166.0" layoutY="160.0" />
+        <TextField fx:id="tf_etat" layoutX="168.0" layoutY="216.0" />
+        <Label layoutX="75.0" layoutY="109.0" prefHeight="18.0" prefWidth="43.0" text="idUser">
+            <font>
+                <Font size="15.0" />
+            </font></Label>
+        <Label layoutX="75.0" layoutY="164.0" prefHeight="22.0" prefWidth="62.0" text="idProduit" textAlignment="CENTER">
+            <font>
+                <Font size="15.0" />
+            </font></Label>
+        <Label layoutX="75.0" layoutY="220.0" prefHeight="22.0" prefWidth="43.0" text="Etat" textAlignment="CENTER">
+            <font>
+                <Font size="14.0" />
+            </font></Label>
+        <Label layoutX="239.0" layoutY="15.0" prefHeight="41.0" prefWidth="327.0" text="Gestion commande" textFill="#4a7805">
+            <font>
+                <Font size="27.0" />
+            </font>
+            <cursor>
+                <Cursor fx:constant="DEFAULT" />
+            </cursor>
+        </Label>
+        <Button fx:id="ajouterp" layoutX="203.0" layoutY="379.0" mnemonicParsing="false" onAction="#ajouterpanier" prefHeight="22.0" prefWidth="119.0" text="Ajouter" />
+        <TableView fx:id="tableview" layoutX="492.0" layoutY="72.0" onMouseClicked="#getData" prefHeight="266.0" prefWidth="302.0">
+            <columns>
+                <TableColumn fx:id="col_idp" prefWidth="75.0" text="id_panier" />
+                <TableColumn fx:id="col_idu" prefWidth="75.0" text="id_user" />
+                <TableColumn fx:id="col_idpr" prefWidth="75.0" text="id_produit" />
+                <TableColumn fx:id="col_etat" prefWidth="75.0" text="Etat" />
+            </columns>
+        </TableView>
+        <Button fx:id="buttonmodifier" layoutX="492.0" layoutY="379.0" mnemonicParsing="false" onAction="#buttonmodifier" prefHeight="26.0" prefWidth="96.0" text="modifier" />
+        <Button fx:id="buttonmodifier1" layoutX="626.0" layoutY="379.0" mnemonicParsing="false" onAction="#buttonsupprimer" prefHeight="26.0" prefWidth="96.0" text="supprimer" />
+        <Button fx:id="tf_commande" layoutX="743.0" layoutY="380.0" mnemonicParsing="false" onAction="#gocommande" prefHeight="26.0" prefWidth="132.0" text="passer commande" />
+    </children>
+</AnchorPane>
