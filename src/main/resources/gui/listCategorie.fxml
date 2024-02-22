@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="listCategoriePane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.listCategorieController">
+
+    <children>
+        <TableView fx:id="tableCategories" editable="true" layoutX="67.0" layoutY="163.0" prefHeight="558.0" prefWidth="1098.0" stylesheets="@hello-view.css">
+            <columns>
+                <TableColumn fx:id="NomCategorie" prefWidth="1096.7999801635742" text="Nom" />
+            </columns>
+        </TableView>
+        <Button fx:id="btnLoad" layoutX="310.0" layoutY="72.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="94.0" styleClass="btn" stylesheets="@hello-view.css" text="Actualiser">
+            <font>
+                <Font name="System Bold" size="12.0" />
+            </font>
+        </Button>
+        <Button fx:id="bntAdd" layoutX="104.0" layoutY="72.0" mnemonicParsing="false" onAction="#open_addCategorie" prefHeight="42.0" prefWidth="177.0" styleClass="btn" stylesheets="@hello-view.css" text="Ajouter Categorie">
+            <font>
+                <Font name="System Bold" size="12.0" />
+            </font>
+            <padding>
+                <Insets left="20.0" />
+            </padding>
+        </Button>
+        <TextField fx:id="txtSearch" layoutX="470.0" layoutY="73.0" prefHeight="40.0" prefWidth="282.0" promptText="Search..." styleClass="search" stylesheets="@hello-view.css" />
+        <Button fx:id="btnDelete" layoutX="801.0" layoutY="72.0" mnemonicParsing="false" onAction="#supprimerCategorie" prefHeight="41.0" prefWidth="94.0" styleClass="btn" stylesheets="@hello-view.css" text="Delete" />
+    </children>
+
+</AnchorPane>
