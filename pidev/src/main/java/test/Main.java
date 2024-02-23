@@ -1,31 +1,33 @@
 package test;
 
-import entities.*;
-import services.ServiceCommande;
-import services.ServicePanier;
+
+import entities.produit;
+import services.produitService;
 import utils.MyDB;
 
 import java.sql.SQLException;
 
 public class Main {
 
-    public static void main(String[] args) {
+    public static void main(String[] args)  {
         MyDB conn1 = MyDB.getInstance();
 
+        produitService ps = new produitService();
 
-         commande p1 = new commande("sdfgs","fsdf","fs",6531,"dgdf");
-        Panier p3 = new Panier(123,55 , 0,"confirme");
-        Panier p4 = new Panier(50900907,11111 , "confirme");
-
-        ServicePanier s = new ServicePanier();
-        ServiceCommande C =new ServiceCommande();
-       try {
-            C.ajouter(p1);
-
-
+        produit p = new produit(54,5,"test");
+        try {
+            ps.getAllProducts();
         } catch (SQLException e) {
-            System.out.println(e.getMessage());
+            throw new RuntimeException(e);
         }
+
+
+
+
+
+
+
+
         /*try {
             System.out.println(s.afficher());
         } catch (SQLException e) {

@@ -1,65 +1,76 @@
 package entities;
 
-public class Panier {
-  int id_panier,id_user,id_produit;
-  String etat;
+public class panier  {
 
+    int id_panier,id_produit,quantite,id_commande;
+    float prix_u;
 
-    public Panier(int id_panier, int id_user, int id_produit, String etat) {
+    public panier(){
+    }
+
+    public panier(int id_panier, int id_produit, int quantite, float prix_u,int id_commande) {
         this.id_panier = id_panier;
-        this.id_user = id_user;
         this.id_produit = id_produit;
-        this.etat = etat;
+        this.quantite = quantite;
+        this.prix_u = prix_u;
+        this.id_commande=id_commande;
     }
-    public Panier(){
+    public panier( int id_produit,int id_commande, int quantite, float prix_u) {
 
-    }
-    public Panier(int id_user, int id_produit, String etat) {
-
-        this.id_user = id_user;
         this.id_produit = id_produit;
-        this.etat = etat;
-    }
-
-    @Override
-    public String toString() {
-        return "panier{" +
-                "id_panier=" + id_panier +
-                ", id_user=" + id_user +
-                ", id_produit=" + id_produit +
-                ", etat=" + etat +
-                '}';
+        this.quantite = quantite;
+        this.prix_u = prix_u;
+        this.id_commande=id_commande;
     }
 
     public int getId_panier() {
         return id_panier;
     }
 
-    public int getId_user() {
-        return id_user;
-    }
-
     public int getId_produit() {
         return id_produit;
     }
 
-    public String getEtat() {
-        return etat;
+    public int getQuantite() {
+        return quantite;
+    }
+
+    public float getPrix_u() {
+        return prix_u;
+    }
+
+    public int getId_commande() {
+        return id_commande;
     }
 
     public void setId_panier(int id_panier) {
         this.id_panier = id_panier;
     }
 
-    public void setId_user(int id_user) {
-        this.id_user = id_user;
-    }
-
     public void setId_produit(int id_produit) {
         this.id_produit = id_produit;
     }
 
-    public void setEtat(String etat) {
-        this.etat = etat;
+    public void setQuantite(int quantite) {
+        this.quantite = quantite;
+    }
+
+    public void setId_commande(int id_commande) {
+        this.id_commande = id_commande;
+    }
+
+    public void setPrix_u(float prix_u) {
+        this.prix_u = prix_u;
+    }
+
+    @Override
+    public String toString() {
+        return "panier{" +
+                "id_panier=" + id_panier +
+                ", id_produit=" + id_produit +
+                ", quantite=" + quantite +
+                ", id_commande=" + id_commande +
+                ", prix_u=" + prix_u +
+                '}';
     }
 }
