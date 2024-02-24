@@ -1,8 +1,6 @@
 package Test;
 
-import Entities.Categorie;
 import Entities.Conseil;
-import Services.CategorieService;
 import Services.ConseilService;
 import Utils.MyDB;
 
@@ -11,7 +9,8 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) throws SQLException
-{
+    {
+        /*
         MyDB conn1 = MyDB.getInstance();
         ConseilService conseilService = new ConseilService();
 
@@ -99,9 +98,8 @@ public class Main {
         int idTypeC = scanner.nextInt();
 
         return new Conseil( nomConseil, Video, Description, idUser, idProduit,idTypeC);
-    }
+    }*/
 
 
 
-}
-
+}}

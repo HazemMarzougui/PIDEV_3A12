@@ -1,36 +1,30 @@
 package Entities;
 
-import java.text.DateFormat;
-import java.time.format.DateTimeFormatter;
 
 public class Conseil {
     public int id_conseil ;
     public String nom_conseil;
-    public DateFormat date;
     public String video;
     public String description;
-    public int id_user ;
     public int id_produit ;
     public int id_typeC ;
 
 
     public Conseil(){}
-    public Conseil(int id_conseil , String nom_conseil , String video, String description , int id_user , int id_produit, int id_typeC)
+    public Conseil(int id_conseil , String nom_conseil , String video, String description , int id_produit, int id_typeC)
     {
         this.id_conseil = id_conseil ;
         this.nom_conseil = nom_conseil ;
         this.video = video ;
         this.description = description ;
-        this.id_user = id_user ;
         this.id_produit = id_produit ;
         this.id_typeC = id_typeC ;
     }
-    public Conseil( String nom_conseil , String video, String description , int id_user , int id_produit, int id_typeC)
+    public Conseil( String nom_conseil , String video, String description , int id_produit, int id_typeC)
     {
         this.nom_conseil = nom_conseil ;
         this.video = video ;
         this.description = description ;
-        this.id_user = id_user ;
         this.id_produit = id_produit ;
         this.id_typeC = id_typeC ;
     }
@@ -66,15 +60,6 @@ public class Conseil {
     public void setDescription(String description) {
         this.description = description;
     }
-
-    public Integer getId_user() {
-        return id_user;
-    }
-
-    public void setId_user(int id_user) {
-        this.id_user = id_user;
-    }
-
     public Integer getId_produit() {
         return id_produit;
     }
@@ -98,7 +83,6 @@ public class Conseil {
                 ", nom_conseil='" + nom_conseil + '\'' +
                 ", video='" + video + '\'' +
                 ", description='" + description + '\'' +
-                ", id_user=" + id_user +
                 ", id_produit=" + id_produit +
                 ", id_typeC=" + id_typeC +
                 '}'+ "\n";

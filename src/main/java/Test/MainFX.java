@@ -6,20 +6,22 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-public class MainFX extends Application {
+public class MainFX  extends Application {
+
+
     @Override
-    public void start(Stage stage) throws Exception
-    {
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/GestionConseils.fxml"));
+    public void start(Stage primaryStage) throws Exception {
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/ConseilList.fxml"));
         Parent root = fxmlLoader.load();
         Scene scene = new Scene(root);
-        stage.setScene(scene);
-        stage.setTitle("Gerer Categorie");
-        stage.show();
+        scene.getStylesheets().add(getClass().getResource("/css/styles.css").toExternalForm());
+        primaryStage.setScene(scene);
+        primaryStage.setTitle("Dashboard");
+        primaryStage.show();
     }
 
-    public static void main(String[] args)
-    {
+    public static void main(String[] args) {
         launch(args);
     }
+
 }
