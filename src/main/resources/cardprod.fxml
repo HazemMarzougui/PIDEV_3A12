@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="487.0" prefWidth="339.0" style="-fx-background-color: #90EE90;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <ImageView fitHeight="108.0" fitWidth="251.0" pickOnBounds="true" preserveRatio="true">
+         <VBox.margin>
+            <Insets top="20.0" />
+         </VBox.margin>
+         <image>
+            <Image url="@kits/Kitsune/prod.jpg" />
+         </image>
+      </ImageView>
+      <Label prefHeight="35.0" prefWidth="58.0" text="nom:">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <TextField prefHeight="43.0" prefWidth="248.0">
+         <VBox.margin>
+            <Insets left="50.0" right="50.0" />
+         </VBox.margin>
+      </TextField>
+      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Description">
+         <VBox.margin>
+            <Insets />
+         </VBox.margin>
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Text>
+      <TextArea prefHeight="98.0" prefWidth="176.0">
+         <VBox.margin>
+            <Insets left="50.0" right="50.0" top="15.0" />
+         </VBox.margin>
+      </TextArea>
+      <Label text="4.0">
+         <VBox.margin>
+            <Insets top="5.0" />
+         </VBox.margin></Label>
+      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="FROM">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Text>
+      <TextField prefHeight="25.0" prefWidth="230.0">
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <VBox.margin>
+            <Insets left="50.0" right="50.0" />
+         </VBox.margin>
+      </TextField>
+      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="TO" />
+      <TextField>
+         <VBox.margin>
+            <Insets left="50.0" right="50.0" />
+         </VBox.margin>
+      </TextField>
+      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="PRIX :">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+         <VBox.margin>
+            <Insets top="5.0" />
+         </VBox.margin>
+      </Text>
+      <TextField prefHeight="25.0" prefWidth="52.0">
+         <VBox.margin>
+            <Insets left="120.0" right="120.0" top="20.0" />
+         </VBox.margin>
+      </TextField>
+      <Label />
+      <Button fx:id="id_add_offre" mnemonicParsing="false" onAction="#add_and_return_to_offre" prefHeight="41.0" prefWidth="74.0" style="-fx-background-color: #7bb225;" text="add" />
+      <HBox alignment="CENTER" prefHeight="93.0" prefWidth="348.0" spacing="50.0">
+         <VBox.margin>
+            <Insets top="10.0" />
+         </VBox.margin>
+      </HBox>
+   </children>
+   <opaqueInsets>
+      <Insets top="3.0" />
+   </opaqueInsets>
+</VBox>

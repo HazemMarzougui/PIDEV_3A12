@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="9e3f97d6-6f90-4c18-b8d2-6d637432e52e" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Controllers/Add_event.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Controllers/AjouterEvenementController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Controllers/EventService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Controllers/admin.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Controllers/admin_offre.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Controllers/cardtemplate.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Controllers/cardtemplateclient.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Controllers/client.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Controllers/client_offre.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Controllers/modify_event.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/entities/Evenement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/entities/offre.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/entities/produit.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/entities/user.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/services/ClientEventMappingService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/services/EventClientMappingService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/services/IService_evenement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/services/IService_offre.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/services/SMSService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/services/Service_evenement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/services/Service_offre.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/services/UserService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/test/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/test/MainFX.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/utils/MyDB.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/AjouterEvenement.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/add_event.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/admin.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/back.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/cardprod.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/cardtemplate.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/cardtemplate_client.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/client.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/copie 3la ab.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/kits/Kitsune/1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/kits/Kitsune/2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/kits/Kitsune/278856181_518030739871578_2176030357596437640_n.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/kits/Kitsune/278888425_359166086173621_1339263120066987880_n.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/kits/Kitsune/2fe21960df846bf296ef1af7fa8707b8.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/kits/Kitsune/3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/kits/Kitsune/81b85572822aajpg.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/kits/Kitsune/BRAD.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/kits/Kitsune/FLEW.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/kits/Kitsune/Getty.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/kits/Kitsune/Google_Arts_and_Culture_Logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/kits/Kitsune/ICON.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/kits/Kitsune/INTERFACE.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/kits/Kitsune/LEAD.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/kits/Kitsune/LEO.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/kits/Kitsune/Logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/kits/Kitsune/Logo_2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/kits/Kitsune/Salvation.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/kits/Kitsune/Screenshot_2022-03-30-01-05-19-19.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/kits/Kitsune/Shhh.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/kits/Kitsune/Sins.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/kits/Kitsune/Untitled-1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/kits/Kitsune/WhatsApp Image 2023-02-08 at 11.07.06.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/kits/Kitsune/_van_gogh.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/kits/Kitsune/accueil (1).png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/kits/Kitsune/back.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/kits/Kitsune/bg.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/kits/Kitsune/bill.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/kits/Kitsune/billb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/kits/Kitsune/billboard/Flayer front.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/kits/Kitsune/billboard/Save-water-Save-life_page-0001-2-scaled.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/kits/Kitsune/billboard/background.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/kits/Kitsune/billboard/billboard image.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/kits/Kitsune/billboard/canvas.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/kits/Kitsune/billboard/flayer.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/kits/Kitsune/billboard/logo 1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/kits/Kitsune/billboard/mockup 1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/kits/Kitsune/billboard/mockup 2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/kits/Kitsune/billboard/mockup 3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/kits/Kitsune/billboard/mockup4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/kits/Kitsune/billbor.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/kits/Kitsune/cj.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/kits/Kitsune/class/att1.mp4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/kits/Kitsune/class/att2.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/kits/Kitsune/class/class - Copy/att1.mp4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/kits/Kitsune/class/class - Copy/att3.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/kits/Kitsune/conseil.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/kits/Kitsune/conseil_active.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/kits/Kitsune/dddddd.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/kits/Kitsune/delete.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/kits/Kitsune/e0850ceec959b82d5cd6396109027bad.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/kits/Kitsune/editing.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/kits/Kitsune/ena w sleh.mp4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/kits/Kitsune/event-management.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/kits/Kitsune/event-management_active.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/kits/Kitsune/foodsketches.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/kits/Kitsune/gogh-vincent-van.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/kits/Kitsune/image/1024px-William_Shakespeare_sq.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/kits/Kitsune/image/Taha_Hussein.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/kits/Kitsune/image/katana.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/kits/Kitsune/image/victor-hugo.jpg!Portrait.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/kits/Kitsune/index.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/kits/Kitsune/kitsune.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/kits/Kitsune/logg.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/kits/Kitsune/mohsenchelbi.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/kits/Kitsune/picto-agenda.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/kits/Kitsune/pidev.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/kits/Kitsune/plus.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/kits/Kitsune/png-clipart-brand-logo-event-marketing-text-logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/kits/Kitsune/prod.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/kits/Kitsune/profil.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/kits/Kitsune/profil_active.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/kits/Kitsune/rapport.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/kits/Kitsune/rapport_active.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/kits/Kitsune/se-deconnecter.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/kits/Kitsune/se-deconnecter_active.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/kits/Kitsune/search.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/kits/Kitsune/shipping-and-delivery.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/kits/Kitsune/shipping-and-delivery_active.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/kits/Kitsune/soccerball-621532cc973b8.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/kits/Kitsune/static.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/kits/Kitsune/test.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/kits/Kitsune/tla1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/kits/Kitsune/traits.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/kits/Kitsune/traits_active.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/kits/Kitsune/wallpaper_update.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/kits/Kitsune/wave.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/kits/Kitsune/white.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/kits/Kitsune/xx.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/kits/Kitsune/yassser.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/modify.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/offre_admin.fxml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="FxmlFile" />
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/src/main/java/entities/Evenement.java" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 1
+}</component>
+  <component name="ProjectId" id="2cEDusMrXmWkoI3TUjhzKsdUXNE" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/ASUS/Downloads/Dashboard.rar&quot;,
+    &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/ASUS/IdeaProjects/pidev/src/main/java/org/example/Main.java&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.repository.indices&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\ASUS\IdeaProjects\pidev\src\main\resources" />
+      <recent name="C:\Users\ASUS\IdeaProjects\pidev\src\main\resources\kits\Kitsune" />
+      <recent name="C:\Users\ASUS\IdeaProjects\pidev\src\main\resources\kits" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\ASUS\IdeaProjects\pidev\src\main\resources" />
+      <recent name="C:\Users\ASUS\IdeaProjects\pidev\src\main\resources\kits" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.MainFX">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="test.Main" />
+      <module name="pidev" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MainFX" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="test.MainFX" />
+      <module name="pidev" />
+      <option name="VM_PARAMETERS" value="--module-path &quot;C:\Users\ASUS\.jdks\javafx-sdk-21.0.2\lib&quot; --add-modules javafx.controls,javafx.fxml" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="pidev [javafx:run]" type="MavenRunConfiguration" factoryName="Maven" temporary="true">
+      <MavenSettings>
+        <option name="myGeneralSettings" />
+        <option name="myRunnerSettings" />
+        <option name="myRunnerParameters">
+          <MavenRunnerParameters>
+            <option name="cmdOptions" />
+            <option name="profiles">
+              <set />
+            </option>
+            <option name="goals">
+              <list>
+                <option value="javafx:run" />
+              </list>
+            </option>
+            <option name="pomFileName" value="pom.xml" />
+            <option name="profilesMap">
+              <map />
+            </option>
+            <option name="projectsCmdOptionValues">
+              <list />
+            </option>
+            <option name="resolveToWorkspace" value="false" />
+            <option name="workingDirPath" value="$PROJECT_DIR$" />
+          </MavenRunnerParameters>
+        </option>
+      </MavenSettings>
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Application.Main" />
+      <item itemvalue="Application.MainFX" />
+      <item itemvalue="Maven.pidev [javafx:run]" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.MainFX" />
+        <item itemvalue="Application.Main" />
+        <item itemvalue="Maven.pidev [javafx:run]" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="9e3f97d6-6f90-4c18-b8d2-6d637432e52e" name="Changes" comment="" />
+      <created>1707668073426</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1707668073426</updated>
+    </task>
+    <servers />
+  </component>
+</project>

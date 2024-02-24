@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="717.0" prefWidth="831.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.AjouterEvenementController">
+   <left>
+      <VBox alignment="TOP_CENTER" prefHeight="593.0" prefWidth="231.0" spacing="5.0" styleClass="white-background" stylesheets="@back.css">
+         <children>
+            <VBox alignment="CENTER" prefHeight="208.0" prefWidth="245.0">
+               <children>
+                  <ImageView fx:id="id_image" fitHeight="111.0" fitWidth="180.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@kits/Kitsune/Logo.png" />
+                     </image>
+                  </ImageView>
+                  <Label prefHeight="17.0" prefWidth="36.0" text="TYLER" />
+               </children>
+            </VBox>
+            <HBox alignment="CENTER_LEFT" prefHeight="40.0" prefWidth="196.0" spacing="20.0">
+               <children>
+                  <ImageView fitHeight="32.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@kits/Kitsune/rapport_active.png" />
+                     </image>
+                  </ImageView>
+                  <Label prefHeight="17.0" prefWidth="85.0" text="Dashboard" textOverrun="WORD_ELLIPSIS">
+                     <font>
+                        <Font name="System Bold" size="11.0" />
+                     </font>
+                  </Label>
+               </children>
+               <padding>
+                  <Insets left="20.0" />
+               </padding>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" prefHeight="40.0" prefWidth="253.0" spacing="20.0">
+               <children>
+                  <ImageView fitHeight="32.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@kits/Kitsune/profil.png" />
+                     </image>
+                  </ImageView>
+                  <Label prefHeight="19.0" prefWidth="156.0" text="Gestion Utilisateurs" textOverrun="WORD_ELLIPSIS">
+                     <font>
+                        <Font name="System Bold" size="11.0" />
+                     </font>
+                  </Label>
+               </children>
+               <padding>
+                  <Insets left="20.0" />
+               </padding>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" prefHeight="40.0" prefWidth="253.0" spacing="20.0">
+               <children>
+                  <ImageView fitHeight="32.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@kits/Kitsune/traits_active.png" />
+                     </image>
+                  </ImageView>
+                  <Label prefHeight="19.0" prefWidth="156.0" text="Gestion Produits" textOverrun="WORD_ELLIPSIS">
+                     <font>
+                        <Font name="System Bold" size="11.0" />
+                     </font>
+                  </Label>
+               </children>
+               <padding>
+                  <Insets left="20.0" />
+               </padding>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" prefHeight="40.0" prefWidth="253.0" spacing="20.0">
+               <children>
+                  <ImageView fitHeight="32.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@kits/Kitsune/shipping-and-delivery_active.png" />
+                     </image>
+                  </ImageView>
+                  <Label prefHeight="19.0" prefWidth="182.0" text="Gestion Livraison" textOverrun="WORD_ELLIPSIS">
+                     <font>
+                        <Font name="System Bold" size="11.0" />
+                     </font>
+                  </Label>
+               </children>
+               <padding>
+                  <Insets left="20.0" />
+               </padding>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" prefHeight="40.0" prefWidth="253.0" spacing="20.0">
+               <children>
+                  <ImageView fitHeight="32.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@kits/Kitsune/event-management_active.png" />
+                     </image>
+                  </ImageView>
+                  <Label prefHeight="19.0" prefWidth="118.0" text="Gestion Evenements" textOverrun="WORD_ELLIPSIS">
+                     <font>
+                        <Font name="System Bold" size="11.0" />
+                     </font>
+                  </Label>
+               </children>
+               <padding>
+                  <Insets left="20.0" />
+               </padding>
+            </HBox>
+         </children>
+      </VBox>
+   </left>
+   <center>
+      <VBox fillWidth="false" prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+         <children>
+            <HBox prefHeight="43.0" prefWidth="552.0" styleClass="white-background" stylesheets="@back.css">
+               <children>
+                  <Pane prefHeight="43.0" prefWidth="165.0">
+                     <children>
+                        <ImageView fitHeight="45.0" fitWidth="171.0" layoutX="-4.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@kits/Kitsune/logg.png" />
+                           </image>
+                        </ImageView>
+                     </children></Pane>
+                  <HBox alignment="CENTER_RIGHT" prefHeight="43.0" prefWidth="244.0" styleClass="search-container" stylesheets="@back.css">
+                     <children>
+                        <TextField fx:id="id_search" prefHeight="25.0" prefWidth="176.0" promptText="search " />
+                        <Button fx:id="id_search_button" mnemonicParsing="false" onAction="#search_event" prefHeight="20.0" prefWidth="56.0" text="search" />
+                     </children>
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                     <padding>
+                        <Insets right="5.0" />
+                     </padding>
+                  </HBox>
+               </children>
+               <opaqueInsets>
+                  <Insets bottom="10.0" right="10.0" top="10.0" />
+               </opaqueInsets>
+            </HBox>
+            <VBox fillWidth="false" prefHeight="652.0" prefWidth="552.0" styleClass="primary-color" stylesheets="@back.css" VBox.vgrow="ALWAYS">
+               <children>
+                  <Label alignment="TOP_CENTER" text="Indicators">
+                     <VBox.margin>
+                        <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
+                     </VBox.margin>
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="112.0" fitWidth="528.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@kits/Kitsune/static.jpg" />
+                     </image>
+                     <VBox.margin>
+                        <Insets left="-3.0" top="-20.0" />
+                     </VBox.margin>
+                  </ImageView>
+                  <VBox>
+                     <VBox.margin>
+                        <Insets left="10.0" />
+                     </VBox.margin>
+                     <children>
+                        <HBox prefHeight="22.0" prefWidth="542.0" />
+                     </children>
+                  </VBox>
+                  <VBox prefHeight="200.0" prefWidth="552.0">
+                     <children>
+                        <HBox alignment="CENTER_LEFT" prefHeight="65.0" prefWidth="585.0">
+                           <children>
+                              <ImageView fitHeight="44.0" fitWidth="68.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@kits/Kitsune/picto-agenda.png" />
+                                 </image>
+                              </ImageView>
+                              <Label contentDisplay="RIGHT" lineSpacing="5.0" prefHeight="44.0" prefWidth="209.0" text="Liste des Evenements">
+                                 <HBox.margin>
+                                    <Insets />
+                                 </HBox.margin>
+                                 <font>
+                                    <Font name="Gill Sans MT Bold" size="18.0" />
+                                 </font>
+                              </Label>
+                              <ImageView fitHeight="41.0" fitWidth="154.0" pickOnBounds="true" preserveRatio="true" />
+                              <Button fx:id="id_add_event" mnemonicParsing="false" onAction="#add_event" prefHeight="40.0" prefWidth="124.0" style="-fx-background-color: #55dd4b;" text="+" textFill="WHITE">
+                                 <font>
+                                    <Font size="30.0" />
+                                 </font>
+                              </Button>
+                           </children>
+                        </HBox>
+                        <VBox fx:id="id_vbox" prefHeight="200.0" prefWidth="100.0" />
+                     </children>
+                  </VBox>
+               </children>
+               <opaqueInsets>
+                  <Insets bottom="10.0" top="10.0" />
+               </opaqueInsets>
+               <VBox.margin>
+                  <Insets top="15.0" />
+               </VBox.margin></VBox>
+         </children>
+      </VBox>
+   </center>
+</BorderPane>

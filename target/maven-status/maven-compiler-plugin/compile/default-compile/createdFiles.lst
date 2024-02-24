@@ -1,0 +1,7 @@
+test\MainFX.class
+test\Main.class
+services\Service_evenement.class
+Controllers\AjouterEvenementController.class
+services\IService_evenement.class
+entities\Evenement.class
+utils\MyDB.class
