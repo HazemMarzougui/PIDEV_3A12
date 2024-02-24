@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="476.0" prefWidth="980.0" style="-fx-background-color: transparent;" stylesheets="@stylesheet.css" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.LoginController">
+   <children>
+      <Pane layoutY="40.0" prefHeight="400.0" prefWidth="980.0" styleClass="pane" stylesheets="@stylesheet.css">
+         <children>
+            <Label layoutX="55.0" layoutY="117.0" text="Don't Have An Acount ?" textFill="WHITE">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <Label layoutX="56.0" layoutY="145.0" minHeight="-Infinity" minWidth="-Infinity" prefWidth="250.0" text="Lorem  Lorem  Lorem  Lorem  Lorem  Lorem  Lorem  Lorem  Lorem  " textFill="WHITE" wrapText="true">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <Button layoutX="55.0" layoutY="227.0" mnemonicParsing="false" onAction="#on_signup" prefHeight="30.0" prefWidth="120.0" styleClass="trans-btn-white-border" text="Sign Up" textFill="WHITE">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+            <Label layoutX="711.0" layoutY="117.0" text="Have An Acount ?" textFill="WHITE">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <Label layoutX="712.0" layoutY="145.0" minHeight="-Infinity" minWidth="-Infinity" prefWidth="250.0" text="Lorem  Lorem  Lorem  Lorem  Lorem  Lorem  Lorem  Lorem  Lorem  " textFill="WHITE" wrapText="true">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <Button layoutX="711.0" layoutY="227.0" mnemonicParsing="false" onAction="#on_signin" prefHeight="30.0" prefWidth="120.0" styleClass="trans-btn-white-border" text="Sign In" textFill="WHITE">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+            <VBox fx:id="vbox" layoutX="14.0" layoutY="-40.0" prefHeight="480.0" prefWidth="480.0" styleClass="white-pane" />
+         </children>
+      </Pane>
+   </children>
+   <opaqueInsets>
+      <Insets />
+   </opaqueInsets>
+   <padding>
+      <Insets bottom="-20.0" top="-500.0" />
+   </padding>
+</AnchorPane>

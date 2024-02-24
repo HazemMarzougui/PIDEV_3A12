@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+
+<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="214.0" prefWidth="695.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.uploadimageController">
+   <children>
+      <ImageView fx:id="imageView" fitHeight="125.0" fitWidth="170.0" pickOnBounds="true" preserveRatio="true" />
+      <Button fx:id="img" mnemonicParsing="false" onAction="#img" prefHeight="26.0" prefWidth="70.0" text="img" />
+   </children>
+</HBox>

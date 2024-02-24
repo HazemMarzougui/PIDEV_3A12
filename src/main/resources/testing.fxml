@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="1300.0" styleClass="bg" stylesheets="@css/styles.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.DashboardController">
+   <children>
+      <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="215.0" prefWidth="250.0" styleClass="dash__side-bar">
+         <children>
+            <ImageView fitHeight="185.0" fitWidth="217.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@uploads/dddddd.png" />
+               </image>
+            </ImageView>
+         </children>
+      </VBox>
+      <VBox layoutX="6.0" layoutY="221.0" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="392.0" prefWidth="250.0">
+         <children>
+            <Pane fx:id="dash_btn" focusTraversable="true" prefHeight="50.0" prefWidth="214.0" styleClass="nav-links" stylesheets="@css/styles.css">
+               <children>
+                  <ImageView fx:id="dashIcon" fitHeight="40.0" fitWidth="40.0" layoutX="7.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@uploads/rapport.png" />
+                     </image>
+                  </ImageView>
+                  <Label fx:id="dashText" layoutX="78.0" layoutY="16.0" styleClass="text" stylesheets="@css/styles.css" text="Dashboard" textFill="WHITE" />
+               </children>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Pane>
+            <Pane fx:id="btn_userList" prefHeight="50.0" prefWidth="214.0" stylesheets="@css/styles.css">
+               <children>
+                  <ImageView fx:id="user_icon" fitHeight="40.0" fitWidth="40.0" layoutX="7.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@uploads/profil_active.png" />
+                     </image>
+                  </ImageView>
+                  <Label fx:id="userText" layoutX="55.0" layoutY="14.0" stylesheets="@css/styles.css" text="Gestion Utilisateurs" textFill="WHITE">
+                     <styleClass>
+                        <String fx:value="activeText" />
+                        <String fx:value="text" />
+                     </styleClass></Label>
+               </children>
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin>
+               <styleClass>
+                  <String fx:value="nav-links" />
+                  <String fx:value="activeLink" />
+               </styleClass>
+            </Pane>
+            <Pane prefHeight="50.0" prefWidth="214.0" styleClass="nav-links" stylesheets="@css/styles.css">
+               <children>
+                  <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="7.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@uploads/traits.png" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="55.0" layoutY="14.0" text="Gestion Produits" textFill="WHITE" />
+               </children>
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin>
+            </Pane>
+            <Pane prefHeight="50.0" prefWidth="214.0" styleClass="nav-links" stylesheets="@css/styles.css">
+               <children>
+                  <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="7.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@uploads/shipping-and-delivery.png" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="55.0" layoutY="14.0" text="Gestion Livraison" textFill="WHITE" />
+               </children>
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin>
+            </Pane>
+            <Pane prefHeight="50.0" prefWidth="214.0" styleClass="nav-links" stylesheets="@css/styles.css">
+               <children>
+                  <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="7.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@uploads/event-management.png" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="55.0" layoutY="14.0" text="Gestion Evenements" textFill="WHITE" />
+               </children>
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin>
+            </Pane>
+            <Pane prefHeight="50.0" prefWidth="214.0" styleClass="nav-links" stylesheets="@css/styles.css">
+               <children>
+                  <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="7.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@uploads/conseil.png" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="55.0" layoutY="14.0" text="Gestion Conseils" textFill="WHITE" />
+               </children>
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin>
+            </Pane>
+         </children>
+      </VBox>
+      <HBox layoutX="250.0" prefHeight="110.0" prefWidth="573.0">
+         <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Dashboard">
+               <HBox.margin>
+                  <Insets left="55.0" top="45.0" />
+               </HBox.margin>
+               <font>
+                  <Font name="Arial Narrow" size="15.0" />
+               </font>
+               <styleClass>
+                  <String fx:value="nav-user-fullname" />
+                  <String fx:value="ha" />
+               </styleClass>
+            </Text>
+         </children>
+      </HBox>
+      <Pane fx:id="content_area" layoutX="268.0" layoutY="117.0" prefHeight="600.0" prefWidth="1000.0" styleClass="dash__container-card">
+         <children>
+            <Button fx:id="btnOverview" alignment="BASELINE_LEFT" graphicTextGap="22.0" layoutX="9.0" layoutY="7.0" mnemonicParsing="false" onAction="#btnOverview" prefHeight="42.0" prefWidth="259.0" styleClass="activeLink" stylesheets="@css/styles.css" text="Liste Utilisateurs">
+               <graphic>
+                  <ImageView fitHeight="23.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="/images/icons8_Home_32px.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <padding>
+                  <Insets left="50.0" />
+               </padding>
+            </Button>
+            <Button fx:id="btnOrders" alignment="BASELINE_LEFT" graphicTextGap="22.0" layoutX="275.0" layoutY="7.0" mnemonicParsing="false" onAction="#btnOrders" prefHeight="42.0" prefWidth="259.0" styleClass="activeLink" stylesheets="@css/styles.css" text="Mon Profile">
+               <graphic>
+                  <ImageView fitHeight="23.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="/images/icons8_Person_32px.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <padding>
+                  <Insets left="50.0" />
+               </padding>
+            </Button>
+            <Button fx:id="btnS" alignment="BASELINE_LEFT" graphicTextGap="22.0" layoutX="541.0" layoutY="7.0" mnemonicParsing="false" onAction="#btnS" prefHeight="42.0" prefWidth="259.0" styleClass="activeLink" stylesheets="@css/styles.css" text="Statestiques">
+               <graphic>
+                  <ImageView fitHeight="23.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="/images/icons8_Person_32px.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <padding>
+                  <Insets left="50.0" />
+               </padding>
+            </Button>
+            <Label layoutX="62.0" layoutY="134.0" prefWidth="120.0" text="Nom &amp; Prenom" textFill="#201f1f" />
+            <Label layoutX="234.0" layoutY="134.0" prefWidth="200.0" text="E-mail" textFill="#201f1f" />
+            <Label layoutX="440.0" layoutY="134.0" prefWidth="120.0" text="Role" textFill="#201f1f" />
+            <Label layoutX="624.0" layoutY="134.0" text="Status" textFill="#201f1f" />
+            <ComboBox fx:id="comb" layoutX="825.0" layoutY="128.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefWidth="150.0" promptText="Tri Par" style="-fx-background-color: #defee6; -fx-border-color: #B7C3D7; -fx-border-radius: 2em;" styleClass="tf" />
+            <TextField fx:id="search" layoutX="792.0" layoutY="56.0" prefHeight="27.0" prefWidth="183.0" promptText="search" style="-fx-background-color: #defee6; -fx-border-color: #B7C3D7; -fx-border-radius: 2em;" />
+            <ImageView fitHeight="17.0" fitWidth="16.0" layoutX="951.0" layoutY="62.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="/images/icons8_Search_52px.png" />
+               </image>
+            </ImageView>
+            <ScrollPane layoutX="41.0" layoutY="198.0" prefHeight="324.0" prefWidth="749.0">
+               <content>
+                  <VBox fx:id="pnItems" prefHeight="318.0" prefWidth="744.0" spacing="5.0" style="-fx-background-color: #defee6;">
+                     <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </padding>
+                  </VBox>
+               </content>
+            </ScrollPane>
+            <ImageView fx:id="adminIMG1" fitHeight="97.0" fitWidth="125.0" layoutX="850.0" layoutY="482.0" pickOnBounds="true" preserveRatio="true" />
+            <Label fx:id="titre_dash" layoutX="214.0" layoutY="70.0" prefHeight="26.0" prefWidth="147.0" textFill="#e7e5e5">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Button fx:id="btnSignout1" alignment="BASELINE_LEFT" graphicTextGap="22.0" layoutX="14.0" layoutY="684.0" mnemonicParsing="false" onAction="#btnSignout" prefHeight="42.0" prefWidth="221.0" styleClass="activeLink" stylesheets="@css/styles.css" text="Sign Out" textFill="#defee6">
+         <padding>
+            <Insets left="50.0" />
+         </padding>
+         <graphic>
+            <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@uploads/se-deconnecter.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <ImageView fx:id="adminIMG" fitHeight="73.0" fitWidth="67.0" layoutX="1201.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" />
+      <Label fx:id="username" layoutX="1049.0" layoutY="35.0" prefHeight="26.0" prefWidth="114.0" textFill="#e7e5e5" />
+   </children>
+</AnchorPane>
