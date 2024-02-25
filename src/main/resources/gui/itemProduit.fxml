@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="itemProduitPane" prefHeight="52.0" prefWidth="880.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.itemProduitController">
+    <children>
+        <HBox prefHeight="52.0" prefWidth="880.0">
+            <children>
+                <Pane prefHeight="52.0" prefWidth="11.0" />
+                <Label fx:id="labelNomProd" prefHeight="26.0" prefWidth="90.0" styleClass="label-item" stylesheets="@style.css" text="Nom">
+                    <font>
+                        <Font name="Cambria" size="18.0" />
+                    </font>
+                    <HBox.margin>
+                        <Insets top="15.0" />
+                    </HBox.margin>
+                </Label>
+                <Pane prefHeight="52.0" prefWidth="24.0" />
+            <Label fx:id="labelPrixProd" prefHeight="26.0" prefWidth="50.0" styleClass="label-item" stylesheets="@style.css" text="Prix">
+               <font>
+                  <Font name="Cambria" size="18.0" />
+               </font>
+               <HBox.margin>
+                  <Insets top="15.0" />
+               </HBox.margin>
+            </Label>
+            <Pane prefHeight="52.0" prefWidth="24.0" />
+            <Label fx:id="labelQteProd" prefHeight="26.0" prefWidth="53.0" styleClass="label-item" stylesheets="@style.css" text="Quantite">
+               <font>
+                  <Font name="Cambria" size="18.0" />
+               </font>
+               <HBox.margin>
+                  <Insets top="15.0" />
+               </HBox.margin>
+            </Label>
+            <Pane prefHeight="52.0" prefWidth="24.0" />
+            <Label fx:id="labelDescriptionProd" prefHeight="26.0" prefWidth="261.0" styleClass="label-item" stylesheets="@style.css" text="Description">
+               <font>
+                  <Font name="Cambria" size="18.0" />
+               </font>
+               <HBox.margin>
+                  <Insets top="15.0" />
+               </HBox.margin>
+            </Label>
+            <Pane prefHeight="52.0" prefWidth="24.0" />
+            <Label fx:id="labelImageProd" prefHeight="26.0" prefWidth="58.0" styleClass="label-item" stylesheets="@style.css" text="Image">
+               <font>
+                  <Font name="Cambria" size="18.0" />
+               </font>
+               <HBox.margin>
+                  <Insets top="15.0" />
+               </HBox.margin>
+            </Label>
+            <Pane prefHeight="52.0" prefWidth="24.0" />
+            <Label fx:id="labelCategProd" prefHeight="26.0" prefWidth="99.0" styleClass="label-item" stylesheets="@style.css" text="Categorie">
+               <font>
+                  <Font name="Cambria" size="18.0" />
+               </font>
+               <HBox.margin>
+                  <Insets top="15.0" />
+               </HBox.margin>
+            </Label>
+            <Pane prefHeight="52.0" prefWidth="24.0" />
+                <Button fx:id="btnModifierProd" mnemonicParsing="false" onAction="#open_UpdateProd" prefHeight="32.0" prefWidth="44.0" styleClass="btn-update" stylesheets="@style.css">
+                    <HBox.margin>
+                        <Insets top="9.0" />
+                    </HBox.margin>
+                    <graphic>
+                        <ImageView fitHeight="19.0" fitWidth="19.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@assets/img/editCateg.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                </Button>
+                <Pane prefHeight="52.0" prefWidth="12.0" />
+                <Button fx:id="btnSupprimerProd" mnemonicParsing="false" onAction="#supprimerProd" prefHeight="32.0" prefWidth="44.0" styleClass="btn-delete" stylesheets="@style.css">
+                    <HBox.margin>
+                        <Insets top="9.0" />
+                    </HBox.margin>
+                    <graphic>
+                        <ImageView fitHeight="19.0" fitWidth="19.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@assets/img/delete.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                </Button>
+            </children>
+        </HBox>
+    </children>
+</AnchorPane>

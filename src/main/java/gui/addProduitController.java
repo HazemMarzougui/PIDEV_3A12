@@ -34,6 +34,7 @@ import com.twilio.type.PhoneNumber;
 
 
 
+
 public class addProduitController implements Initializable {
 
     @FXML
@@ -116,7 +117,7 @@ public class addProduitController implements Initializable {
 
             } else {
                 ajouterProduit();
-                //send_SMS();
+                send_SMS();
                 Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
                 alert.setTitle("Ajouté avec succès");
                 alert.setHeaderText(null);
@@ -190,7 +191,7 @@ public class addProduitController implements Initializable {
     void send_SMS (){
         // Initialisation de la bibliothèque Twilio avec les informations de votre compte
         String ACCOUNT_SID = "AC24ccf0796502905b1dc946992f7164e9";
-        String AUTH_TOKEN = "5afca91897c5f252b14722c3d475e8a8";
+        String AUTH_TOKEN = "2ed23f9a611d34fe8b041396e3b101e4";
 
         Twilio.init(ACCOUNT_SID, AUTH_TOKEN);
 
@@ -208,6 +209,7 @@ public class addProduitController implements Initializable {
 
         System.out.println("SMS envoyé : " + twilioMessage.getSid());
     }
+
 
 
 }
