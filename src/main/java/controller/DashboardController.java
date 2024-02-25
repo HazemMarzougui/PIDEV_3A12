@@ -26,6 +26,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
 import java.util.List;
+import java.util.Objects;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -204,24 +205,33 @@ public class DashboardController implements Initializable {
                         Label rlabel = (Label) nodes[i].lookup("#role");
                         rlabel.setText(users.get(i).getRole());
                         Button myButton = (Button) nodes[i].lookup("#button");
-                        if(users.get(i).isIs_Actif() == false){
-                            myButton.setText("Activer");
-                            myButton.setStyle("-fx-background-radius: 20px; -fx-border-color: green;");
+                        if(Objects.equals(users.get(i).getRole(), "Admin") && MainFx.connecteduser.getId() != 86){
+                            myButton.setText(" ");
                         }
-                        else{
-                            myButton.setText("Bloquer");
-                            myButton.setStyle("-fx-background-radius: 20px; -fx-border-color: red;");
+                        else {
+                            if (users.get(i).isIs_Actif() == false) {
+                                myButton.setText("Activer");
+                                myButton.setStyle("-fx-background-radius: 20px; -fx-border-color: green;");
+                            } else {
+                                myButton.setText("Bloquer");
+                                myButton.setStyle("-fx-background-radius: 20px; -fx-border-color: red;");
+                            }
                         }
                         myButton.setOnAction(event -> {
                             Utilisateur user = users.get(j);
-                            if (user.isIs_Actif() == false) {
-                                user.setIs_Actif(true);
-                                myButton.setText("Bloquer");
-                                myButton.setStyle("-fx-background-radius: 20px; -fx-border-color: red;");
-                            } else {
-                                user.setIs_Actif(false);
-                                myButton.setText("Activer");
-                                myButton.setStyle("-fx-background-radius: 20px; -fx-border-color: green;");
+                            if(Objects.equals(user.getRole(), "Admin") && MainFx.connecteduser.getId() != 86){
+                                myButton.setText(" ");
+                            }
+                            else {
+                                if (user.isIs_Actif() == false) {
+                                    user.setIs_Actif(true);
+                                    myButton.setText("Bloquer");
+                                    myButton.setStyle("-fx-background-radius: 20px; -fx-border-color: red;");
+                                } else {
+                                    user.setIs_Actif(false);
+                                    myButton.setText("Activer");
+                                    myButton.setStyle("-fx-background-radius: 20px; -fx-border-color: green;");
+                                }
                             }
                             Us.updateUser(user,user.getId());
                             // clear and re-populate the container with updated items
@@ -398,8 +408,6 @@ public class DashboardController implements Initializable {
 
     }
 
-
-
     @FXML
     void btnOrders(ActionEvent event) throws IOException {
         pnItems.getChildren().clear();
@@ -417,7 +425,7 @@ public class DashboardController implements Initializable {
         Label rlabel = (Label) nodes[0].lookup("#rolep");
         rlabel.setText(MainFx.connecteduser.getRole());
         Label tlabel = (Label) nodes[0].lookup("#tel");
-        rlabel.setText(Integer.toString(MainFx.connecteduser.getTel()));
+        tlabel.setText(Integer.toString(MainFx.connecteduser.getTel()));
         Label alabel = (Label) nodes[0].lookup("#adresse");
         alabel.setText(MainFx.connecteduser.getAddresse());
         Label dlabel = (Label) nodes[0].lookup("#naiss");
@@ -435,7 +443,7 @@ public class DashboardController implements Initializable {
 
     @FXML
     void btnOverview(ActionEvent event) throws IOException {
-
+        MainFx.m=0;
         Parent root = FXMLLoader.load(getClass().getResource("/testing.fxml"));
         // Get the current scene and set the new scene
         Scene scene = new Scene(root);

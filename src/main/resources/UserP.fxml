@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox prefHeight="214.0" prefWidth="717.0" style="-fx-border-color: black; -fx-border-radius: 15;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.userPController">
+   <children>
+      <HBox fx:id="itemC1" alignment="CENTER_LEFT" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="53.0" prefWidth="695.0" spacing="30.0" style="-fx-background-color: transparent; -fx-background-radius: 0; -fx-background-insets: 0;">
+         <effect>
+            <DropShadow blurType="GAUSSIAN" height="5.0" radius="2.0" width="5.0" />
+         </effect>
+         <children>
+            <Label fx:id="nom1" prefHeight="22.0" prefWidth="147.0" stylesheets="@css/styles.css" text="Nom et Prenom :">
+               <HBox.margin>
+                  <Insets left="15.0" />
+               </HBox.margin>
+            </Label>
+            <Label fx:id="name" prefHeight="23.0" prefWidth="182.0" style="-fx-border-color: black; -fx-border-radius: 10;" stylesheets="@css/styles.css" textFill="#064b1c">
+               <HBox.margin>
+                  <Insets left="-5.0" />
+               </HBox.margin>
+            </Label>
+            <Label fx:id="nom11" prefHeight="22.0" prefWidth="92.0" stylesheets="@css/styles.css" text="Email :">
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+            </Label>
+            <Label fx:id="emailp" layoutX="176.0" layoutY="28.0" prefHeight="23.0" prefWidth="215.0" style="-fx-border-color: black; -fx-border-radius: 10;" stylesheets="@css/styles.css" textFill="#064b1c">
+               <HBox.margin>
+                  <Insets right="15.0" />
+               </HBox.margin>
+            </Label>
+         </children>
+      </HBox>
+      <HBox fx:id="itemC11" alignment="CENTER_LEFT" layoutX="10.0" layoutY="64.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="53.0" prefWidth="695.0" spacing="30.0" style="-fx-background-color: transparent; -fx-background-radius: 0; -fx-background-insets: 0;">
+         <effect>
+            <DropShadow blurType="GAUSSIAN" height="5.0" radius="2.0" width="5.0" />
+         </effect>
+         <children>
+            <Label fx:id="role11" prefWidth="100.0" stylesheets="@css/styles.css" text="Adresse:">
+               <HBox.margin>
+                  <Insets left="16.0" />
+               </HBox.margin>
+            </Label>
+            <Label fx:id="adresse" prefHeight="23.0" prefWidth="179.0" style="-fx-border-color: black; -fx-border-radius: 10;" stylesheets="@css/styles.css" textFill="#064b1c">
+               <HBox.margin>
+                  <Insets left="23.0" />
+               </HBox.margin>
+            </Label>
+            <Label fx:id="email1112" prefHeight="22.0" prefWidth="84.0" stylesheets="@css/styles.css" text="Téléphone:" />
+            <Label fx:id="tel" layoutX="156.0" layoutY="28.0" prefWidth="200.0" style="-fx-border-color: black; -fx-border-radius: 10;" stylesheets="@css/styles.css" textFill="#064b1c">
+               <HBox.margin>
+                  <Insets right="15.0" />
+               </HBox.margin>
+            </Label>
+         </children>
+      </HBox>
+      <HBox fx:id="itemC111" alignment="CENTER_LEFT" layoutX="10.0" layoutY="117.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="53.0" prefWidth="695.0" spacing="30.0" style="-fx-background-color: transparent; -fx-background-radius: 0; -fx-background-insets: 0;">
+         <effect>
+            <DropShadow blurType="GAUSSIAN" height="5.0" radius="2.0" width="5.0" />
+         </effect>
+         <children>
+            <Label fx:id="nom111" prefHeight="22.0" prefWidth="144.0" stylesheets="@css/styles.css" text="Date de naissance :">
+               <HBox.margin>
+                  <Insets left="15.0" />
+               </HBox.margin>
+            </Label>
+            <Label fx:id="naiss" prefHeight="23.0" prefWidth="183.0" style="-fx-border-color: black; -fx-border-radius: 10;" stylesheets="@css/styles.css" textFill="#064b1c">
+               <HBox.margin>
+                  <Insets left="-27.0" />
+               </HBox.margin>
+            </Label>
+         </children>
+      </HBox>
+      <HBox fx:id="itemC11111" alignment="CENTER_LEFT" layoutX="10.0" layoutY="224.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="53.0" prefWidth="695.0" spacing="30.0" style="-fx-background-color: transparent; -fx-background-radius: 0; -fx-background-insets: 0;">
+         <effect>
+            <DropShadow blurType="GAUSSIAN" height="5.0" radius="2.0" width="5.0" />
+         </effect>
+         <children>
+            <Button mnemonicParsing="false" onAction="#modif" prefHeight="39.0" prefWidth="98.0" style="-fx-border-color: black; -fx-border-radius: 20;" stylesheets="@css/styles.css" text="Modifier">
+               <HBox.margin>
+                  <Insets left="50.0" />
+               </HBox.margin>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <styleClass>
+                  <String fx:value="btn_action_add" />
+                  <String fx:value="nav-linksbtn" />
+               </styleClass>
+            </Button>
+            <Button layoutX="10.0" layoutY="24.0" mnemonicParsing="false" onAction="#img" prefHeight="34.0" prefWidth="150.0" style="-fx-border-radius: 20; -fx-border-color: black;" stylesheets="@css/styles.css" text="Changer photo">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <styleClass>
+                  <String fx:value="nav-linksbtn" />
+                  <String fx:value="btn_action_add" />
+               </styleClass></Button>
+            <Button layoutX="100.0" layoutY="24.0" mnemonicParsing="false" onAction="#pwd" prefHeight="34.0" prefWidth="206.0" style="-fx-border-color: black; -fx-border-radius: 20;" stylesheets="@css/styles.css" text="Changer mot de passe">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <styleClass>
+                  <String fx:value="btn_action_add" />
+                  <String fx:value="nav-linksbtn" />
+               </styleClass></Button>
+         </children>
+      </HBox>
+   </children>
+</VBox>

@@ -140,7 +140,7 @@
                <graphic>
                   <ImageView fitHeight="23.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="/images/icons8_Home_32px.png" />
+                        <Image url="@images/icons8_Home_32px.png" />
                      </image>
                   </ImageView>
                </graphic>
@@ -155,7 +155,7 @@
                <graphic>
                   <ImageView fitHeight="23.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="/images/icons8_Person_32px.png" />
+                        <Image url="@images/icons8_Person_32px.png" />
                      </image>
                   </ImageView>
                </graphic>
@@ -167,7 +167,7 @@
                <graphic>
                   <ImageView fitHeight="23.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="/images/icons8_Person_32px.png" />
+                        <Image url="@images/icons8_Person_32px.png" />
                      </image>
                   </ImageView>
                </graphic>
@@ -183,7 +183,7 @@
             <TextField fx:id="search" layoutX="792.0" layoutY="56.0" prefHeight="27.0" prefWidth="183.0" promptText="search" style="-fx-background-color: #defee6; -fx-border-color: #B7C3D7; -fx-border-radius: 2em;" />
             <ImageView fitHeight="17.0" fitWidth="16.0" layoutX="951.0" layoutY="62.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="/images/icons8_Search_52px.png" />
+                  <Image url="@images/icons8_Search_52px.png" />
                </image>
             </ImageView>
             <ScrollPane layoutX="41.0" layoutY="198.0" prefHeight="324.0" prefWidth="749.0">

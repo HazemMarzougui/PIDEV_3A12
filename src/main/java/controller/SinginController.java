@@ -42,7 +42,7 @@ private TextField emailField;
 private TextField passwordField;
         @FXML
     private ImageView cap;
-            @FXML
+        @FXML
     private TextField code;
     
         private VBox vbox;
@@ -80,7 +80,7 @@ private void signin(ActionEvent event) throws SQLException, IOException, NullPoi
                        primaryStage.close();
 
 // Load the FXML file into a Parent object
-                       Parent root = FXMLLoader.load(getClass().getResource("/testing.fxml"));
+                       Parent root = FXMLLoader.load(getClass().getResource("/front office.fxml"));
 
 // Create a new Scene with the loaded Parent
                        Scene scene = new Scene(root);
