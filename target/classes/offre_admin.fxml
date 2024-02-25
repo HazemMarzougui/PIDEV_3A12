@@ -39,11 +39,11 @@
                         <Image url="@kits/Kitsune/rapport.png" />
                      </image>
                   </ImageView>
-                  <Button mnemonicParsing="false" prefHeight="36.0" prefWidth="144.0" style="-fx-background-color: transparent;" text="Dashboard" textFill="WHITE">
+                  <Label prefHeight="40.0" prefWidth="84.0" text="Dashboard" textFill="WHITE">
                      <font>
                         <Font name="System Bold" size="14.0" />
                      </font>
-                  </Button>
+                  </Label>
                </children>
             </HBox>
             <HBox prefHeight="40.0" prefWidth="163.0" spacing="15.0">
@@ -56,11 +56,11 @@
                         <Image url="@kits/Kitsune/profil.png" />
                      </image>
                   </ImageView>
-                  <Button mnemonicParsing="false" prefHeight="36.0" prefWidth="177.0" style="-fx-background-color: transparent;" text="Gestion Utilisateurs" textFill="WHITE">
+                  <Label prefHeight="39.0" prefWidth="143.0" text="Gestion Utilisateurs" textFill="WHITE">
                      <font>
                         <Font name="System Bold" size="14.0" />
                      </font>
-                  </Button>
+                  </Label>
                </children>
             </HBox>
             <HBox prefHeight="27.0" prefWidth="145.0" spacing="15.0">
@@ -73,11 +73,11 @@
                         <Image url="@kits/Kitsune/traits.png" />
                      </image>
                   </ImageView>
-                  <Button mnemonicParsing="false" prefHeight="34.0" prefWidth="162.0" style="-fx-background-color: transparent;" text="Gestion Produits" textFill="WHITE">
+                  <Label prefHeight="34.0" prefWidth="153.0" text="Gestion Produits" textFill="WHITE">
                      <font>
                         <Font name="System Bold" size="14.0" />
                      </font>
-                  </Button>
+                  </Label>
                </children>
             </HBox>
             <HBox prefHeight="40.0" prefWidth="163.0" spacing="15.0">
@@ -90,11 +90,11 @@
                         <Image url="@kits/Kitsune/shipping-and-delivery.png" />
                      </image>
                   </ImageView>
-                  <Button mnemonicParsing="false" prefHeight="34.0" prefWidth="162.0" style="-fx-background-color: transparent;" text="Gestion Livraison" textFill="WHITE">
+                  <Label prefHeight="39.0" prefWidth="143.0" text="Gestion Livraison" textFill="WHITE">
                      <font>
                         <Font name="System Bold" size="14.0" />
                      </font>
-                  </Button>
+                  </Label>
                </children>
             </HBox>
             <HBox prefHeight="27.0" prefWidth="145.0" spacing="15.0">
@@ -107,11 +107,11 @@
                         <Image url="@kits/Kitsune/event-management.png" />
                      </image>
                   </ImageView>
-                  <Button mnemonicParsing="false" prefHeight="34.0" prefWidth="162.0" style="-fx-background-color: transparent;" text="Gestion Evenements" textFill="WHITE">
+                  <Label prefHeight="34.0" prefWidth="162.0" text="Gestion Evenements" textFill="WHITE">
                      <font>
                         <Font name="System Bold" size="14.0" />
                      </font>
-                  </Button>
+                  </Label>
                </children>
             </HBox>
             <HBox prefHeight="27.0" prefWidth="145.0" spacing="15.0">
@@ -124,11 +124,11 @@
                         <Image url="@kits/Kitsune/conseil.png" />
                      </image>
                   </ImageView>
-                  <Button mnemonicParsing="false" prefHeight="34.0" prefWidth="162.0" style="-fx-background-color: transparent;" text="Gestion Conseils " textFill="WHITE">
+                  <Label prefHeight="34.0" prefWidth="162.0" text="Gestion Conseils" textFill="WHITE">
                      <font>
                         <Font name="System Bold" size="14.0" />
                      </font>
-                  </Button>
+                  </Label>
                </children>
             </HBox>
             <HBox prefHeight="27.0" prefWidth="145.0" spacing="15.0">
@@ -141,11 +141,11 @@
                         <Image url="@kits/Kitsune/se-deconnecter.png" />
                      </image>
                   </ImageView>
-                  <Button mnemonicParsing="false" prefHeight="34.0" prefWidth="162.0" style="-fx-background-color: transparent;" text="Se déconnecter" textFill="WHITE">
+                  <Label prefHeight="34.0" prefWidth="162.0" text="Se déconnecter" textFill="WHITE">
                      <font>
                         <Font name="System Bold" size="14.0" />
                      </font>
-                  </Button>
+                  </Label>
                </children>
                <VBox.margin>
                   <Insets top="100.0" />
@@ -158,17 +158,17 @@
       </VBox>
       <TextField fx:id="id_search_offre" layoutX="509.0" layoutY="32.0" prefHeight="25.0" prefWidth="222.0" promptText="search " />
       <Button fx:id="id_search_button_offre" layoutX="732.0" layoutY="32.0" mnemonicParsing="false" onAction="#search_event_offre" prefHeight="25.0" prefWidth="84.0" text="search" />
-      <VBox layoutX="252.0" layoutY="83.0" prefHeight="547.0" prefWidth="781.0" spacing="10.0">
+      <VBox layoutX="252.0" layoutY="83.0" prefHeight="459.0" prefWidth="781.0" spacing="10.0">
          <children>
             <Label prefHeight="40.0" prefWidth="95.0" text="Indicators :" textFill="WHITE">
                <font>
-                  <Font name="System Bold Italic" size="15.0" />
+                  <Font name="System Bold" size="15.0" />
                </font>
                <VBox.margin>
                   <Insets top="40.0" />
                </VBox.margin>
             </Label>
-            <ImageView fitHeight="121.0" fitWidth="387.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="125.0" fitWidth="452.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@kits/Kitsune/billbor.png" />
                </image>
@@ -189,7 +189,7 @@
                      </font>
                   </Label>
                   <ImageView fitHeight="41.0" fitWidth="154.0" pickOnBounds="true" preserveRatio="true" />
-                  <Button fx:id="id_add_offre" mnemonicParsing="false" onAction="#add_event_offre" prefHeight="65.0" prefWidth="163.0" style="-fx-background-color: #55dd4b;" text="+" textFill="#119728">
+                  <Button fx:id="id_add_offre" mnemonicParsing="false" onAction="#add_event_offre" prefHeight="40.0" prefWidth="124.0" style="-fx-background-color: #55dd4b;" text="+" textFill="#119728">
                      <font>
                         <Font size="30.0" />
                      </font>
@@ -199,9 +199,9 @@
                   </Button>
                </children>
             </HBox>
-            <ScrollPane prefHeight="261.0" prefWidth="726.0">
+            <ScrollPane>
                <content>
-                  <VBox fx:id="id_vbox_offre" prefHeight="249.0" prefWidth="779.0" style="-fx-background-color: #ffffff;" />
+                  <VBox fx:id="id_vbox_offre" prefHeight="142.0" prefWidth="781.0" style="-fx-background-color: #ffffff;" />
                </content>
             </ScrollPane>
          </children>

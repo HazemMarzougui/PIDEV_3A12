@@ -9,7 +9,6 @@ import javafx.scene.control.Button;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
 import services.Service_evenement;
-
 import java.io.IOException;
 import java.sql.Date;
 import java.sql.SQLException;
@@ -61,7 +60,4 @@ public class Add_event {
     }
 
 
-    @FXML
-    void Ajouterevent(ActionEvent event) {
-
-}}
+ }
