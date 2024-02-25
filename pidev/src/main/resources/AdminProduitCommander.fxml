@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Text?>
+
+
+<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="80.0" prefWidth="491.0" styleClass="commandDetailsRow" stylesheets="@Style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Text fx:id="qunatitec" strokeType="OUTSIDE" strokeWidth="0.0" text="10">
+         <HBox.margin>
+            <Insets left="50.0" top="30.0" />
+         </HBox.margin>
+      </Text>
+      <Text fx:id="prixu_c" strokeType="OUTSIDE" strokeWidth="0.0" text="2">
+         <HBox.margin>
+            <Insets left="300.0" top="30.0" />
+         </HBox.margin>
+      </Text>
+   </children>
+</HBox>

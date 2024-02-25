@@ -47,6 +47,10 @@ public class ListeCommandeController implements Initializable {
     @FXML
     private HBox deletep;
 
+    public HBox getDeletep() {
+        return deletep;
+    }
+
     @FXML
     private HBox moin;
 
@@ -111,6 +115,7 @@ public class ListeCommandeController implements Initializable {
 
 
          }
+
 
 }
 

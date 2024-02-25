@@ -12,4 +12,5 @@ public interface IServiceP <T> {
     public panier Afficheproduit(int produitId);
     public List<produit> getAllProducts() ;
     public void SupprimerProduitCommande(int id_produit);
+    public List<panier> getAllProductsForCommand(int commandeId) throws SQLException;
 }

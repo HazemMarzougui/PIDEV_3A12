@@ -61,10 +61,5 @@ public class listeproduitcontroller {
 
 
     }
-    @FXML
-    void retour(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("../front office.fxml"));
-        productsListContainer.getScene().setRoot(root);
 
-    }
 }

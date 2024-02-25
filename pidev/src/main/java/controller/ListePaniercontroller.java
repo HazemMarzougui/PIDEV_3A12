@@ -11,6 +11,7 @@ import javafx.geometry.Insets;
 import javafx.scene.Parent;
 import javafx.scene.control.Alert;
 import javafx.scene.control.TextField;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
@@ -29,8 +30,18 @@ public class ListePaniercontroller implements Initializable {
     panierService ps = new panierService();
   commandeService commandeService=new commandeService();
 
+
+    @FXML
+    private GridPane ListePanierContainer;
+
     @FXML
     private TextField adresse;
+
+    @FXML
+    private HBox checkoutModel;
+
+    @FXML
+    private Pane content_area;
 
     @FXML
     private TextField email;
@@ -44,27 +55,46 @@ public class ListePaniercontroller implements Initializable {
     @FXML
     private TextField telephone;
 
+    @FXML
+    private HBox updateCheckoutBtn;
 
     @FXML
-    private Pane content_area;
+    void UpdateCheckoutBtn(MouseEvent event) {
+
+    }
+
+    @FXML
+    void fermer(MouseEvent event) {
+        checkoutModel.setVisible(false);
+    }
+
+    @FXML
+    void formulaire(ActionEvent event) {
+
+        checkoutModel.setVisible(true);
+
+    }
+
+
 
 
     @FXML
-    private GridPane ListePanierContainer;
+    void switchToPaymentModel(MouseEvent event) {
+
+    }
+
+
+
 
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
 
+        checkoutModel.setVisible(false);
         afficherProduitsDansGridPane( );
     }
-    @FXML
-    void retour(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("../front office.fxml"));
-        ListePanierContainer.getScene().setRoot(root);
 
-    }
     private void afficherProduitsDansGridPane() {
 
         int column = 0;
@@ -73,8 +103,9 @@ public class ListePaniercontroller implements Initializable {
             List<produit> produits = ps.getAllProducts();
 
             for (int i = 0; i < produits.size(); i++) {
-                ListeCommandeController listeCommandeController = new ListeCommandeController();
-                FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/ListeCommande.fxml"));
+               AdminProduitCommanderController adminProduitCommanderController =new AdminProduitCommanderController();
+               ListeCommandeController listeCommandeController = new ListeCommandeController();
+               FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/ListeCommande.fxml"));
                 fxmlLoader.setController(listeCommandeController);
                 HBox productCard = fxmlLoader.load();
                 listeCommandeController.setProduit(produits.get(i));
@@ -110,6 +141,22 @@ public class ListePaniercontroller implements Initializable {
                 }
                 ListePanierContainer.add(productCard, column++, row);
                 GridPane.setMargin(productCard, new Insets(0, 10, 15, 10));
+
+
+
+                // Dans la méthode afficherProduitsDansGridPane
+
+                int finalI = i;
+                listeCommandeController.getDeletep().setOnMouseClicked(event -> {
+                    // Obtenez l'ID du produit associé à ce bouton de suppression
+                    int idProduit = produits.get(finalI).getId_produit(); // Supposons que getId() retourne l'ID du produit
+
+                    // Appelez la méthode pour supprimer ce produit
+                    ps.SupprimerProduitCommande(idProduit);
+
+                    // Supprimez le produit de l'interface utilisateur
+                    ListePanierContainer.getChildren().remove(productCard);
+                });   
             }
         } catch (IOException e) {
             e.printStackTrace(); // Consider more user-friendly error handling
@@ -127,11 +174,13 @@ public class ListePaniercontroller implements Initializable {
         return id;
     }
 
-    @FXML
-    void passe_commande(ActionEvent event) {
 
-         int id = -generateID();
-         Float tot=0f;
+
+    @FXML
+    void passe_commande(MouseEvent event) {
+
+        int id = -generateID();
+        Float tot=0f;
         for (int i = 0; i < MainFX.GlobalData.produits.size(); i++) {
             tot+=MainFX.GlobalData.prix.get(i)*MainFX.GlobalData.quantites.get(i);
         }
@@ -157,6 +206,10 @@ public class ListePaniercontroller implements Initializable {
 
 
     }
+
+
+
+
 
 
 

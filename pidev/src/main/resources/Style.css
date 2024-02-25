@@ -1091,3 +1091,10 @@
   -fx-border-radius: 10px;
   -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.09), 35, 0.1, 0, 0);
 }
+
+.btn__del {
+  -fx-background-radius: 100px;
+  -fx-border-radius: 100px;
+  -fx-background-color: #cb1212;
+  -fx-cursor: hand;
+}

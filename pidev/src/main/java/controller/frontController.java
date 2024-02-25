@@ -9,6 +9,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
 import entities.produit;
+import javafx.scene.layout.Pane;
 
 import java.io.IOException;
 
@@ -52,6 +53,9 @@ public class frontController {
 
     @FXML
     private HBox sideBarLogout;
+    @FXML
+    private Pane content_area;
+
 
     @FXML
     void logout(MouseEvent event) {
@@ -78,17 +82,20 @@ public class frontController {
     @FXML
     void open_productsList(MouseEvent event) throws IOException {
 
-        Parent root = FXMLLoader.load(getClass().getResource("/listeproduit.fxml"));
-        productsBtn.getScene().setRoot(root);
 
+        Parent fxml = FXMLLoader.load(getClass().getResource("/listeproduit.fxml"));
+        content_area.getChildren().removeAll();
+        content_area.getChildren().setAll(fxml);
 
     }
 
     @FXML
     void open_commandsList(MouseEvent event) throws IOException {
 
-        Parent root = FXMLLoader.load(getClass().getResource("/ListePanier.fxml"));
-        productsBtn.getScene().setRoot(root);
+
+        Parent fxml = FXMLLoader.load(getClass().getResource("/ListePanier.fxml"));
+        content_area.getChildren().removeAll();
+        content_area.getChildren().setAll(fxml);
 
     }
 

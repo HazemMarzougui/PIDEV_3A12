@@ -113,4 +113,38 @@ public class panierService implements IServiceP<panier> {
         }
     }
 
+
+
+
+
+
+
+    @Override
+    public List<panier> getAllProductsForCommand( int commandeId) throws SQLException{
+        List<panier> pers = new ArrayList<>();
+
+        String req = "select * from panier p INNER JOIN commande c ON p.id_commande=c.idcommande WHERE id_commande=?";
+        PreparedStatement pre = con.prepareStatement(req);
+        pre.setInt(1, commandeId);
+        ResultSet res = pre.executeQuery();
+        while (res.next()) {
+            panier p = new panier();
+            p.setId_panier(res.getInt(1));
+            p.setId_produit(res.getInt(2));
+            p.setId_commande(res.getInt(3));
+            p.setQuantite(res.getInt(4));
+            p.setPrix_u(res.getFloat(5));
+
+
+            pers.add(p);
+        }
+
+
+        return pers;
+
+
+    }
+
+
+
 }

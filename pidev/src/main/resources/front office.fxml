@@ -142,7 +142,7 @@
             <Insets left="20.0" />
          </padding>
       </HBox>
-      <Pane layoutX="139.0" layoutY="86.0" prefHeight="658.0" prefWidth="1142.0" styleClass="dash__container-card">
+      <Pane fx:id="content_area" layoutX="139.0" layoutY="86.0" prefHeight="658.0" prefWidth="1142.0" styleClass="dash__container-card">
          <stylesheets>
             <URL value="@Style.css" />
             <URL value="@Style.css" />
