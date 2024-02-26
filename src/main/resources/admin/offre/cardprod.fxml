@@ -73,9 +73,6 @@
          <VBox.margin>
             <Insets top="10.0" />
          </VBox.margin>
-         <children>
-            <Button fx:id="id_return" mnemonicParsing="false" onAction="#return_to_admin" prefHeight="36.0" prefWidth="126.0" style="-fx-background-color: #7bb225;" text="return" />
-         </children>
       </HBox>
    </children>
    <opaqueInsets>

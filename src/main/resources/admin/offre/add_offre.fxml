@@ -13,7 +13,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="487.0" prefWidth="339.0" style="-fx-background-color: #90EE90;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.add_offre">
+<VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="487.0" prefWidth="572.0" style="-fx-background-color: #90EE90;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.add_offre">
    <children>
       <ImageView fitHeight="108.0" fitWidth="251.0" pickOnBounds="true" preserveRatio="true">
          <VBox.margin>
@@ -31,15 +31,11 @@
             <Font name="System Bold" size="13.0" />
          </font>
       </Text>
-      <TextArea fx:id="id_desc_offre" prefHeight="98.0" prefWidth="176.0">
+      <TextArea fx:id="id_desc_offre" prefHeight="46.0" prefWidth="472.0">
          <VBox.margin>
             <Insets left="50.0" right="50.0" top="15.0" />
          </VBox.margin>
       </TextArea>
-      <Label text="4.0">
-         <VBox.margin>
-            <Insets top="5.0" />
-         </VBox.margin></Label>
       <Text strokeType="OUTSIDE" strokeWidth="0.0" text="FROM">
          <font>
             <Font name="System Bold" size="12.0" />

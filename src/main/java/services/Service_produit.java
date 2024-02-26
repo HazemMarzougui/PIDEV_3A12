@@ -32,6 +32,9 @@ public class Service_produit implements IService_offre<Produit> {
     @Override
     public void modifier(Produit produit) throws SQLException {
 
+
+
+
     }
 
     @Override

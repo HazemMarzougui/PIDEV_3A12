@@ -1,6 +1,8 @@
 package Controllers;
 
 
+import entities.Evenement;
+import entities.Offre;
 import entities.Produit;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -13,6 +15,7 @@ import javafx.scene.control.TextField;
 import javafx.event.ActionEvent;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
+import services.Service_offre;
 import services.Service_produit;
 
 import java.io.IOException;
@@ -33,6 +36,9 @@ public class admin_offre {
     @FXML
     private VBox id_vbox_offre;
 
+    private Evenement current_event;
+
+    Service_offre so = new Service_offre();
     Service_produit sp = new Service_produit();
     @FXML
     void add_event_offre(ActionEvent event) {
@@ -43,19 +49,37 @@ public class admin_offre {
     void search_event_offre(ActionEvent event) {
 
     }
+    public void setData(Evenement event)
+    {
+        this.current_event=event;
 
+    }
     @FXML
     void initialize() {
         try {
-            ObservableList<Produit> observableList = FXCollections.observableList(sp.afficher());
+            ObservableList<Offre> observableList = FXCollections.observableList(so.afficher());
+            // Filter the list based on the search text
+            List<Offre> filteredList = observableList.stream()
+                    .filter(e -> e.getId_evenement_offre() == current_event.getId_evenement())
+                    .collect(Collectors.toList());
 
-            for (int i = 0; i < observableList.size(); i++) {
+            for (int i = 0; i < filteredList.size(); i++) {
+                int prodId = filteredList.get(i).getId_produit_offre();
+
+                /////prod
+                ObservableList<Produit> prodList = FXCollections.observableList(sp.afficher());
+                // Filter the list based on the search text
+                List<Produit> filteredprodList = prodList.stream()
+                        .filter(e -> e.getId_produit() == prodId)
+                        .collect(Collectors.toList());
+
+
                 FXMLLoader fxmlLoader = new FXMLLoader();
                 fxmlLoader.setLocation(getClass().getResource("/admin/offre/cardprod.fxml"));
                 VBox cardBox = fxmlLoader.load();
                 cardprod cardProd = fxmlLoader.getController();
 
-                cardProd.setData(observableList.get(i));
+                cardProd.setData(filteredprodList.get(0));
                 id_vbox_offre.getChildren().add(cardBox);
             }
         } catch (SQLException | IOException e) {

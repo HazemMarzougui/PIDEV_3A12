@@ -5,12 +5,15 @@ import entities.Evenement;
 import entities.user;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import services.ClientEventMappingService;
 import services.SMSService; // Your SMS service integration class
 import services.UserService;
 
+import java.io.IOException;
 import java.sql.SQLException;
 
 
@@ -36,7 +39,39 @@ public class cardtemplateclient {
     private Label id_nom;
 
     @FXML
+    private Button id_event_name;
+
+    @FXML
+    void go_to_event(ActionEvent event) {
+
+
+        try{
+            Parent root= loadRootLayout();
+            id_event.getScene().setRoot(root);
+        } catch (SQLException | IOException e) {
+            throw new RuntimeException(e);
+        }catch (Exception e)
+        {
+            e.printStackTrace();
+        }
+
+    }
+
+
+    private Parent loadRootLayout() throws Exception {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/admin/offre/offre_admin.fxml"));
+        admin_offre controller = new admin_offre();
+        loader.setController(controller);
+        System.out.println(event);
+        controller.setData(event); // Add data to the controller
+        Parent root = loader.load();
+
+        return root;
+    }
+
+    @FXML
     void form(ActionEvent event) {
+
 
     }
 
@@ -45,7 +80,7 @@ public class cardtemplateclient {
     public void setData(Evenement event)
     {
         id_event.setText(""+event.getId_evenement());
-        id_nom.setText(event.getNom_event());
+        id_event_name.setText(event.getNom_event());
         id_description.setText(""+event.getDescription());
         id_date_deb.setText(""+event.getDate_debut());
         id_date_fin.setText(""+event.getDate_fin());
