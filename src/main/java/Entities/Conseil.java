@@ -10,6 +10,7 @@ public class Conseil {
     public int id_typeC ;
 
 
+
     public Conseil(){}
     public Conseil(int id_conseil , String nom_conseil , String video, String description , int id_produit, int id_typeC)
     {

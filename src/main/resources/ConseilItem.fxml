@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+
+<HBox fx:id="HBoxx" alignment="CENTER_LEFT" prefHeight="80.0" prefWidth="928.0" spacing="30.0" styleClass="hbox-conseil-item" stylesheets="@css/itemstyle.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.ConseilItemController">
+   <children>
+      <Label fx:id="id_conseil" prefHeight="20.0" prefWidth="39.0" styleClass="label-conseil" stylesheets="@css/itemstyle.css" text="1">
+         <HBox.margin>
+            <Insets right="5.0" />
+         </HBox.margin>
+      </Label>
+      <Label fx:id="nom_conseil" alignment="CENTER" contentDisplay="CENTER" nodeOrientation="INHERIT" prefHeight="20.0" prefWidth="85.0" styleClass="label-conseil" stylesheets="@css/itemstyle.css" text="hazem">
+         <HBox.margin>
+            <Insets />
+         </HBox.margin></Label>
+      <Label fx:id="video" nodeOrientation="INHERIT" prefHeight="20.0" prefWidth="269.0" styleClass="label-conseil" stylesheets="@css/itemstyle.css" text="url">
+         <HBox.margin>
+            <Insets />
+         </HBox.margin></Label>
+      <Label fx:id="description" prefHeight="60.0" prefWidth="82.0" styleClass="label-conseil" stylesheets="@css/itemstyle.css" text="test">
+         <HBox.margin>
+            <Insets />
+         </HBox.margin>
+      </Label>
+      <Label fx:id="id_produit" prefHeight="20.0" prefWidth="142.0" styleClass="label-conseil" stylesheets="@css/itemstyle.css" text="nom produit">
+         <HBox.margin>
+            <Insets />
+         </HBox.margin>
+      </Label>
+      <Label fx:id="id_typeC" prefHeight="20.0" prefWidth="136.0" styleClass="label-conseil" stylesheets="@css/itemstyle.css" text="stabiliser du poids">
+         <HBox.margin>
+            <Insets />
+         </HBox.margin>
+      </Label>
+      <HBox alignment="CENTER" prefHeight="60.0" prefWidth="141.0" spacing="20.0">
+         <HBox.margin>
+            <Insets />
+         </HBox.margin>
+         <children>
+            <Button fx:id="btn_mod" alignment="TOP_RIGHT" contentDisplay="CENTER" mnemonicParsing="false" onAction="#update_conseil" prefHeight="30.0" prefWidth="30.0" styleClass="button-update" stylesheets="@css/itemstyle.css" textFill="WHITE">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <graphic>
+                  <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@uploads/editer.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="btn_del" mnemonicParsing="false" onAction="#delete_conseil" prefHeight="30.0" prefWidth="30.0" styleClass="button-delete" stylesheets="@css/itemstyle.css" textFill="WHITE">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <graphic>
+                  <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@uploads/supprimer.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+         </children>
+      </HBox>
+   </children>
+</HBox>

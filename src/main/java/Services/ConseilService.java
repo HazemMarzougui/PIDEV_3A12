@@ -85,4 +85,94 @@ public class ConseilService  implements IService<Conseil>{
         return conseils;
     }
 
+    public List<Conseil> searchProducts(String search) {
+        List<Conseil> conseilList = new ArrayList<>();
+        try {
+            String query = "SELECT * FROM conseil WHERE nom_conseil LIKE ? OR id_typeC LIKE ?";
+            PreparedStatement preparedStatement = connection.prepareStatement(query);
+            preparedStatement.setString(1, "%" + search + "%");
+            preparedStatement.setString(2, "%" + search + "%");
+            ResultSet resultSet = preparedStatement.executeQuery();
+
+            // Parcours du résultat de la requête
+            while (resultSet.next()) {
+                Conseil conseil = new Conseil();
+                conseil.setId_conseil(resultSet.getInt("id_conseil"));
+                conseil.setNom_conseil(resultSet.getString("nom_conseil"));
+                conseil.setVideo(resultSet.getString("video"));
+                conseil.setDescription(resultSet.getString("description"));
+                conseil.setId_produit(resultSet.getInt("id_produit"));
+                conseil.setId_typeC(resultSet.getInt("id_typeC"));
+
+                conseilList.add(conseil);
+            }
+            preparedStatement.close();
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return conseilList;
+    }
+
+    public List<Conseil> sortProductsUser(String sortBy, String comboBoxData) {
+        List<Conseil> conseilList = new ArrayList<>();
+        try {
+            String query = "";
+            PreparedStatement preparedStatement;
+
+            if (sortBy.equals("Nom_Conseil")) {
+                if (comboBoxData.equals("Nom Conseil - ASC To DESC")) {
+                    query = "SELECT * FROM conseil ORDER BY nom_conseil asc";
+                } else if (comboBoxData.equals("Price - High To Low")) {
+                    query = "SELECT * FROM conseil ORDER BY nom_conseil desc";
+                }
+            } else if (sortBy.equals("id_typeC")) {
+                if (comboBoxData.equals("Type Conseil - ASC To DESC")) {
+                    query = "SELECT * FROM conseil ORDER BY id_typeC asc";
+                } else if (comboBoxData.equals("Points - High To Low")) {
+                    query = "SELECT * FROM conseil ORDER BY id_typeC desc";
+                }
+            }
+            preparedStatement = connection.prepareStatement(query);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            // Parcours du résultat de la requête
+            while (resultSet.next()) {
+                Conseil conseil = new Conseil();
+                conseil.setId_conseil(resultSet.getInt("id_conseil"));
+                conseil.setNom_conseil(resultSet.getString("nom_conseil"));
+                conseil.setVideo(resultSet.getString("video"));
+                conseil.setDescription(resultSet.getString("description"));
+                conseil.setId_produit(resultSet.getInt("id_produit"));
+                conseil.setId_typeC(resultSet.getInt("id_typeC"));
+                conseilList.add(conseil);
+            }
+            preparedStatement.close();
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return conseilList;
+    }
+
+    @Override
+    public List<Conseil> getonseilByID(int idConseil) throws SQLException {
+        List<Conseil> conseilList = new ArrayList<>();
+        String req = "SELECT * FROM conseil WHERE id_conseil = ?";
+        PreparedStatement pre = connection.prepareStatement(req);
+        pre.setInt(1, idConseil);
+        ResultSet res = pre.executeQuery();
+        while (res.next()) {
+            Conseil conseil = new Conseil();
+            conseil.setId_conseil(res.getInt(1));
+            conseil.setNom_conseil(res.getString(2));
+            conseil.setVideo(res.getString(3));
+            conseil.setDescription(res.getString(4));
+            conseil.setId_produit(res.getInt(5));
+            conseil.setId_typeC(res.getInt(6));
+            conseilList.add(conseil);
+        }
+        return conseilList;
+    }
+
+
 }

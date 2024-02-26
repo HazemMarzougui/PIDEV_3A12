@@ -9,6 +9,7 @@ public interface IServiceCategorie <T>{
     public void modifierCategorie(T t, int id_conseil ) throws SQLException ;
     public void deleteCategorie(int id_conseil) throws SQLException;
     public List<T> displayCategorie() throws SQLException ;
+    public String getCategoriesName(int idCategory) throws SQLException;
 
 
 }

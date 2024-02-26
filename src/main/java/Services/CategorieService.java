@@ -73,5 +73,20 @@ public class CategorieService  implements IServiceCategorie<Categorie>{
         }
         return categories;
     }
+    @Override
+    public String getCategoriesName(int idCategory) throws SQLException {
+        String categoryName = ""; // Default value
+        String req = "SELECT nom_categorie FROM categorie WHERE id_categorie = ?";
+        try (PreparedStatement pre = connection.prepareStatement(req)) {
+            pre.setInt(1, idCategory);
+            try (ResultSet res = pre.executeQuery()) {
+                if (res.next()) {
+                    categoryName = res.getString(1);
+                }
+            }
+        }
+        return categoryName;
+    }
+
 
 }

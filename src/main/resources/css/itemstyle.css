@@ -1,0 +1,35 @@
+/* ConseilItem.css */
+
+/* Style for the container HBox */
+.hbox-conseil-item {
+    -fx-background-color: #f0f0f0; /* Background color */
+    -fx-padding: 10px; /* Padding */
+    -fx-spacing: 10px; /* Spacing between children */
+}
+
+/* Style for labels */
+.label-conseil {
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+}
+
+/* Style for buttons */
+.button-delete {
+    -fx-background-color: #ff6b6b; /* Red background color */
+    -fx-text-fill: white; /* White text color */
+}
+
+.button-update {
+    -fx-background-color: #43882b; /* Green background color */
+    -fx-text-fill: white; /* White text color */
+}
+
+/* Hover effect for buttons */
+.button-update:hover {
+    -fx-background-color: derive(#4CAF50, 20%); /* Darken the green color on hover */
+}
+.button-delete:hover
+{
+    -fx-background-color: derive(#9f1515, 20%);
+}
+/* Styling for other elements (customize as needed) */
