@@ -10,7 +10,6 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
-import javafx.scene.input.MouseEvent;
 
 import javafx.event.ActionEvent;
 import javafx.scene.layout.HBox;
@@ -55,7 +54,7 @@ public class AjouterEvenementController {
 
             // Load and display filtered data
             for (Evenement evenement : filteredList) {
-                FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/cardtemplate.fxml"));
+                FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/admin/event/cardtemplate.fxml"));
                 HBox cardBox = fxmlLoader.load();
                 cardtemplate cardController = fxmlLoader.getController();
                 cardController.setData(evenement);
@@ -72,7 +71,7 @@ public class AjouterEvenementController {
     @FXML
     void add_event(ActionEvent event) {
         try {
-            Parent root= FXMLLoader.load(getClass().getResource("/add_event.fxml"));
+            Parent root= FXMLLoader.load(getClass().getResource("/admin/event/add_event.fxml"));
             id_add_event.getScene().setRoot(root);
         }catch (IOException e){
             System.out.println(e.getMessage());
@@ -91,7 +90,7 @@ public class AjouterEvenementController {
 
             for (int i = 0; i < observableList.size(); i++) {
                 FXMLLoader fxmlLoader= new FXMLLoader();
-                fxmlLoader.setLocation(getClass().getResource("/cardtemplate.fxml"));
+                fxmlLoader.setLocation(getClass().getResource("/admin/event/cardtemplate.fxml"));
                 HBox cardBox = fxmlLoader.load();
                 cardtemplate cardController = fxmlLoader.getController();
 

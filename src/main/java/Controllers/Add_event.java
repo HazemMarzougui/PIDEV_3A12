@@ -46,7 +46,7 @@ public class Add_event {
             alert.setTitle("Success");
             alert.setContentText("Événement ajouté avec succès");
             alert.showAndWait();
-            Parent root= FXMLLoader.load(getClass().getResource("/admin.fxml"));
+            Parent root= FXMLLoader.load(getClass().getResource("/admin/event/admin_event.fxml"));
             id_nom.getScene().setRoot(root);
         } catch (SQLException e) {
             Alert alert = new Alert(Alert.AlertType.ERROR);

@@ -56,7 +56,7 @@ public class cardtemplateclient {
     private UserService userService = new UserService();
 
     private String composeMessage(Evenement event) {
-        // You need to implement this method according to your requirements
+
         return "Your message content based on the event";
     }
 
@@ -67,7 +67,7 @@ public class cardtemplateclient {
             try {
                 System.out.println(this.event.getClientId());
                 // Fetch the user associated with this event (assuming each event has a client/user ID)
-                user client = userService.getUserById(this.event.getClientId()); // Assuming there's a method to get user by ID
+                user client = userService.getUserById(1); // Assuming there's a method to get user by ID
                 System.out.println(client);
                 if (client != null) {
                     // Get the client's phone number
@@ -77,13 +77,13 @@ public class cardtemplateclient {
                     String message = composeMessage(this.event);
 
                     // Send SMS
-                    /*boolean smsSent = SMSService.sendSMS("+21653658515", message);
+                    boolean smsSent = SMSService.sendSMS("+21653658515", message);
 
                     if (smsSent) {
                         System.out.println("SMS sent successfully to: " + clientPhoneNumber);
                     } else {
                         System.out.println("Failed to send SMS to: " + clientPhoneNumber);
-                    }*/
+                    }
                 } else {
                     System.out.println("Client not found for the event.");
                 }

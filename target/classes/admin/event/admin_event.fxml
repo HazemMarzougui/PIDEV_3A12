@@ -12,18 +12,18 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="621.0" prefWidth="972.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.admin">
+<AnchorPane prefHeight="621.0" prefWidth="972.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.admin_event">
    <children>
       <ImageView fitHeight="656.0" fitWidth="1090.0" layoutX="-1.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@kits/Kitsune/bg.png" />
+            <Image url="@../../kits/Kitsune/bg.png" />
          </image>
       </ImageView>
       <VBox layoutX="-3.0" layoutY="1.0" prefHeight="629.0" prefWidth="238.0" spacing="15.0">
          <children>
             <ImageView fitHeight="134.0" fitWidth="169.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@kits/Kitsune/dddddd.png" />
+                  <Image url="@../../kits/Kitsune/dddddd.png" />
                </image>
                <VBox.margin>
                   <Insets left="10.0" top="20.0" />
@@ -36,7 +36,7 @@
                         <Insets left="5.0" />
                      </HBox.margin>
                      <image>
-                        <Image url="@kits/Kitsune/rapport.png" />
+                        <Image url="@../../kits/Kitsune/rapport.png" />
                      </image>
                   </ImageView>
                   <Label prefHeight="40.0" prefWidth="84.0" text="Dashboard" textFill="WHITE">
@@ -53,7 +53,7 @@
                         <Insets left="5.0" />
                      </HBox.margin>
                      <image>
-                        <Image url="@kits/Kitsune/profil.png" />
+                        <Image url="@../../kits/Kitsune/profil.png" />
                      </image>
                   </ImageView>
                   <Label prefHeight="39.0" prefWidth="143.0" text="Gestion Utilisateurs" textFill="WHITE">
@@ -70,7 +70,7 @@
                         <Insets left="5.0" />
                      </HBox.margin>
                      <image>
-                        <Image url="@kits/Kitsune/traits.png" />
+                        <Image url="@../../kits/Kitsune/traits.png" />
                      </image>
                   </ImageView>
                   <Label prefHeight="34.0" prefWidth="153.0" text="Gestion Produits" textFill="WHITE">
@@ -87,7 +87,7 @@
                         <Insets left="5.0" />
                      </HBox.margin>
                      <image>
-                        <Image url="@kits/Kitsune/shipping-and-delivery.png" />
+                        <Image url="@../../kits/Kitsune/shipping-and-delivery.png" />
                      </image>
                   </ImageView>
                   <Label prefHeight="39.0" prefWidth="143.0" text="Gestion Livraison" textFill="WHITE">
@@ -104,7 +104,7 @@
                         <Insets left="5.0" />
                      </HBox.margin>
                      <image>
-                        <Image url="@kits/Kitsune/event-management.png" />
+                        <Image url="@../../kits/Kitsune/event-management.png" />
                      </image>
                   </ImageView>
                   <Label prefHeight="34.0" prefWidth="162.0" text="Gestion Evenements" textFill="WHITE">
@@ -121,7 +121,7 @@
                         <Insets left="5.0" />
                      </HBox.margin>
                      <image>
-                        <Image url="@kits/Kitsune/conseil.png" />
+                        <Image url="@../../kits/Kitsune/conseil.png" />
                      </image>
                   </ImageView>
                   <Label prefHeight="34.0" prefWidth="162.0" text="Gestion Conseils" textFill="WHITE">
@@ -138,7 +138,7 @@
                         <Insets left="5.0" />
                      </HBox.margin>
                      <image>
-                        <Image url="@kits/Kitsune/se-deconnecter.png" />
+                        <Image url="@../../kits/Kitsune/se-deconnecter.png" />
                      </image>
                   </ImageView>
                   <Label prefHeight="34.0" prefWidth="162.0" text="Se déconnecter" textFill="WHITE">
@@ -170,14 +170,14 @@
             </Label>
             <ImageView fitHeight="133.0" fitWidth="712.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@kits/Kitsune/static.jpg" />
+                  <Image url="@../../kits/Kitsune/static.jpg" />
                </image>
             </ImageView>
             <HBox alignment="CENTER_LEFT" prefHeight="65.0" prefWidth="585.0" spacing="50.0">
                <children>
                   <ImageView fitHeight="44.0" fitWidth="65.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@kits/Kitsune/picto-agenda.png" />
+                        <Image url="@../../kits/Kitsune/picto-agenda.png" />
                      </image>
                   </ImageView>
                   <Label contentDisplay="RIGHT" lineSpacing="5.0" prefHeight="44.0" prefWidth="211.0" text="Liste des Evenements">

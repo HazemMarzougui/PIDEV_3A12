@@ -8,22 +8,18 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.control.Button;
-import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TextField;
-import javafx.scene.image.ImageView;
-import javafx.scene.input.MouseEvent;
 
 import javafx.event.ActionEvent;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
-import javafx.scene.shape.Circle;
 import services.Service_evenement;
 
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.List;
 import java.util.stream.Collectors;
-public class admin {
+public class admin_event {
 
     @FXML
     private Button id_add_event;
@@ -37,7 +33,7 @@ public class admin {
     @FXML
     void add_event(ActionEvent event) {
         try {
-            Parent root= FXMLLoader.load(getClass().getResource("/add_event.fxml"));
+            Parent root= FXMLLoader.load(getClass().getResource("/admin/event/add_event.fxml"));
             id_add_event.getScene().setRoot(root);
         }catch (IOException e){
             System.out.println(e.getMessage());
@@ -66,7 +62,7 @@ public class admin {
 
             // Load and display filtered data
             for (Evenement evenement : filteredList) {
-                FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/cardtemplate.fxml"));
+                FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/admin/event/cardtemplate.fxml"));
                 HBox cardBox = fxmlLoader.load();
                 cardtemplate cardController = fxmlLoader.getController();
                 cardController.setData(evenement);
@@ -82,13 +78,12 @@ public class admin {
     @FXML
     void initialize()
     {
-
         try{
             ObservableList<Evenement> observableList = FXCollections.observableList(se.afficher()) ;
 
             for (int i = 0; i < observableList.size(); i++) {
                 FXMLLoader fxmlLoader= new FXMLLoader();
-                fxmlLoader.setLocation(getClass().getResource("/cardtemplate.fxml"));
+                fxmlLoader.setLocation(getClass().getResource("/admin/event/cardtemplate.fxml"));
                 HBox cardBox = fxmlLoader.load();
                 cardtemplate cardController = fxmlLoader.getController();
 

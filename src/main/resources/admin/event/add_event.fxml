@@ -13,7 +13,7 @@
    <children>
       <ImageView fitHeight="406.0" fitWidth="608.0" layoutX="-2.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@kits/Kitsune/back.jpg" />
+            <Image url="@../../kits/Kitsune/back.jpg" />
          </image>
       </ImageView>
       <Label layoutX="56.0" layoutY="57.0" prefHeight="17.0" prefWidth="112.0" text="Nom_event ">

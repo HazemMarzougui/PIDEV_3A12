@@ -4,17 +4,13 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
 import javafx.scene.control.Button;
-import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
-import javafx.scene.input.MouseEvent;
 
 import javafx.event.ActionEvent;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
-import javafx.scene.shape.Circle;
 import services.Service_evenement;
 
 import java.io.IOException;
@@ -54,7 +50,7 @@ public class client {
 
             // Load and display filtered data
             for (Evenement evenement : filteredList) {
-                FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/cardtemplate_client.fxml"));
+                FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/client/event/cardtemplate_client.fxml"));
                 HBox cardBox = fxmlLoader.load();
                 cardtemplateclient cardController = fxmlLoader.getController();
                 cardController.setData(evenement);
@@ -77,7 +73,7 @@ public class client {
 
             for (int i = 0; i < observableList.size(); i++) {
                 FXMLLoader fxmlLoader= new FXMLLoader();
-                fxmlLoader.setLocation(getClass().getResource("/cardtemplate_client.fxml"));
+                fxmlLoader.setLocation(getClass().getResource("/client/event/cardtemplate_client.fxml"));
                 HBox cardBox = fxmlLoader.load();
                 cardtemplateclient cardController = fxmlLoader.getController();
 

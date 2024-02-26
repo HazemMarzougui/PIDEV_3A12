@@ -33,6 +33,7 @@ public class add_offre {
 
     @FXML
     void add_and_return_to_offre(ActionEvent event) {
+
     }
 
 }

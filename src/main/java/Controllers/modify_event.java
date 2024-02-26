@@ -14,9 +14,6 @@ import services.Service_evenement;
 import java.io.IOException;
 import java.sql.Date;
 import java.sql.SQLException;
-import java.time.Instant;
-import java.time.LocalDate;
-import java.time.ZoneId;
 
 public class modify_event {
 
@@ -46,22 +43,27 @@ public class modify_event {
             Date dateDebut = java.sql.Date.valueOf(id_date_deb.getValue());
             Date dateFin = java.sql.Date.valueOf(id_date_fin.getValue());
 
-            // Create Evenement object with converted dates
-            Evenement modifiedEvent = new Evenement(oldevent.getId_evenement(), id_nom_modify.getText(), dateDebut, dateFin, id_desc.getText());
+            if(check_date(dateDebut, dateFin)) {
+                // Create Evenement object with converted dates
+                Evenement modifiedEvent = new Evenement(oldevent.getId_evenement(), id_nom_modify.getText(), dateDebut, dateFin, id_desc.getText());
 
-            // Call the modifier method from your service class
-            Service_evenement se = new Service_evenement();
-            se.modifier(modifiedEvent);
+                // Call the modifier method from your service class
+                Service_evenement se = new Service_evenement();
+                se.modifier(modifiedEvent);
 
-            // Show success message
-            Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setTitle("Success");
-            alert.setContentText("Événement modifié avec succès");
-            alert.showAndWait();
-            Parent root = FXMLLoader.load(getClass().getResource("/admin.fxml"));
-            id_nom_modify.getScene().setRoot(root);
+                // Show success message
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setTitle("Success");
+                alert.setContentText("Événement modifié avec succès");
+                alert.showAndWait();
+                Parent root = FXMLLoader.load(getClass().getResource("/admin/event/admin_event.fxml"));
+                id_nom_modify.getScene().setRoot(root);
+            } else {
+                // Show error message for invalid dates
+                throw new SQLException("Les dates de début et de fin ne sont pas valides. Assurez-vous que la date de début est antérieure à la date de fin");
+            }
         } catch (SQLException e) {
-            // Show error message if modification fails
+
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Error");
             alert.setContentText("Erreur lors de la modification de l'événement : " + e.getMessage());
@@ -70,6 +72,8 @@ public class modify_event {
             throw new RuntimeException(e);
         }
     }
+
+
 
     public void setData(Evenement event) {
         id_nom_modify.setText(event.getNom_event());
@@ -84,5 +88,10 @@ public class modify_event {
 
     }
 
+    public boolean check_date(Date dateDebut ,Date dateFin)
+    {
 
+        if (dateDebut.compareTo(dateFin)<0 ) return true;
+        else return false;
+    }
 }

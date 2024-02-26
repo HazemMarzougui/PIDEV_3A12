@@ -13,12 +13,12 @@
    <children>
       <ImageView fitHeight="507.0" fitWidth="743.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@kits/Kitsune/81b85572822aajpg.jpg" />
+            <Image url="@../../kits/Kitsune/81b85572822aajpg.jpg" />
          </image>
       </ImageView>
       <ImageView fitHeight="417.0" fitWidth="409.0" layoutX="167.0" layoutY="43.0" opacity="0.76" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@kits/Kitsune/white.jpg" />
+            <Image url="@../../kits/Kitsune/white.jpg" />
          </image>
       </ImageView>
       <Label layoutX="308.0" layoutY="67.0" prefHeight="17.0" prefWidth="112.0" text="Nom_event : " textFill="#7bb225">

@@ -6,7 +6,6 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.image.ImageView;
 import services.Service_evenement;
 
 import java.io.IOException;
@@ -49,7 +48,7 @@ public class cardtemplate {
         }
     }
     private Parent loadRootLayout() throws Exception {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/Modify.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/admin/event/modify.fxml"));
         modify_event controller = new modify_event();
         loader.setController(controller);
         Parent root = loader.load();
@@ -74,7 +73,7 @@ public class cardtemplate {
 
         try {
             se.supprimer(this.event);
-            Parent root= FXMLLoader.load(getClass().getResource("/admin.fxml"));
+            Parent root= FXMLLoader.load(getClass().getResource("/admin/event/admin_event.fxml"));
             id_nom.getScene().setRoot(root);
         } catch (SQLException | IOException e) {
             throw new RuntimeException(e);
