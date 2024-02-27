@@ -35,8 +35,30 @@ public class admin_offre {
 
     @FXML
     private VBox id_vbox_offre;
-
     private Evenement current_event;
+    @FXML
+    void add_offre(ActionEvent event) {
+        try {
+            Parent root= loadRootLayout();
+            id_add_offre.getScene().setRoot(root);
+        }catch (IOException e){
+            System.out.println(e.getMessage());
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+
+
+    }
+    private Parent loadRootLayout() throws Exception {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/admin/offre/add_offre.fxml"));
+        add_offre controller = new add_offre();
+        loader.setController(controller);
+        Parent root = loader.load();
+        controller.setData(current_event); // Add data to the controller
+        return root;
+    }
+
+
 
     Service_offre so = new Service_offre();
     Service_produit sp = new Service_produit();
@@ -79,7 +101,7 @@ public class admin_offre {
                 VBox cardBox = fxmlLoader.load();
                 cardprod cardProd = fxmlLoader.getController();
 
-                cardProd.setData(filteredprodList.get(0));
+                cardProd.setData(filteredprodList.get(0),current_event);
                 id_vbox_offre.getChildren().add(cardBox);
             }
         } catch (SQLException | IOException e) {

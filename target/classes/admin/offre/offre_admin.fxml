@@ -16,7 +16,7 @@
    <children>
       <ImageView fitHeight="656.0" fitWidth="1090.0" layoutX="-1.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../kits/Kitsune/bg.png" />
+            <Image url="@../../kits/Kitsune/bg.png"    />
          </image>
       </ImageView>
       <VBox layoutX="-3.0" layoutY="1.0" prefHeight="629.0" prefWidth="238.0" spacing="15.0">
@@ -189,12 +189,12 @@
                      </font>
                   </Label>
                   <ImageView fitHeight="41.0" fitWidth="154.0" pickOnBounds="true" preserveRatio="true" />
-                  <Button fx:id="id_add_offre" mnemonicParsing="false" prefHeight="65.0" prefWidth="163.0" style="-fx-background-color: #55dd4b;" text="+" textFill="#119728">
+                  <Button fx:id="id_add_offre" mnemonicParsing="false" onAction="#add_offre" prefHeight="65.0" prefWidth="163.0" style="-fx-background-color: #55dd4b;" text="+" textFill="#119728">
                      <font>
                         <Font size="30.0" />
                      </font>
                      <HBox.margin>
-                        <Insets left="90.0" />
+                        <Insets left="-175.0" />
                      </HBox.margin>
                   </Button>
                </children>

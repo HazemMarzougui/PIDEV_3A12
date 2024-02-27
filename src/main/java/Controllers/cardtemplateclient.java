@@ -43,8 +43,6 @@ public class cardtemplateclient {
 
     @FXML
     void go_to_event(ActionEvent event) {
-
-
         try{
             Parent root= loadRootLayout();
             id_event.getScene().setRoot(root);

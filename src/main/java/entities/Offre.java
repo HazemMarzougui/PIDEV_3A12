@@ -31,13 +31,22 @@ public class Offre {
 
 
 
-    public Offre(int montant_remise, Date date_debut, Date date_fin, String description, int id_evenement_offre, int id_produit_offre) {
+    public Offre(String description, Date date_debut, Date date_fin, int montant_remise, int id_evenement_offre, int id_produit_offre) {
         this.montant_remise = montant_remise;
         this.date_debut = date_debut;
         this.date_fin = date_fin;
         this.description = description;
         this.id_evenement_offre = id_evenement_offre;
         this.id_produit_offre = id_produit_offre;
+    }
+
+
+
+    public Offre( String description, Date date_debut, Date date_fin, int montant_remise) {
+        this.montant_remise = montant_remise;
+        this.date_debut = date_debut;
+        this.date_fin = date_fin;
+        this.description = description;
     }
 
     public int getId_offre() {
@@ -86,6 +95,19 @@ public class Offre {
 
     public void setId_evenement_offre(int id_evenement_offre) {
         this.id_evenement_offre = id_evenement_offre;
+    }
+
+    @Override
+    public String toString() {
+        return "Offre{" +
+                "id_offre=" + id_offre +
+                ", montant_remise=" + montant_remise +
+                ", date_debut=" + date_debut +
+                ", date_fin=" + date_fin +
+                ", description='" + description + '\'' +
+                ", id_evenement_offre=" + id_evenement_offre +
+                ", id_produit_offre=" + id_produit_offre +
+                '}';
     }
 
     public int getId_produit_offre() {

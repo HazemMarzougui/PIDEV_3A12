@@ -53,10 +53,10 @@ public class Service_offre implements IService_offre<Offre> {
 
     @Override
     public void supprimer(Offre offre) throws SQLException {
-        String req = "DELETE FROM offre WHERE id_offre=?";
-        PreparedStatement pre = con.prepareStatement(req);
-        pre.setInt(1, offre.getId_offre());
-        pre.executeUpdate();
+        String req = "DELETE FROM offre WHERE id_offre="+offre.getId_offre()+";";
+        Statement pre = con.createStatement();
+
+        pre.executeUpdate(req);
     }
 
     @Override

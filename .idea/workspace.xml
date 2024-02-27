@@ -6,17 +6,23 @@
   <component name="ChangeListManager">
     <list default="true" id="9e3f97d6-6f90-4c18-b8d2-6d637432e52e" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/add_offre.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/add_offre.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/admin_offre.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/admin_offre.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/cardprod.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/cardprod.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/cardtemplateclient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/cardtemplateclient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/services/Service_produit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/services/Service_produit.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/test/MainFX.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/test/MainFX.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/admin/event/add_offre.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/admin/offre/add_offre.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/entities/Offre.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entities/Offre.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/services/Service_offre.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/services/Service_offre.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/admin/offre/add_offre.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/admin/offre/add_offre.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/admin/offre/cardprod.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/admin/offre/cardprod.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/admin/offre/offre_admin.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/admin/offre/offre_admin.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/client/event/cardtemplate_client.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/client/event/cardtemplate_client.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Controllers/add_offre.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Controllers/add_offre.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Controllers/admin_offre.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Controllers/admin_offre.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Controllers/cardtemplateclient.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Controllers/cardtemplateclient.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/test/MainFX.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/test/MainFX.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/admin/offre/add_offre.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/admin/offre/add_offre.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/admin/offre/cardprod.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/admin/offre/cardprod.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/admin/offre/offre_admin.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/admin/offre/offre_admin.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/client/event/cardtemplate_client.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/client/event/cardtemplate_client.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

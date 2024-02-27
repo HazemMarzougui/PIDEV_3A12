@@ -12,7 +12,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="469.0" prefWidth="503.0" style="-fx-background-color: #90EE90;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.cardprod">
+<VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="405.0" prefWidth="494.0" style="-fx-background-color: #90EE90;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.cardprod">
    <children>
       <ImageView fx:id="id_image" fitHeight="122.0" fitWidth="170.0" pickOnBounds="true" preserveRatio="true">
          <VBox.margin>
@@ -67,13 +67,21 @@
             <Insets left="200.0" right="200.0" top="20.0" />
          </VBox.margin>
       </TextField>
-      <Label />
-      <Button fx:id="id_add_offre" mnemonicParsing="false" onAction="#to_offre" prefHeight="36.0" prefWidth="126.0" style="-fx-background-color: #7bb225;" text="make an offer" />
-      <HBox alignment="BOTTOM_RIGHT" prefHeight="93.0" prefWidth="348.0" spacing="50.0">
-         <VBox.margin>
-            <Insets top="10.0" />
-         </VBox.margin>
+      <HBox prefHeight="100.0" prefWidth="200.0" spacing="262.0">
+         <children>
+            <Button fx:id="id_update_offre" mnemonicParsing="false" onAction="#update_and_return_to_prod" prefHeight="63.0" prefWidth="116.0" style="-fx-background-color: #7bb225;" text="update">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Button>
+            <Button fx:id="id_delete_offre" mnemonicParsing="false" onAction="#delete_and_return_to_prod" prefHeight="63.0" prefWidth="116.0" style="-fx-background-color: #7bb225;" text="delete">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Button>
+         </children>
       </HBox>
+      <Label />
    </children>
    <opaqueInsets>
       <Insets top="3.0" />

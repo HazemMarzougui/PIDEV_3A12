@@ -8,12 +8,15 @@
 
 <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="95.0" prefWidth="675.0" spacing="15.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.cardtemplateclient">
    <children>
-      <Label fx:id="id_event" prefHeight="20.0" prefWidth="35.0" text="1">
+      <Label fx:id="id_event" prefHeight="20.0" prefWidth="35.0" text="1" textFill="#901212">
          <font>
-            <Font size="14.0" />
+            <Font name="System Bold" size="18.0" />
          </font>
       </Label>
-      <Button fx:id="id_event_name" mnemonicParsing="false" onAction="#go_to_event" text="black fridai" />
+      <Button fx:id="id_event_name" mnemonicParsing="false" onAction="#go_to_event" style="-fx-background-color: #55dd4b;" text="black fridai" textFill="WHITE">
+         <font>
+            <Font name="System Bold Italic" size="13.0" />
+         </font></Button>
       <Label fx:id="id_date_deb" prefHeight="20.0" prefWidth="79.0" text="13/01/2024">
          <font>
             <Font name="System Bold" size="14.0" />
@@ -21,12 +24,12 @@
       </Label>
       <Label fx:id="id_date_fin" prefHeight="20.0" prefWidth="81.0" text="17/01/2024">
          <font>
-            <Font size="14.0" />
+            <Font name="System Bold" size="14.0" />
          </font>
       </Label>
-      <Label fx:id="id_description" text="Sample description">
+      <Label fx:id="id_description" text="Sample description" textFill="#9e1a1a">
          <font>
-            <Font size="14.0" />
+            <Font name="System Bold Italic" size="14.0" />
          </font>
       </Label>
       <Button fx:id="id_button_intrest" mnemonicParsing="false" onAction="#handleJoinButton" prefHeight="25.0" prefWidth="92.0" style="-fx-background-color: #55dd4b;" text="JOIN +" textFill="WHITE" />
