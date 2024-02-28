@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Text?>
+
+<HBox maxHeight="-Infinity" maxWidth="1004.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="80.0" prefWidth="1001.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <HBox fx:id="HBoxx" alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="80.0" prefWidth="998.0" spacing="5.0" styleClass="commandItem_card" stylesheets="@Style.css">
+         <children>
+            <Label fx:id="idcommande" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="108.0" text="18524">
+               <HBox.margin>
+                  <Insets left="25.0" />
+               </HBox.margin>
+            </Label>
+            <Label fx:id="nom" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" nodeOrientation="INHERIT" prefHeight="40.0" prefWidth="89.0" text="hleli">
+               <HBox.margin>
+                  <Insets left="20.0" />
+               </HBox.margin></Label>
+            <Label fx:id="adresse" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="88.0" text="ariana">
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+            </Label>
+            <Label fx:id="telephone" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="82.0" text="28673567">
+               <HBox.margin>
+                  <Insets left="35.0" />
+               </HBox.margin>
+            </Label>
+            <Label fx:id="email" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="215.0" text="khairi@esprit.tn">
+               <HBox.margin>
+                  <Insets left="60.0" />
+               </HBox.margin>
+            </Label>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="\$">
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+            </Text>
+            <Label fx:id="prixtotale" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="42.0" prefWidth="50.0" text="250">
+               <HBox.margin>
+                  <Insets bottom="10.0" top="10.0" />
+               </HBox.margin>
+            </Label>
+            <HBox alignment="CENTER" prefHeight="80.0" prefWidth="207.0" spacing="20.0">
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+               <children>
+                  <HBox fx:id="detailsCommand" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="46.0" styleClass="product__card-btns">
+                     <children>
+                        <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@assets/img/view.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </HBox>
+                  <HBox fx:id="deleteCommand" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="46.0" styleClass="product__card-btns">
+                     <children>
+                        <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@assets/img/trash.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </HBox>
+                  <HBox fx:id="qrCodeCommand" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="46.0" styleClass="product__card-btns" stylesheets="@Style.css">
+                     <children>
+                        <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@assets/img/qr-code.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </HBox>
+               </children>
+            </HBox>
+         </children>
+         <HBox.margin>
+            <Insets />
+         </HBox.margin>
+      </HBox>
+   </children>
+</HBox>

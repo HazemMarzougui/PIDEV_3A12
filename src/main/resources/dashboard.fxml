@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="1300.0" styleClass="bgg" stylesheets="@Style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ConseilController">
+   <children>
+      <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="215.0" prefWidth="250.0" styleClass="dash__side-bar">
+         <children>
+            <ImageView fitHeight="185.0" fitWidth="217.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@uploads/dddddd.png" />
+               </image>
+            </ImageView>
+         </children>
+      </VBox>
+      <VBox layoutX="6.0" layoutY="221.0" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="392.0" prefWidth="250.0">
+         <children>
+            <Pane fx:id="dash_btn" focusTraversable="true" prefHeight="50.0" prefWidth="214.0" styleClass="nav-links" stylesheets="@css/styles.css">
+               <children>
+                  <ImageView fx:id="dashIcon" fitHeight="40.0" fitWidth="40.0" layoutX="7.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@uploads/rapport.png" />
+                     </image>
+                  </ImageView>
+                  <Label fx:id="dashText" layoutX="78.0" layoutY="16.0" styleClass="text" stylesheets="@css/styles.css" text="Dashboard" textFill="WHITE" />
+               </children>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Pane>
+            <Pane fx:id="btn_userList" prefHeight="50.0" prefWidth="214.0" styleClass="nav-links" stylesheets="@css/styles.css">
+               <children>
+                  <ImageView fx:id="user_icon" fitHeight="40.0" fitWidth="40.0" layoutX="7.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@uploads/profil.png" />
+                     </image>
+                  </ImageView>
+                  <Label fx:id="userText" layoutX="55.0" layoutY="14.0" text="Gestion Utilisateurs" textFill="WHITE" />
+               </children>
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin>
+            </Pane>
+            <Pane prefHeight="50.0" prefWidth="214.0" styleClass="nav-links" stylesheets="@css/styles.css">
+               <children>
+                  <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="7.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@uploads/traits.png" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="55.0" layoutY="14.0" text="Gestion Produits" textFill="WHITE" />
+               </children>
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin>
+            </Pane>
+            <Pane onMouseClicked="#commande" prefHeight="50.0" prefWidth="214.0" stylesheets="@css/styles.css">
+               <children>
+                  <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="7.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@uploads/shipping-and-delivery.png" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="55.0" layoutY="14.0" styleClass="nav-links" stylesheets="@Style.css" text="Gestion Commande" textFill="WHITE" />
+               </children>
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin>
+               <styleClass>
+                  <String fx:value="nav-links" />
+                  <String fx:value="activeLink" />
+               </styleClass>
+            </Pane>
+            <Pane prefHeight="50.0" prefWidth="214.0" styleClass="nav-links" stylesheets="@css/styles.css">
+               <children>
+                  <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="7.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@uploads/event-management.png" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="55.0" layoutY="14.0" text="Gestion Evenements" textFill="WHITE" />
+               </children>
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin>
+            </Pane>
+            <Pane prefHeight="50.0" prefWidth="214.0" styleClass="nav-links" stylesheets="@css/styles.css">
+               <children>
+                  <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="7.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@uploads/conseil_active.png" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="55.0" layoutY="14.0" styleClass="text" stylesheets="@css/styles.css" text="Gestion Conseils" textFill="WHITE">
+                     <padding>
+                        <Insets left="10.0" />
+                     </padding></Label>
+               </children>
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin>
+            </Pane>
+         </children>
+      </VBox>
+      <VBox layoutY="675.0" prefHeight="75.0" prefWidth="227.0">
+         <children>
+            <Pane prefHeight="50.0" prefWidth="214.0" styleClass="nav-links" stylesheets="@css/styles.css">
+               <children>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@uploads/se-deconnecter.png" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="55.0" layoutY="18.0" text="Se déconnecter" textFill="WHITE" />
+               </children>
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin>
+            </Pane>
+         </children>
+      </VBox>
+      <HBox layoutX="250.0" prefHeight="75.0" prefWidth="1053.0">
+         <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="GESTION des Commandes">
+               <HBox.margin>
+                  <Insets left="20.0" top="30.0" />
+               </HBox.margin>
+               <font>
+                  <Font name="Arial Narrow" size="15.0" />
+               </font>
+               <styleClass>
+                  <String fx:value="nav-user-fullname" />
+                  <String fx:value="ha" />
+               </styleClass>
+            </Text>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="nav-user-fullname" text="Admin">
+               <font>
+                  <Font name="Arial Narrow" size="15.0" />
+               </font>
+               <HBox.margin>
+                  <Insets left="600.0" top="30.0" />
+               </HBox.margin>
+            </Text>
+            <Circle fill="DODGERBLUE" radius="32.0" stroke="BLACK" strokeType="INSIDE">
+               <HBox.margin>
+                  <Insets left="50.0" top="5.0" />
+               </HBox.margin>
+            </Circle>
+         </children>
+      </HBox>
+      <Pane fx:id="content_area" layoutX="268.0" layoutY="76.0" prefHeight="668.0" prefWidth="1026.0" styleClass="dash__container-card">
+         <children>
+            <HBox layoutX="14.0" layoutY="14.0" prefHeight="50.0" prefWidth="200.0">
+               <children>
+                  <Text fx:id="bonjour" fill="#43882b" strokeType="OUTSIDE" strokeWidth="0.0" text="Bonjour Admin">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="10.0" top="15.0" />
+                     </HBox.margin>
+                  </Text>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Liste des Commandes">
+                     <HBox.margin>
+                        <Insets left="10.0" top="18.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Text>
+               </children>
+            </HBox>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>
