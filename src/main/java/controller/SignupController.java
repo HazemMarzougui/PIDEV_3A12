@@ -52,7 +52,9 @@ public class SignupController implements Initializable {
     @FXML
     private void signup(ActionEvent event) throws SQLException {
          UtilisateurServices Us = new UtilisateurServices();
+
          Utilisateur p1 = new Utilisateur(nom.getText(),nom1.getText(),email.getText(),pwd.getText(),"Client",true);
+
          if(nom.getText().isEmpty() || email.getText().isEmpty() || pwd.getText().length() < 8 || !pwd.getText().matches(".*\\d.*") || pwd.getText().isEmpty()){
          if(nom.getText().isEmpty()){
              Cnom.setText("Champs nom vide");
@@ -105,8 +107,12 @@ public class SignupController implements Initializable {
             e.printStackTrace();
         }
              }
+             else{
+                 Cemail.setText("email est déja exist");
+             }
+
          }
-         
+
     }
-    
+
 }

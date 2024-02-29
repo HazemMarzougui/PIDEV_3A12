@@ -62,11 +62,11 @@ public class userPController implements Initializable {
 
     @FXML
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
-        name.setText(MainFx.connecteduser.getNom());
+
+      /*  name.setText(MainFx.connecteduser.getNom());
         emailp.setText(MainFx.connecteduser.getEmail());
         adresse.setText(MainFx.connecteduser.getAddresse());
-        tel.setText(Integer.toString(MainFx.connecteduser.getTel()));
+        tel.setText(Integer.toString(MainFx.connecteduser.getTel()));*/
     }
 
     @FXML
@@ -86,7 +86,7 @@ public class userPController implements Initializable {
     }
 
     @FXML
-    void modif(ActionEvent event) {
+    void modif(ActionEvent event) throws IOException {
         try {
             MainFx.m = 1;
             // Load the new FXML file
@@ -117,5 +117,19 @@ public class userPController implements Initializable {
             e.printStackTrace();
         }
     }
-
+    @FXML
+    void supp(ActionEvent event) {
+        try {
+            MainFx.m = 4;
+            // Load the new FXML file
+            Parent root = FXMLLoader.load(getClass().getResource("/front office.fxml"));
+            // Get the current scene and set the new scene
+            Scene scene = new Scene(root);
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException | NullPointerException e) {
+            e.printStackTrace();
+        }
+    }
 }

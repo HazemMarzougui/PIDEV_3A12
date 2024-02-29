@@ -3,9 +3,11 @@ package controller;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
@@ -18,7 +20,7 @@ import java.util.ResourceBundle;
 
 import static services.PasswordHasher.checkPassword;
 
-public class PwdUserController {
+public class PwdUserController implements Initializable {
 
     @FXML
     private HBox itemC11111;
@@ -40,15 +42,49 @@ public class PwdUserController {
 
     @FXML
     private TextField mdp2;
+    @FXML
+    private Label er1;
+
+    @FXML
+    private Label er2;
+
+    @FXML
+    private Label er3;
+
 
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
     }
     @FXML
-    void modif(ActionEvent event) {
-        if( checkPassword(mdp.getText(), MainFx.connecteduser.getPassword())){
+    private void modif(ActionEvent event) {
+        String currentPassword = mdp.getText();
+        String newPassword = mdp1.getText();
+        String confirmPassword = mdp2.getText();
+
+        // Clear error labels
+        er1.setText("");
+        er2.setText("");
+        er3.setText("");
+
+        // Check if current password is correct
+        if (checkPassword(currentPassword, MainFx.connecteduser.getPassword())) {
+            // Check if the new password and confirmation match
+            if (!newPassword.equals(confirmPassword)) {
+                // Display an error message or handle the mismatch appropriately
+                er3.setText("Passwords do not match.");
+                return;
+            }
+
+            // Check if the new password meets your criteria (you can customize isValidPassword method)
+            if (!UtilisateurServices.isValidPassword(newPassword)) {
+                // Display an error message or handle the invalid password appropriately
+                er2.setText("Invalid password. Password must be at least 8 characters long and not empty.");
+                return;
+            }
+
+            // Update the password
             UtilisateurServices us = new UtilisateurServices();
-            if(us.updatePwd(mdp1.getText(),MainFx.connecteduser.getId() )){
+            if (us.updatePwd(newPassword, MainFx.connecteduser.getId())) {
                 try {
                     MainFx.m = 0;
                     // Load the new FXML file
@@ -61,8 +97,17 @@ public class PwdUserController {
                 } catch (IOException | NullPointerException e) {
                     e.printStackTrace();
                 }
+            } else {
+                // Password update failed
+                // Display an error message or handle the failure appropriately
             }
+        } else {
+            // Current password is incorrect
+            er1.setText("Current password is incorrect");
         }
     }
+
+
+
 
 }

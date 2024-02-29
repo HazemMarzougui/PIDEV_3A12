@@ -186,7 +186,4 @@ public class Utilisateur {
     public String toString() {
         return "Utilisateur{" + "id=" + id + ", tel=" + tel + ", nom=" + nom + ", prenom=" + prenom + ", email=" + email + ", password=" + password + ", token=" + token + ", photo=" + photo + ", addresse=" + addresse + ", description=" + description + ", role=" + role + ", date_naiss=" + date_naiss + ", is_Actif=" + is_Actif + '}';
     }
-
-    
-    
 }

@@ -1,4 +1,3 @@
-
 package controller;
 
 import javafx.event.ActionEvent;
@@ -51,9 +50,6 @@ public class statController implements Initializable {
     @FXML
     private Canvas pnItems1;
 
-    /**
-     * Initializes the controller class.
-     */
     private void drawPieChart(int activeUsers, int blockedUsers) {
         // Get the GraphicsContext of the canvas
         GraphicsContext gc = pnItems.getGraphicsContext2D();
@@ -97,7 +93,7 @@ public class statController implements Initializable {
             currentAngle += angle;
         }
     }
-    private void drawPieChart1(int activeUsers, int blockedUsers, int pendingUsers) {
+    private void drawPieChart1(int activeUsers, int blockedUsers) {
         // Get the GraphicsContext of the canvas
         GraphicsContext gc = pnItems1.getGraphicsContext2D();
 
@@ -106,18 +102,16 @@ public class statController implements Initializable {
         pnItems1.setHeight(300);
 
         // Define the colors to use for the chart
-        Color[] colors = { Color.GREEN, Color.RED, Color.ORANGE };
+        Color[] colors = { Color.GREEN, Color.RED};
 
         // Calculate the percentage of active, blocked, and pending users
-        int total = activeUsers + blockedUsers + pendingUsers;
+        int total = activeUsers + blockedUsers ;
         double activePercentage = (double) activeUsers / total;
         double blockedPercentage = (double) blockedUsers / total;
-        double pendingPercentage = (double) pendingUsers / total;
 
         // Define the angles for the chart
         double activeAngle = activePercentage * 360;
         double blockedAngle = blockedPercentage * 360;
-        double pendingAngle = pendingPercentage * 360;
 
         // Draw the pie chart
         double startX = 300;
@@ -130,13 +124,14 @@ public class statController implements Initializable {
                 case 0:
                     angle = activeAngle;
                     gc.setFill(colors[i]);
-                    gc.fillText("Client: " + activeUsers, startX + radius + 10, startY - radius + 20);
+                    gc.fillText("Admin: " + activeUsers, startX + radius + 10, startY - radius + 20);
                     break;
                 case 1:
-                    angle = pendingAngle;
+                    angle = blockedAngle;
                     gc.setFill(colors[i]);
-                    gc.fillText("Admin: " + pendingUsers, startX + radius + 10, startY + radius + 20);
+                    gc.fillText("Client : " + blockedUsers, startX - radius - 80, startY + radius - 10);
                     break;
+
             }
             gc.fillArc(startX - radius, startY - radius, radius * 2, radius * 2, currentAngle, angle, ArcType.ROUND);
             currentAngle += angle;
@@ -147,7 +142,7 @@ public class statController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         UtilisateurServices Us = new UtilisateurServices();
         drawPieChart(Us.getUserCountAc(), Us.getUserCountB());
-        drawPieChart1(Us.getUserCountI(),Us.getUserCountE(),Us.getUserCountAd());
+        drawPieChart1(Us.getUserCountA(),Us.getUserCountC());
     }
 
     @FXML

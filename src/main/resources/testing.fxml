@@ -63,6 +63,9 @@
                   <String fx:value="nav-links" />
                   <String fx:value="activeLink" />
                </styleClass>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
             </Pane>
             <Pane prefHeight="50.0" prefWidth="214.0" styleClass="nav-links" stylesheets="@css/styles.css">
                <children>
@@ -76,6 +79,9 @@
                <VBox.margin>
                   <Insets top="10.0" />
                </VBox.margin>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
             </Pane>
             <Pane prefHeight="50.0" prefWidth="214.0" styleClass="nav-links" stylesheets="@css/styles.css">
                <children>
@@ -89,6 +95,9 @@
                <VBox.margin>
                   <Insets top="10.0" />
                </VBox.margin>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
             </Pane>
             <Pane prefHeight="50.0" prefWidth="214.0" styleClass="nav-links" stylesheets="@css/styles.css">
                <children>
@@ -102,6 +111,9 @@
                <VBox.margin>
                   <Insets top="10.0" />
                </VBox.margin>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
             </Pane>
             <Pane prefHeight="50.0" prefWidth="214.0" styleClass="nav-links" stylesheets="@css/styles.css">
                <children>
@@ -115,6 +127,9 @@
                <VBox.margin>
                   <Insets top="10.0" />
                </VBox.margin>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
             </Pane>
          </children>
       </VBox>
@@ -150,6 +165,9 @@
                <padding>
                   <Insets left="50.0" />
                </padding>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
             </Button>
             <Button fx:id="btnOrders" alignment="BASELINE_LEFT" graphicTextGap="22.0" layoutX="275.0" layoutY="7.0" mnemonicParsing="false" onAction="#btnOrders" prefHeight="42.0" prefWidth="259.0" styleClass="activeLink" stylesheets="@css/styles.css" text="Mon Profile">
                <graphic>
@@ -162,6 +180,9 @@
                <padding>
                   <Insets left="50.0" />
                </padding>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
             </Button>
             <Button fx:id="btnS" alignment="BASELINE_LEFT" graphicTextGap="22.0" layoutX="541.0" layoutY="7.0" mnemonicParsing="false" onAction="#btnS" prefHeight="42.0" prefWidth="259.0" styleClass="activeLink" stylesheets="@css/styles.css" text="Statestiques">
                <graphic>
@@ -174,21 +195,30 @@
                <padding>
                   <Insets left="50.0" />
                </padding>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
             </Button>
-            <Label layoutX="62.0" layoutY="134.0" prefWidth="120.0" text="Nom &amp; Prenom" textFill="#201f1f" />
-            <Label layoutX="234.0" layoutY="134.0" prefWidth="200.0" text="E-mail" textFill="#201f1f" />
-            <Label layoutX="440.0" layoutY="134.0" prefWidth="120.0" text="Role" textFill="#201f1f" />
-            <Label layoutX="624.0" layoutY="134.0" text="Status" textFill="#201f1f" />
-            <ComboBox fx:id="comb" layoutX="825.0" layoutY="128.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefWidth="150.0" promptText="Tri Par" style="-fx-background-color: #defee6; -fx-border-color: #B7C3D7; -fx-border-radius: 2em;" styleClass="tf" />
-            <TextField fx:id="search" layoutX="792.0" layoutY="56.0" prefHeight="27.0" prefWidth="183.0" promptText="search" style="-fx-background-color: #defee6; -fx-border-color: #B7C3D7; -fx-border-radius: 2em;" />
+            <Label layoutX="94.0" layoutY="160.0" prefWidth="120.0" text="Nom &amp; Prenom" textFill="#201f1f" />
+            <Label layoutX="268.0" layoutY="160.0" prefWidth="200.0" text="E-mail" textFill="#201f1f" />
+            <Label layoutX="500.0" layoutY="160.0" prefWidth="120.0" text="Role" textFill="#201f1f" />
+            <Label layoutX="670.0" layoutY="160.0" text="Status" textFill="#201f1f" />
+            <ComboBox fx:id="comb" layoutX="825.0" layoutY="128.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefWidth="150.0" promptText="Tri Par" style="-fx-background-color: #defee6; -fx-border-color: #B7C3D7; -fx-border-radius: 2em;" styleClass="tf">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></ComboBox>
+            <TextField fx:id="search" layoutX="792.0" layoutY="56.0" prefHeight="27.0" prefWidth="183.0" promptText="search" style="-fx-background-color: #defee6; -fx-border-color: #B7C3D7; -fx-border-radius: 2em;">
+               <cursor>
+                  <Cursor fx:constant="TEXT" />
+               </cursor></TextField>
             <ImageView fitHeight="17.0" fitWidth="16.0" layoutX="951.0" layoutY="62.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@images/icons8_Search_52px.png" />
                </image>
             </ImageView>
-            <ScrollPane layoutX="41.0" layoutY="198.0" prefHeight="324.0" prefWidth="749.0">
+            <ScrollPane layoutX="41.0" layoutY="198.0" prefHeight="324.0" prefWidth="719.0">
                <content>
-                  <VBox fx:id="pnItems" prefHeight="318.0" prefWidth="744.0" spacing="5.0" style="-fx-background-color: #defee6;">
+                  <VBox fx:id="pnItems" prefHeight="318.0" prefWidth="747.0" spacing="5.0" style="-fx-background-color: #defee6;">
                      <padding>
                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                      </padding>
@@ -214,8 +244,14 @@
                </image>
             </ImageView>
          </graphic>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
       </Button>
-      <ImageView fx:id="adminIMG" fitHeight="73.0" fitWidth="67.0" layoutX="1201.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="adminIMG" fitHeight="73.0" fitWidth="67.0" layoutX="1201.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></ImageView>
       <Label fx:id="username" layoutX="1049.0" layoutY="35.0" prefHeight="26.0" prefWidth="114.0" textFill="#e7e5e5" />
    </children>
 </AnchorPane>

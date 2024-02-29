@@ -28,6 +28,11 @@
                   <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                </padding>
             </VBox>
+            <Label fx:id="titre_dash" layoutX="190.0" layoutY="88.0" prefHeight="28.0" prefWidth="437.0">
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </Label>
          </children></Pane>
       <ImageView fitHeight="104.0" fitWidth="118.0" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -118,10 +123,9 @@
             <String fx:value="ha" />
          </styleClass>
       </Text>
-      <Label fx:id="titre_dash" layoutX="157.0" layoutY="60.0" prefHeight="28.0" prefWidth="126.0" />
-      <Label fx:id="username" layoutX="1149.0" layoutY="85.0" prefHeight="28.0" prefWidth="151.0" />
-      <ImageView fx:id="adminIMG" fitHeight="72.0" fitWidth="86.0" layoutX="1192.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true" />
-      <Button layoutX="1094.0" layoutY="17.0" mnemonicParsing="false" onAction="#profile" prefHeight="42.0" prefWidth="86.0" stylesheets="@style.css" text="profile">
+      <Label fx:id="username" contentDisplay="CENTER" layoutX="1149.0" layoutY="85.0" prefHeight="28.0" prefWidth="151.0" textAlignment="CENTER" />
+      <ImageView fx:id="adminIMG" fitHeight="72.0" fitWidth="100.0" layoutX="1151.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" />
+      <Button layoutX="1044.0" layoutY="18.0" mnemonicParsing="false" onAction="#profile" prefHeight="42.0" prefWidth="86.0" stylesheets="@style.css" text="profile">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
@@ -134,6 +138,9 @@
                </image>
             </ImageView>
          </graphic>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
       </Button>
    </children>
 </AnchorPane>

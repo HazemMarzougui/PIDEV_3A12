@@ -62,7 +62,7 @@
                </VBox.margin>
                <children>
                   <ImageView fx:id="cap" fitHeight="125.0" fitWidth="143.0" pickOnBounds="true" preserveRatio="true" />
-                  <TextField fx:id="code" maxHeight="50.0" maxWidth="306.0" minHeight="50.0" minWidth="81.0" prefHeight="50.0" prefWidth="306.0" styleClass="tf">
+                  <TextField fx:id="code" maxHeight="50.0" maxWidth="306.0" minHeight="50.0" minWidth="81.0" prefHeight="50.0" prefWidth="306.0" promptText="CODE :" styleClass="tf">
                      <font>
                         <Font size="15.0" />
                      </font>
@@ -78,6 +78,9 @@
                      <font>
                         <Font size="15.0" />
                      </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
                   </Button>
                   <Button mnemonicParsing="false" onAction="#signin" prefHeight="39.0" prefWidth="120.0" style="-fx-background-color: #40bc88;" styleClass="pink-btn" text="Sign In">
                      <font>

@@ -9,6 +9,7 @@ import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
+import services.UtilisateurServices;
 import utils.MyDB;
 
 import java.io.IOException;
@@ -19,6 +20,7 @@ public class MainFx extends Application {
     private VBox vbox;
     public static int page=0;
     public static Utilisateur connecteduser = new Utilisateur();
+
     public static int m = 0;
     public static int idd = 0;
 

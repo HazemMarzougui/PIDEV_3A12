@@ -12,6 +12,22 @@
     -fx-border-vidth:1px;
     -fx-text-fill:whitesmoke;
 }
+.trans-btn-white-border:hover{
+    -fx-background-color: #61c494;
+    -fx-background-radius:5px;
+    -fx-border-color:#cccccc;
+    -fx-border-radius:5px;
+    -fx-border-vidth:1px;
+    -fx-text-fill:whitesmoke;
+}
+.trans-btn-white-border:pressed{
+    -fx-background-color: #063f2a;
+    -fx-background-radius:5px;
+    -fx-border-color:#cccccc;
+    -fx-border-radius:5px;
+    -fx-border-vidth:1px;
+    -fx-text-fill:whitesmoke;
+}
 .white-pane{
     -fx-background-color:#FFFFFF;
 }

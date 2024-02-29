@@ -11,7 +11,7 @@
 
 <VBox prefHeight="214.0" prefWidth="717.0" style="-fx-border-color: black; -fx-border-radius: 15;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.userPController">
    <children>
-      <HBox fx:id="itemC1" alignment="CENTER_LEFT" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="53.0" prefWidth="695.0" spacing="30.0" style="-fx-background-color: transparent; -fx-background-radius: 0; -fx-background-insets: 0;">
+      <HBox fx:id="itemC1" alignment="CENTER_LEFT" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="53.0" prefWidth="695.0" spacing="30.0" style="-fx-background-radius: 0; -fx-background-insets: 0;">
          <effect>
             <DropShadow blurType="GAUSSIAN" height="5.0" radius="2.0" width="5.0" />
          </effect>
@@ -38,7 +38,7 @@
             </Label>
          </children>
       </HBox>
-      <HBox fx:id="itemC11" alignment="CENTER_LEFT" layoutX="10.0" layoutY="64.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="53.0" prefWidth="695.0" spacing="30.0" style="-fx-background-color: transparent; -fx-background-radius: 0; -fx-background-insets: 0;">
+      <HBox fx:id="itemC11" alignment="CENTER_LEFT" layoutX="10.0" layoutY="64.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="53.0" prefWidth="695.0" spacing="30.0" style="-fx-background-radius: 0; -fx-background-insets: 0;">
          <effect>
             <DropShadow blurType="GAUSSIAN" height="5.0" radius="2.0" width="5.0" />
          </effect>
@@ -61,7 +61,7 @@
             </Label>
          </children>
       </HBox>
-      <HBox fx:id="itemC111" alignment="CENTER_LEFT" layoutX="10.0" layoutY="117.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="53.0" prefWidth="695.0" spacing="30.0" style="-fx-background-color: transparent; -fx-background-radius: 0; -fx-background-insets: 0;">
+      <HBox fx:id="itemC111" alignment="CENTER_LEFT" layoutX="10.0" layoutY="117.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="53.0" prefWidth="695.0" spacing="30.0" style="-fx-background-radius: 0; -fx-background-insets: 0;">
          <effect>
             <DropShadow blurType="GAUSSIAN" height="5.0" radius="2.0" width="5.0" />
          </effect>
@@ -78,14 +78,14 @@
             </Label>
          </children>
       </HBox>
-      <HBox fx:id="itemC11111" alignment="CENTER_LEFT" layoutX="10.0" layoutY="224.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="53.0" prefWidth="695.0" spacing="30.0" style="-fx-background-color: transparent; -fx-background-radius: 0; -fx-background-insets: 0;">
+      <HBox fx:id="itemC11111" alignment="CENTER_LEFT" layoutX="10.0" layoutY="224.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="54.0" prefWidth="717.0" spacing="30.0" style="-fx-background-radius: 0; -fx-background-insets: 0;">
          <effect>
             <DropShadow blurType="GAUSSIAN" height="5.0" radius="2.0" width="5.0" />
          </effect>
          <children>
             <Button mnemonicParsing="false" onAction="#modif" prefHeight="39.0" prefWidth="98.0" style="-fx-border-color: black; -fx-border-radius: 20;" stylesheets="@css/styles.css" text="Modifier">
                <HBox.margin>
-                  <Insets left="50.0" />
+                  <Insets left="15.0" />
                </HBox.margin>
                <cursor>
                   <Cursor fx:constant="HAND" />
@@ -102,7 +102,10 @@
                <styleClass>
                   <String fx:value="nav-linksbtn" />
                   <String fx:value="btn_action_add" />
-               </styleClass></Button>
+               </styleClass>
+               <HBox.margin>
+                  <Insets left="-5.0" />
+               </HBox.margin></Button>
             <Button layoutX="100.0" layoutY="24.0" mnemonicParsing="false" onAction="#pwd" prefHeight="34.0" prefWidth="206.0" style="-fx-border-color: black; -fx-border-radius: 20;" stylesheets="@css/styles.css" text="Changer mot de passe">
                <cursor>
                   <Cursor fx:constant="HAND" />
@@ -110,7 +113,22 @@
                <styleClass>
                   <String fx:value="btn_action_add" />
                   <String fx:value="nav-linksbtn" />
-               </styleClass></Button>
+               </styleClass>
+               <HBox.margin>
+                  <Insets left="-5.0" />
+               </HBox.margin></Button>
+            <Button mnemonicParsing="false" onAction="#supp" prefHeight="34.0" prefWidth="160.0" style="-fx-border-color: black; -fx-border-radius: 20;" stylesheets="@css/styles.css" text="Supprimer compte">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <styleClass>
+                  <String fx:value="btn_action_add" />
+                  <String fx:value="nav-linksbtn" />
+               </styleClass>
+               <HBox.margin>
+                  <Insets left="-5.0" />
+               </HBox.margin>
+            </Button>
          </children>
       </HBox>
    </children>

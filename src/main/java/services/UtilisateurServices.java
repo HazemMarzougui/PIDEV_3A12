@@ -175,39 +175,6 @@ public class UtilisateurServices implements ICRUD<Utilisateur>{
         return users;
     }
 
-
-    @Override
-    public boolean updateToken(String Email, String token) {
-        PreparedStatement pstmt = null;
-        int rowsUpdated = 0;
-        try {
-            String sql = "UPDATE `utilisateur` SET `token`=? WHERE `email`=?";
-            pstmt = conx.prepareStatement(sql);
-            pstmt.setString(1, token);
-            pstmt.setString(2, Email);
-            rowsUpdated = pstmt.executeUpdate();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        return rowsUpdated > 0;
-    }
-
-    @Override
-    public int isTokenExist(String token) {
-        String req = "SELECT id FROM `utilisateur` WHERE `token` = ?";
-        try {
-            PreparedStatement pstmt = conx.prepareStatement(req);
-            pstmt.setString(1, token);
-            ResultSet rs = pstmt.executeQuery();
-            if (rs.next()) {
-                return rs.getInt("id");
-            } else {
-                return 0;
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
-            return 0;
-        }    }
     @Override
     public int getUserCountAc() {
         String query = "SELECT COUNT(*) as user_count FROM utilisateur WHERE is_actif = 1;";
@@ -241,8 +208,8 @@ public class UtilisateurServices implements ICRUD<Utilisateur>{
     }
 
     @Override
-    public int getUserCountI() {
-        String query = "SELECT COUNT(*) as user_count FROM utilisateur WHERE role = 'investisseur';";
+    public int getUserCountA() {
+        String query = "SELECT COUNT(*) as user_count FROM utilisateur WHERE role = 'Admin';";
         try (PreparedStatement pstmt = conx.prepareStatement(query);
              ResultSet rs = pstmt.executeQuery()) {
             if (rs.next()) {
@@ -257,8 +224,8 @@ public class UtilisateurServices implements ICRUD<Utilisateur>{
     }
 
     @Override
-    public int getUserCountE() {
-        String query = "SELECT COUNT(*) as user_count FROM utilisateur WHERE role = 'entrepreneur';";
+    public int getUserCountC() {
+        String query = "SELECT COUNT(*) as user_count FROM utilisateur WHERE role = 'Client';";
         try (PreparedStatement pstmt = conx.prepareStatement(query);
              ResultSet rs = pstmt.executeQuery()) {
             if (rs.next()) {
@@ -272,21 +239,6 @@ public class UtilisateurServices implements ICRUD<Utilisateur>{
         }
     }
 
-    @Override
-    public int getUserCountAd() {
-        String query = "SELECT COUNT(*) as user_count FROM utilisateur WHERE role = 'Admin' Or role = 'Super_Admin';";
-        try (PreparedStatement pstmt = conx.prepareStatement(query);
-             ResultSet rs = pstmt.executeQuery()) {
-            if (rs.next()) {
-                return rs.getInt("user_count");
-            } else {
-                return 0;
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
-            return 0;
-        }
-    }
 
     @Override
     public List<Utilisateur> triPrenom() throws SQLException {
@@ -339,5 +291,52 @@ public class UtilisateurServices implements ICRUD<Utilisateur>{
         }
 
         return users;
+    }
+    public static boolean isValidPassword(String password) {
+        // Enforce minimum length of 8 characters and check if not empty
+        return password.length() >= 8 && !password.isEmpty();
+    }
+    @Override
+    public boolean updateToken(String Email, String token) {
+        PreparedStatement pstmt = null;
+        int rowsUpdated = 0;
+        try {
+            String sql = "UPDATE `utilisateur` SET `token`=? WHERE `email`=?";
+            pstmt = conx.prepareStatement(sql);
+            pstmt.setString(1, token);
+            pstmt.setString(2, Email);
+            rowsUpdated = pstmt.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return rowsUpdated > 0;
+    }
+    @Override
+    public int isTokenExist(String token) {
+        String req = "SELECT id FROM `utilisateur` WHERE `token` = ?";
+        try {
+            PreparedStatement pstmt = conx.prepareStatement(req);
+            pstmt.setString(1, token);
+            ResultSet rs = pstmt.executeQuery();
+            if (rs.next()) {
+                return rs.getInt("id");
+            } else {
+                return 0;
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return 0;
+        }    }
+    public void deleteUser(int id) {
+        PreparedStatement pstmt = null;
+        int rowsUpdated = 0;
+        try {
+            String sql = "delete FROM `utilisateur` WHERE `id`=?";
+            pstmt = conx.prepareStatement(sql);
+            pstmt.setInt(1, id);
+            rowsUpdated = pstmt.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 }

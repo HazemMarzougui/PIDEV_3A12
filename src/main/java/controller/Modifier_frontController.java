@@ -3,6 +3,7 @@ package controller;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -19,7 +20,7 @@ import java.sql.Date;
 import java.time.LocalDate;
 import java.util.ResourceBundle;
 
-public class Modifier_frontController {
+public class Modifier_frontController implements Initializable {
 
     @FXML
     private TextField adresse;
@@ -50,14 +51,22 @@ public class Modifier_frontController {
 
     @FXML
     private TextField tel;
-    @FXML
+
+    @Override
     public void initialize(URL url, ResourceBundle rb) {
 
         nom.setText(MainFx.connecteduser.getNom());
         prenom.setText(MainFx.connecteduser.getPrenom());
         email.setText(MainFx.connecteduser.getEmail());
         adresse.setText(MainFx.connecteduser.getAddresse());
-       // tel.setText(Integer.toString(MainFx.connecteduser.getTel()));
+        tel.setText(Integer.toString(MainFx.connecteduser.getTel()));
+
+        Date userBirthDate = MainFx.connecteduser.getDate_naiss();
+        if (userBirthDate != null) {
+            // Assuming date is a DatePicker component
+            date.setValue(userBirthDate.toLocalDate());
+
+        }
     }
     @FXML
     void modif(ActionEvent event) {
@@ -70,6 +79,7 @@ public class Modifier_frontController {
         LocalDate localDate = date.getValue();
         Date sqlDate = Date.valueOf(localDate);
         MainFx.connecteduser.setDate_naiss(sqlDate);
+
         UtilisateurServices us = new UtilisateurServices();
         if(us.updateUser(MainFx.connecteduser,MainFx.connecteduser.getId()))
         {

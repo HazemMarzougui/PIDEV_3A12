@@ -10,10 +10,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
@@ -30,6 +27,7 @@ import java.util.Objects;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+
 
 public class DashboardController implements Initializable {
     @FXML
@@ -84,26 +82,33 @@ public class DashboardController implements Initializable {
     @FXML
     private ImageView user_icon;
 
+    public boolean SupAdmin ;
+    {
+        SupAdmin=(MainFx.connecteduser.getId() ==86);
+    }
+
 
     public void initialize(URL location, ResourceBundle resources) {
+        System.out.println(SupAdmin);
 
         System.out.println(MainFx.m);
         if (MainFx.m == 1){
             pnItems.getChildren().clear();
+            if(MainFx.connecteduser.getPhoto() != null){
             Image image = new Image(MainFx.connecteduser.getPhoto());
-            adminIMG.setImage(image);
+            adminIMG.setImage(image);}
             username.setText(MainFx.connecteduser.getNom() +" "+ MainFx.connecteduser.getPrenom());
-            titre_dash.setText("Mon Profile");
+            titre_dash.setText("Modifier Profile");
             Node[] nodes = new Node[1];
             try {
                 nodes[0] = FXMLLoader.load(getClass().getResource("/Modifier_back.fxml"));
 
-                nodes[0].setOnMouseEntered(event -> {
-                    nodes[0].setStyle("-fx-background-color : #0A0E3F");
+               /* nodes[0].setOnMouseEntered(event -> {
+                    nodes[0].setStyle("-fx-background-color : transparent");
                 });
                 nodes[0].setOnMouseExited(event -> {
-                    nodes[0].setStyle("-fx-background-color : #02030A");
-                });
+                    nodes[0].setStyle("-fx-background-color : transparent");
+                });*/
                 pnItems.getChildren().add(nodes[0]);
             } catch (IOException ex) {
                 Logger.getLogger(DashboardController.class.getName()).log(Level.SEVERE, null, ex);
@@ -115,17 +120,17 @@ public class DashboardController implements Initializable {
             Image image = new Image(MainFx.connecteduser.getPhoto());
             adminIMG.setImage(image);
             username.setText(MainFx.connecteduser.getNom() +" "+ MainFx.connecteduser.getPrenom());
-            titre_dash.setText("Mon Profile");
+            titre_dash.setText("Modifier Mot de passe");
             Node[] nodes = new Node[1];
             try {
                 nodes[0] = FXMLLoader.load(getClass().getResource("/Changerpwd.fxml"));
 
-                nodes[0].setOnMouseEntered(event -> {
-                    nodes[0].setStyle("-fx-background-color : #0A0E3F");
+               /* nodes[0].setOnMouseEntered(event -> {
+                    nodes[0].setStyle("-fx-background-color : transparent");
                 });
                 nodes[0].setOnMouseExited(event -> {
-                    nodes[0].setStyle("-fx-background-color : #02030A");
-                });
+                    nodes[0].setStyle("-fx-background-color : transparent");
+                });*/
                 pnItems.getChildren().add(nodes[0]);
             } catch (IOException ex) {
                 Logger.getLogger(DashboardController.class.getName()).log(Level.SEVERE, null, ex);
@@ -134,62 +139,65 @@ public class DashboardController implements Initializable {
         }
         else  if (MainFx.m == 3){
             pnItems.getChildren().clear();
+            if(MainFx.connecteduser.getPhoto() != null){
             Image image = new Image(MainFx.connecteduser.getPhoto());
-            adminIMG.setImage(image);
+            adminIMG.setImage(image);}
             username.setText(MainFx.connecteduser.getNom() +" "+ MainFx.connecteduser.getPrenom());
-            titre_dash.setText("Mon Profile");
+            titre_dash.setText("Photo de Profile");
             Node[] nodes = new Node[1];
             try {
                 nodes[0] = FXMLLoader.load(getClass().getResource("/upload_image.fxml"));
 
-                nodes[0].setOnMouseEntered(event -> {
-                    nodes[0].setStyle("-fx-background-color : #0A0E3F");
+               /* nodes[0].setOnMouseEntered(event -> {
+                    nodes[0].setStyle("-fx-background-color : transparent");
                 });
                 nodes[0].setOnMouseExited(event -> {
-                    nodes[0].setStyle("-fx-background-color : #02030A");
-                });
+                    nodes[0].setStyle("-fx-background-color : transparent");
+                });*/
                 pnItems.getChildren().add(nodes[0]);
             } catch (IOException ex) {
                 Logger.getLogger(DashboardController.class.getName()).log(Level.SEVERE, null, ex);
             }
 
         }
-        else  if (MainFx.m == 4){
-            pnItems.getChildren().clear();
-            Image image = new Image(MainFx.connecteduser.getPhoto());
-            adminIMG.setImage(image);
-            username.setText(MainFx.connecteduser.getNom() +" "+ MainFx.connecteduser.getPrenom());
-            titre_dash.setText("Mon Profile");
-            Node[] nodes = new Node[1];
-            try {
-                nodes[0] = FXMLLoader.load(getClass().getResource("/ajouter_admin.fxml"));
+        else  if (MainFx.m == 4  ){
+                pnItems.getChildren().clear();
+                if(MainFx.connecteduser.getPhoto() != null){
+                Image image = new Image(MainFx.connecteduser.getPhoto());
+                adminIMG.setImage(image);}
+                username.setText(MainFx.connecteduser.getNom() + " " + MainFx.connecteduser.getPrenom());
+            if (SupAdmin) {
+                titre_dash.setText("Ajouter Admin");
+                Node[] nodes = new Node[1];
+                try {
+                    nodes[0] = FXMLLoader.load(getClass().getResource("/ajouter_admin.fxml"));
 
-                nodes[0].setOnMouseEntered(event -> {
-                    nodes[0].setStyle("-fx-background-color : #0A0E3F");
+               /* nodes[0].setOnMouseEntered(event -> {
+                    nodes[0].setStyle("-fx-background-color : transparent");
                 });
                 nodes[0].setOnMouseExited(event -> {
-                    nodes[0].setStyle("-fx-background-color : #02030A");
-                });
-                pnItems.getChildren().add(nodes[0]);
-            } catch (IOException ex) {
-                Logger.getLogger(DashboardController.class.getName()).log(Level.SEVERE, null, ex);
+                    nodes[0].setStyle("-fx-background-color : transparent");
+                });*/
+                    pnItems.getChildren().add(nodes[0]);
+                } catch (IOException ex) {
+                    Logger.getLogger(DashboardController.class.getName()).log(Level.SEVERE, null, ex);
+                }
+        }else{
+            showError("Acces impossible pour plus d'information contacter le support .");
             }
-
         }
-
         else{
             ObservableList<String> list = FXCollections.observableArrayList("Nom","Prenom");
             comb.setItems(list);
-            Image image1 = new Image(MainFx.connecteduser.getPhoto());
-            Image image = new Image(MainFx.connecteduser.getPhoto());
-            adminIMG.setImage(image);
-            adminIMG1.setImage(image1);
+            if(MainFx.connecteduser.getPhoto() != null){
+                Image image = new Image(MainFx.connecteduser.getPhoto());
+            adminIMG.setImage(image);}
             username.setText(MainFx.connecteduser.getNom() +" "+ MainFx.connecteduser.getPrenom());
             titre_dash.setText("Liste des utilisateurs !");
             try{
                 UtilisateurServices Us = new UtilisateurServices();
                 List<Utilisateur> users;
-
+                //affichage
                 users = Us.afficherListe();
 
                 Node[] nodes = new Node[users.size()];
@@ -205,7 +213,7 @@ public class DashboardController implements Initializable {
                         Label rlabel = (Label) nodes[i].lookup("#role");
                         rlabel.setText(users.get(i).getRole());
                         Button myButton = (Button) nodes[i].lookup("#button");
-                        if(Objects.equals(users.get(i).getRole(), "Admin") && MainFx.connecteduser.getId() != 86){
+                        if(Objects.equals(users.get(i).getRole(), "Admin") && !SupAdmin){
                             myButton.setText(" ");
                         }
                         else {
@@ -219,7 +227,7 @@ public class DashboardController implements Initializable {
                         }
                         myButton.setOnAction(event -> {
                             Utilisateur user = users.get(j);
-                            if(Objects.equals(user.getRole(), "Admin") && MainFx.connecteduser.getId() != 86){
+                            if(Objects.equals(user.getRole(), "Admin") && !SupAdmin){
                                 myButton.setText(" ");
                             }
                             else {
@@ -245,11 +253,11 @@ public class DashboardController implements Initializable {
                             }
                         });
                         nodes[i].setOnMouseEntered(event -> {
-                            nodes[j].setStyle("-fx-background-color : #0A0E3F");
+                            nodes[j].setStyle("-fx-background-color : #064b1c");
 
                         });
                         nodes[i].setOnMouseExited(event -> {
-                            nodes[j].setStyle("-fx-background-color : #02030A");
+                            nodes[j].setStyle("-fx-background-color : #177c4d");
                         });
                         pnItems.getChildren().add(nodes[i]);
                     } catch (IOException | NullPointerException e) {
@@ -315,10 +323,10 @@ public class DashboardController implements Initializable {
                                 }
                             });
                             nodes[i].setOnMouseEntered(event -> {
-                                nodes[j].setStyle("-fx-background-color : #0A0E3F");
+                                nodes[j].setStyle("-fx-background-color : #064b1c");
                             });
                             nodes[i].setOnMouseExited(event -> {
-                                nodes[j].setStyle("-fx-background-color : #02030A");
+                                nodes[j].setStyle("-fx-background-color : #177c4d");
                             });
                             pnItems.getChildren().add(nodes[i]);
                         } catch (IOException | NullPointerException e) {
@@ -389,10 +397,10 @@ public class DashboardController implements Initializable {
                 }
                         });*/
                             nodes[i].setOnMouseEntered(event -> {
-                                nodes[j].setStyle("-fx-background-color : #0A0E3F");
+                                nodes[j].setStyle("-fx-background-color : #064b1c");
                             });
                             nodes[i].setOnMouseExited(event -> {
-                                nodes[j].setStyle("-fx-background-color : #02030A");
+                                nodes[j].setStyle("-fx-background-color : #177c4d");
                             });
                             pnItems.getChildren().add(nodes[i]);
                         } catch (IOException | NullPointerException e) {
@@ -411,8 +419,9 @@ public class DashboardController implements Initializable {
     @FXML
     void btnOrders(ActionEvent event) throws IOException {
         pnItems.getChildren().clear();
-        Image image = new Image(MainFx.connecteduser.getPhoto());
-        adminIMG.setImage(image);
+        if(MainFx.connecteduser.getPhoto() != null){
+            Image image = new Image(MainFx.connecteduser.getPhoto());
+        adminIMG.setImage(image);}
         username.setText(MainFx.connecteduser.getNom() +" "+ MainFx.connecteduser.getPrenom());
         titre_dash.setText("Mon Profile");
         Node[] nodes = new Node[1];
@@ -428,13 +437,16 @@ public class DashboardController implements Initializable {
         tlabel.setText(Integer.toString(MainFx.connecteduser.getTel()));
         Label alabel = (Label) nodes[0].lookup("#adresse");
         alabel.setText(MainFx.connecteduser.getAddresse());
-        Label dlabel = (Label) nodes[0].lookup("#naiss");
-        dlabel.setText(MainFx.connecteduser.getDate_naiss().toString());
-              /*  nodes[0].setOnMouseEntered(event -> {
-                    nodes[0].setStyle("-fx-background-color : #0A0E3F");
+
+        if(MainFx.connecteduser.getDate_naiss() != null) {
+            Label dlabel = (Label) nodes[0].lookup("#naiss");
+            dlabel.setText(MainFx.connecteduser.getDate_naiss().toString());
+        }
+              /* nodes[0].setOnMouseEntered(event -> {
+                    nodes[0].setStyle("-fx-background-color : #064b1c");
                 });
                 nodes[0].setOnMouseExited(event -> {
-                    nodes[0].setStyle("-fx-background-color : #02030A");
+                    nodes[0].setStyle("-fx-background-color : #177c4d");
                 });*/
         pnItems.getChildren().add(nodes[0]);
 
@@ -481,5 +493,11 @@ public class DashboardController implements Initializable {
         }
 
     }
-
+    private void showError(String message) {
+        Alert alert = new Alert(Alert.AlertType.ERROR);
+        alert.setTitle("Error");
+        alert.setHeaderText(null);
+        alert.setContentText(message);
+        alert.showAndWait();
+    }
 }

@@ -50,27 +50,29 @@ public class frontController implements Initializable {
         System.out.println(MainFx.m);
         if(MainFx.m == 0){
             pnItems.getChildren().clear();
+            if(MainFx.connecteduser.getPhoto() != null){
             Image image = new Image(MainFx.connecteduser.getPhoto());
-            adminIMG.setImage(image);
+            adminIMG.setImage(image);}
             username.setText(MainFx.connecteduser.getNom() +" "+ MainFx.connecteduser.getPrenom());
-            titre_dash.setText("Mon Profile");
+            titre_dash.setText("");
         }
        else if (MainFx.m == 1){
             pnItems.getChildren().clear();
-            Image image = new Image(MainFx.connecteduser.getPhoto());
-            adminIMG.setImage(image);
+            if(MainFx.connecteduser.getPhoto() != null){
+                Image image = new Image(MainFx.connecteduser.getPhoto());
+            adminIMG.setImage(image);}
             username.setText(MainFx.connecteduser.getNom() +" "+ MainFx.connecteduser.getPrenom());
-            titre_dash.setText("Mon Profile");
+            titre_dash.setText("Modifier Profile");
             Node[] nodes = new Node[1];
             try {
                 nodes[0] = FXMLLoader.load(getClass().getResource("/Modifier_front.fxml"));
 
-                nodes[0].setOnMouseEntered(event -> {
-                    nodes[0].setStyle("-fx-background-color : #0A0E3F");
+               /* nodes[0].setOnMouseEntered(event -> {
+                    nodes[0].setStyle("-fx-background-color : transparent");
                 });
                 nodes[0].setOnMouseExited(event -> {
-                    nodes[0].setStyle("-fx-background-color : #02030A");
-                });
+                    nodes[0].setStyle("-fx-background-color : #transparent");
+                });*/
                 pnItems.getChildren().add(nodes[0]);
             } catch (IOException ex) {
                 Logger.getLogger(DashboardController.class.getName()).log(Level.SEVERE, null, ex);
@@ -79,20 +81,21 @@ public class frontController implements Initializable {
         }
         else  if (MainFx.m == 2){
             pnItems.getChildren().clear();
-            Image image = new Image(MainFx.connecteduser.getPhoto());
-            adminIMG.setImage(image);
+            if(MainFx.connecteduser.getPhoto() != null){
+                Image image = new Image(MainFx.connecteduser.getPhoto());
+            adminIMG.setImage(image);}
             username.setText(MainFx.connecteduser.getNom() +" "+ MainFx.connecteduser.getPrenom());
-            titre_dash.setText("Mon Profile");
+            titre_dash.setText("Modifier Mot de passe");
             Node[] nodes = new Node[1];
             try {
                 nodes[0] = FXMLLoader.load(getClass().getResource("/PwdUser.fxml"));
 
-                nodes[0].setOnMouseEntered(event -> {
-                    nodes[0].setStyle("-fx-background-color : #0A0E3F");
+               /* nodes[0].setOnMouseEntered(event -> {
+                    nodes[0].setStyle("-fx-background-color : #transparent");
                 });
                 nodes[0].setOnMouseExited(event -> {
-                    nodes[0].setStyle("-fx-background-color : #02030A");
-                });
+                    nodes[0].setStyle("-fx-background-color : #transparent");
+                });*/
                 pnItems.getChildren().add(nodes[0]);
             } catch (IOException ex) {
                 Logger.getLogger(DashboardController.class.getName()).log(Level.SEVERE, null, ex);
@@ -101,20 +104,45 @@ public class frontController implements Initializable {
         }
         else  if (MainFx.m == 3){
             pnItems.getChildren().clear();
-            Image image = new Image(MainFx.connecteduser.getPhoto());
-            adminIMG.setImage(image);
+            if(MainFx.connecteduser.getPhoto() != null){
+                Image image = new Image(MainFx.connecteduser.getPhoto());
+            adminIMG.setImage(image);}
             username.setText(MainFx.connecteduser.getNom() +" "+ MainFx.connecteduser.getPrenom());
-            titre_dash.setText("Mon Profile");
+            titre_dash.setText("Photo de profile");
             Node[] nodes = new Node[1];
             try {
                 nodes[0] = FXMLLoader.load(getClass().getResource("/uploadImg_user.fxml"));
 
-                nodes[0].setOnMouseEntered(event -> {
-                    nodes[0].setStyle("-fx-background-color : #0A0E3F");
+               /* nodes[0].setOnMouseEntered(event -> {
+                    nodes[0].setStyle("-fx-background-color : #transparent");
                 });
                 nodes[0].setOnMouseExited(event -> {
-                    nodes[0].setStyle("-fx-background-color : #02030A");
+                    nodes[0].setStyle("-fx-background-color : #transparent");
+                });*/
+                pnItems.getChildren().add(nodes[0]);
+            } catch (IOException ex) {
+                Logger.getLogger(DashboardController.class.getName()).log(Level.SEVERE, null, ex);
+            }
+
+        }
+        else if (MainFx.m == 4){
+
+            pnItems.getChildren().clear();
+            if(MainFx.connecteduser.getPhoto() != null){
+                Image image = new Image(MainFx.connecteduser.getPhoto());
+                adminIMG.setImage(image);}
+            username.setText(MainFx.connecteduser.getNom() +" "+ MainFx.connecteduser.getPrenom());
+            titre_dash.setText("supprimer compte");
+            Node[] nodes = new Node[1];
+            try {
+                nodes[0] = FXMLLoader.load(getClass().getResource("/supp_user.fxml"));
+
+               /* nodes[0].setOnMouseEntered(event -> {
+                    nodes[0].setStyle("-fx-background-color : #transparent");
                 });
+                nodes[0].setOnMouseExited(event -> {
+                    nodes[0].setStyle("-fx-background-color : #transparent");
+                });*/
                 pnItems.getChildren().add(nodes[0]);
             } catch (IOException ex) {
                 Logger.getLogger(DashboardController.class.getName()).log(Level.SEVERE, null, ex);
@@ -127,8 +155,9 @@ public class frontController implements Initializable {
     @FXML
     void profile(ActionEvent event) throws IOException {
         pnItems.getChildren().clear();
-        Image image = new Image(MainFx.connecteduser.getPhoto());
-        adminIMG.setImage(image);
+        if(MainFx.connecteduser.getPhoto() != null){
+            Image image = new Image(MainFx.connecteduser.getPhoto());
+        adminIMG.setImage(image);}
         username.setText(MainFx.connecteduser.getNom() +" "+ MainFx.connecteduser.getPrenom());
         titre_dash.setText("Mon Profile");
         Node[] nodes = new Node[1];
@@ -142,8 +171,11 @@ public class frontController implements Initializable {
         tlabel.setText(Integer.toString(MainFx.connecteduser.getTel()));
         Label alabel = (Label) nodes[0].lookup("#adresse");
         alabel.setText(MainFx.connecteduser.getAddresse());
+
+        if(MainFx.connecteduser.getDate_naiss() != null){
         Label dlabel = (Label) nodes[0].lookup("#naiss");
         dlabel.setText(MainFx.connecteduser.getDate_naiss().toString());
+        }
               /*  nodes[0].setOnMouseEntered(event -> {
                     nodes[0].setStyle("-fx-background-color : #0A0E3F");
                 });

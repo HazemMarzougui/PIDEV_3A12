@@ -55,6 +55,12 @@ public class Modifier_backController implements Initializable {
      email.setText(MainFx.connecteduser.getEmail());
      adresse.setText(MainFx.connecteduser.getAddresse());
      tel.setText(Integer.toString(MainFx.connecteduser.getTel()));
+
+        Date userBirthDate = MainFx.connecteduser.getDate_naiss();
+        if (userBirthDate != null) {
+            // Assuming date is a DatePicker component
+            date.setValue(userBirthDate.toLocalDate());
+        }
     }    
 
     @FXML
