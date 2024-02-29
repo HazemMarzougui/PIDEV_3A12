@@ -54,6 +54,7 @@ public class cardtemplate {
         Parent root = loader.load();
         controller.setData(event); // Add data to the controller
         return root;
+
     }
 
 

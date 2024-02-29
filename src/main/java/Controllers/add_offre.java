@@ -19,6 +19,11 @@ import java.sql.Date;
 import java.sql.SQLException;
 import java.util.List;
 import java.util.stream.Collectors;
+import java.time.LocalDate;
+import java.time.ZoneId;
+
+
+
 
 public class add_offre {
 
@@ -52,12 +57,27 @@ public class add_offre {
     Service_produit sp =new Service_produit();
 
     private Evenement evenement;
+   /* public void setEvenement(Evenement evenement) {
+        this.evenement = evenement;
+
+        // Convert java.sql.Date to LocalDate
+        LocalDate eventStartDate = evenement.getDate_debut().toLocalDate();
+
+        // Set the lower bound of id_date_deb_offre to the value of start date from the selected Evenement
+        id_date_deb_offre.setDayCellFactory(picker -> new DateCell() {
+            public void updateItem(LocalDate date, boolean empty) {
+                super.updateItem(date, empty);
+                setDisable(date.isBefore(eventStartDate));
+            }
+        });
+    }*/
 
     @FXML
     void add_and_return_to_prod(ActionEvent event) {
         try {
             List<Produit> produits = sp.afficher();
             // Convert LocalDate objects to java.util.Date objects
+            
             Date dateDebut = java.sql.Date.valueOf(id_date_deb_offre.getValue());
             Date dateFin = java.sql.Date.valueOf(id_date_fin_offre.getValue());
 
@@ -72,16 +92,20 @@ public class add_offre {
 
             // Ensure a product is selected
             if (selectedProduct != null) {
+
                 // Create Evenement object with converted dates
                 so.ajouter(new Offre(id_desc_offre.getText(), dateDebut, dateFin, Integer.parseInt(id_prix_remise_offre.getText()), evenement.getId_evenement(), selectedProduct.getId_produit()));
 
-                // Other code here...
-
                 Alert alert = new Alert(Alert.AlertType.INFORMATION);
                 alert.setTitle("Success");
-                alert.setContentText("Événement ajouté avec succès");
+                alert.setContentText("Offre ajoutée avec succès");
                 alert.showAndWait();
-                Parent root = FXMLLoader.load(getClass().getResource("/admin/event/admin_event.fxml"));
+
+                // Load the "offre_admin.fxml" file
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("/admin/event/admin_event.fxml.fxml"));
+                Parent root = loader.load();
+                // If your controller needs to be set up with any data, you can do it here
+
                 id_add_offre.getScene().setRoot(root);
             } else {
                 // Handle case when no product is selected
@@ -98,15 +122,6 @@ public class add_offre {
     }
 
 
-    @FXML
-    void delete_and_return_to_prod(ActionEvent event) {
-
-    }
-
-    @FXML
-    void update_and_return_to_prod(ActionEvent event) {
-
-    }
 
 
 
@@ -143,9 +158,11 @@ public class add_offre {
                     e.printStackTrace();
                 }
             });
+
         } catch (SQLException e) {
             e.printStackTrace();
         }
+
     }
 
     // Méthode setData() que vous avez fournie précédemment

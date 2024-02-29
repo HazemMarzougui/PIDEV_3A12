@@ -9,38 +9,43 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.Add_event">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="490.0" prefWidth="745.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.Add_event">
    <children>
-      <ImageView fitHeight="406.0" fitWidth="608.0" layoutX="-2.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="526.0" fitWidth="747.0" layoutX="-2.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../kits/Kitsune/back.jpg" />
+            <Image url="@../../kits/Kitsune/wallpaper_update.jpg" />
          </image>
       </ImageView>
-      <Label layoutX="56.0" layoutY="57.0" prefHeight="17.0" prefWidth="112.0" text="Nom_event ">
+      <ImageView fitHeight="490.0" fitWidth="536.0" layoutX="126.0" layoutY="-1.0" opacity="0.71" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../kits/Kitsune/white.jpg" />
+         </image>
+      </ImageView>
+      <Label contentDisplay="CENTER" layoutX="330.0" layoutY="14.0" prefHeight="17.0" prefWidth="112.0" text="Nom_event ">
          <font>
             <Font name="System Bold" size="18.0" />
          </font>
       </Label>
-      <TextField fx:id="id_nom" layoutX="56.0" layoutY="90.0" prefHeight="25.0" prefWidth="112.0" promptText="sales" />
-      <Label layoutX="412.0" layoutY="57.0" prefHeight="17.0" prefWidth="112.0" text="Date_debut ">
+      <TextField fx:id="id_nom" alignment="CENTER" layoutX="316.0" layoutY="62.0" prefHeight="25.0" prefWidth="112.0" promptText="sales" />
+      <Label alignment="CENTER" layoutX="324.0" layoutY="232.0" prefHeight="17.0" prefWidth="112.0" text="Date_debut ">
          <font>
             <Font name="System Bold" size="18.0" />
          </font>
       </Label>
-      <DatePicker fx:id="id_date_deb" layoutX="412.0" layoutY="85.0" prefHeight="34.0" prefWidth="112.0" />
-      <Label layoutX="412.0" layoutY="145.0" prefHeight="17.0" prefWidth="112.0" text="Date_fin">
+      <DatePicker fx:id="id_date_deb" layoutX="316.0" layoutY="284.0" prefHeight="34.0" prefWidth="112.0" />
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="317.0" layoutY="343.0" prefHeight="17.0" prefWidth="112.0" text="Date_fin">
          <font>
             <Font name="System Bold" size="18.0" />
          </font>
       </Label>
-      <DatePicker fx:id="id_date_fin" layoutX="408.0" layoutY="187.0" prefHeight="34.0" prefWidth="121.0" />
-      <Label layoutX="56.0" layoutY="145.0" prefHeight="17.0" prefWidth="112.0" text="Description">
+      <DatePicker fx:id="id_date_fin" layoutX="320.0" layoutY="380.0" prefHeight="34.0" prefWidth="121.0" />
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="317.0" layoutY="107.0" prefHeight="17.0" prefWidth="112.0" text="Description">
          <font>
             <Font name="System Bold" size="18.0" />
          </font>
       </Label>
-      <TextField fx:id="id_desc" layoutX="52.0" layoutY="187.0" prefHeight="67.0" prefWidth="237.0" promptText="DESC" />
-      <Button fx:id="add_button" layoutX="52.0" layoutY="301.0" mnemonicParsing="false" onAction="#add_and_return" prefHeight="25.0" prefWidth="121.0" text="Ajouter">
+      <TextField fx:id="id_desc" alignment="CENTER" layoutX="253.0" layoutY="145.0" prefHeight="67.0" prefWidth="237.0" promptText="DESC" />
+      <Button fx:id="add_button" layoutX="320.0" layoutY="442.0" mnemonicParsing="false" onAction="#add_and_return" prefHeight="25.0" prefWidth="121.0" style="-fx-background-color: #aec313;" text="Ajouter">
          <font>
             <Font name="System Bold Italic" size="12.0" />
          </font>

@@ -14,7 +14,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="487.0" prefWidth="572.0" style="-fx-background-color: #90EE90;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+<VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="487.0" prefWidth="572.0" style="-fx-background-color: #90EE90;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" >
    <children>
       <ImageView fitHeight="108.0" fitWidth="251.0" pickOnBounds="true" preserveRatio="true">
          <VBox.margin>
@@ -66,8 +66,6 @@
          </VBox.margin>
          <children>
             <Button fx:id="id_add_offre" mnemonicParsing="false" onAction="#add_and_return_to_prod" prefHeight="41.0" prefWidth="74.0" style="-fx-background-color: #7bb225;" text="add" />
-            <Button fx:id="id_update_offre" mnemonicParsing="false" onAction="#update_and_return_to_prod" prefHeight="41.0" prefWidth="74.0" style="-fx-background-color: #7bb225;" text="update" />
-            <Button fx:id="id_delete_offre" mnemonicParsing="false" onAction="#delete_and_return_to_prod" prefHeight="41.0" prefWidth="74.0" style="-fx-background-color: #7bb225;" text="delete" />
          </children>
       </HBox>
    </children>

@@ -20,6 +20,7 @@ import java.sql.SQLException;
 public class cardtemplateclient {
 
 
+
     @FXML
     private Button id_button_intrest;
 
@@ -57,8 +58,8 @@ public class cardtemplateclient {
 
 
     private Parent loadRootLayout() throws Exception {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/admin/offre/offre_admin.fxml"));
-        admin_offre controller = new admin_offre();
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/client/offre/offre_client.fxml"));
+        client_offre controller = new client_offre();
         loader.setController(controller);
         System.out.println(event);
         controller.setData(event); // Add data to the controller
@@ -89,9 +90,11 @@ public class cardtemplateclient {
     private UserService userService = new UserService();
 
     private String composeMessage(Evenement event) {
-
-        return "Your message content based on the event";
+        return "Bonjour, vous êtes inscrit à l'événement " + event.getNom_event() + " qui aura lieu du " +
+                event.getDate_debut() + " au " + event.getDate_fin() + ". Description de l'événement : " +
+                event.getDescription() + ". Nous avons hâte de vous y retrouver !";
     }
+
 
     @FXML
     void handleJoinButton(ActionEvent event) {
@@ -100,7 +103,7 @@ public class cardtemplateclient {
             try {
                 System.out.println(this.event.getClientId());
                 // Fetch the user associated with this event (assuming each event has a client/user ID)
-                user client = userService.getUserById(1); // Assuming there's a method to get user by ID
+                user client = userService.getUserById(1);
                 System.out.println(client);
                 if (client != null) {
                     // Get the client's phone number

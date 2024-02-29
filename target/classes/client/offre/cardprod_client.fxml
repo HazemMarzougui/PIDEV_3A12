@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="405.0" prefWidth="494.0" style="-fx-background-color: #90EE90;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.cardprod_client">
+    <children>
+        <ImageView fx:id="id_image" fitHeight="122.0" fitWidth="170.0" pickOnBounds="true" preserveRatio="true">
+            <VBox.margin>
+                <Insets top="20.0" />
+            </VBox.margin>
+            <image>
+                <Image url="@../../kits/Kitsune/prod.jpg" />
+            </image>
+        </ImageView>
+        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="nom_produit">
+            <VBox.margin>
+                <Insets />
+            </VBox.margin>
+            <font>
+                <Font name="System Bold" size="13.0" />
+            </font>
+        </Text>
+        <TextArea fx:id="id_nom_produit" prefHeight="38.0" prefWidth="438.0">
+            <VBox.margin>
+                <Insets left="150.0" right="150.0" />
+            </VBox.margin>
+        </TextArea>
+        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="quantite">
+            <font>
+                <Font name="System Bold" size="12.0" />
+            </font>
+        </Text>
+        <TextField fx:id="id_quantite" prefHeight="32.0" prefWidth="499.0">
+            <VBox.margin>
+                <Insets left="150.0" right="150.0" />
+            </VBox.margin>
+        </TextField>
+        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="description" wrappingWidth="63.263671875">
+            <font>
+                <Font name="System Bold" size="12.0" />
+            </font></Text>
+        <TextField fx:id="id_description" prefHeight="68.0" prefWidth="203.0">
+            <VBox.margin>
+                <Insets left="150.0" right="150.0" />
+            </VBox.margin>
+        </TextField>
+        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="PRIX :">
+            <font>
+                <Font name="System Bold" size="12.0" />
+            </font>
+            <VBox.margin>
+                <Insets top="5.0" />
+            </VBox.margin>
+        </Text>
+        <TextField fx:id="id_prix_remise_offre" prefHeight="25.0" prefWidth="232.0">
+            <VBox.margin>
+                <Insets left="200.0" right="200.0" top="20.0" />
+            </VBox.margin>
+        </TextField>
+        <Label />
+    </children>
+    <opaqueInsets>
+        <Insets top="3.0" />
+    </opaqueInsets>
+</VBox>
