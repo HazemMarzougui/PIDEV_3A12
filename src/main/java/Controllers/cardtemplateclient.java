@@ -1,24 +1,34 @@
 package Controllers;
 
+import javax.mail.*;
+import javax.mail.internet.InternetAddress;
+import javax.mail.internet.MimeMessage;
 
+//import com.mysql.cj.Session;
 import entities.Evenement;
 import entities.user;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import services.ClientEventMappingService;
-import services.SMSService; // Your SMS service integration class
+import services.SMSService;
 import services.UserService;
 
-import java.io.IOException;
-import java.sql.SQLException;
+import java.util.Properties;
 
+import java.io.IOException;
+//import java.net.PasswordAuthentication;
+import java.sql.SQLException;
+import javax.mail.PasswordAuthentication;
+import javax.mail.PasswordAuthentication;
 
 public class cardtemplateclient {
-
+   // ServiceEmail.EmailService emailService = new ServiceEmail.EmailService("medamine.bacha@esprit.tn", "Airplaness666");
+   //private final ServiceEmail serviceEmail = new ServiceEmail();
+   // private final ServiceEmail.EmailService serviceEmail = new ServiceEmail.EmailService();
 
 
     @FXML
@@ -68,11 +78,7 @@ public class cardtemplateclient {
         return root;
     }
 
-    @FXML
-    void form(ActionEvent event) {
 
-
-    }
 
     private Evenement event;
 
@@ -96,8 +102,109 @@ public class cardtemplateclient {
     }
 
 
+
+
     @FXML
     void handleJoinButton(ActionEvent event) {
+        if (this.event != null) {
+            //sendSMS();
+            String recipientName = "BECHA"; // Replace with actual recipient name
+            String recipientEmail = "medamine.bacha@esprit.tn"; // Replace with actual recipient email
+            String formationTitle = "Formation Title"; // Replace with actual formation title
+            sendEmail(recipientName, recipientEmail, formationTitle);
+        }
+    }
+
+
+
+    @FXML
+    private void sendEmail(String recipientName, String recipientEmail, String formationTitle) {
+
+
+        /*String recipientName = "Recipient Name"; // You can set these values dynamically based on your application's logic
+        String recipientEmail = "recipient@example.com"; // Example email
+        String formationTitle = "Formation Title"; // Example formation title*/
+
+        String host = "smtp.gmail.com";
+        String username = "medamine.bacha@esprit.tn"; // Your Gmail email address
+        String password = "Airplaness666"; // Your Gmail password
+
+        //String recipientName = "Recipient Name"; // You can set this dynamically based on your application's logic
+        String subject = "Welcome to " + event.getNom_event();
+        String body = "Dear " + recipientName + ",\n\n" +
+                "Welcome to " + event.getNom_event() + ". Thank you for your registration. Now you are all set to join the event!";
+
+        Properties properties = new Properties();
+        properties.put("mail.smtp.host", host);
+        properties.put("mail.smtp.auth", "true");
+        properties.put("mail.smtp.starttls.enable", "true");
+        properties.put("mail.smtp.port", "587"); // Update the port as needed
+
+        // Send the email using JavaMail API
+        try {
+            Session session = Session.getInstance(properties, new javax.mail.Authenticator() {
+                protected PasswordAuthentication getPasswordAuthentication() {
+                    return new PasswordAuthentication(username, password);
+                }
+            });
+
+            Message message = new MimeMessage(session);
+            message.setFrom(new InternetAddress(username));
+            message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(recipientEmail));
+            message.setSubject(subject);
+            message.setText(body);
+
+            Transport.send(message);
+
+            showAlert("Success", "Email sent successfully");
+        } catch (MessagingException e) {
+            e.printStackTrace();
+            showAlert("Error", "Failed to send email");
+        }
+    }
+
+
+
+
+        private void showAlert(String title, String content) {
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle(title);
+            alert.setHeaderText(null);
+            alert.setContentText(content);
+            alert.showAndWait();
+        }
+
+
+
+
+   /* private void sendEmail() {
+        try {
+            // Fetch client details
+            user client = userService.getUserById(1);
+            if (client != null) {
+                String clientEmail = client.getEmail();
+                String message = composeMessage(event);
+
+                // Create an instance of EmailService with your email credentials
+                EmailService emailService = new EmailService("your_email@example.com", "your_password");
+                boolean emailSent = emailService.sendEmail(clientEmail, "Reminder: Event Tomorrow", message);
+
+                if (emailSent) {
+                    System.out.println("Email sent successfully to: " + clientEmail);
+                } else {
+                    System.out.println("Failed to send email to: " + clientEmail);
+                }
+            } else {
+                System.out.println("Client not found for the event.");
+            }
+        } catch (SQLException | MessagingException e) {
+            e.printStackTrace();
+        }
+    }*/
+
+
+ /* @FXML
+    void sendSMS() {
         // Handle button click
         if (this.event != null) {
             try {
@@ -130,6 +237,6 @@ public class cardtemplateclient {
             }
         }
     }
-
+*/
 
 }

@@ -6,25 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="9e3f97d6-6f90-4c18-b8d2-6d637432e52e" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/add_offre.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/add_offre.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/cardtemplate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/cardtemplate.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/admin_event.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/admin_event.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/cardtemplateclient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/cardtemplateclient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/client_offre.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/client_offre.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/services/SMSService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/services/SMSService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/test/MainFX.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/test/MainFX.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/admin/event/add_event.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/admin/event/add_event.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/admin/event/modify.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/admin/event/modify.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/admin/offre/add_offre.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/admin/offre/add_offre.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/admin/offre/offre_admin.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/admin/offre/offre_admin.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Controllers/add_offre.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Controllers/add_offre.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Controllers/cardtemplate.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Controllers/cardtemplate.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Controllers/cardtemplateclient.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Controllers/cardtemplateclient.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/admin/event/add_event.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/admin/event/add_event.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/admin/event/modify.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/admin/event/modify.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/admin/offre/add_offre.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/admin/offre/add_offre.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/admin/offre/offre_admin.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/admin/offre/offre_admin.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/services/SMSService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/services/SMSService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/test/MainFX.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/test/MainFX.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/client/event/client.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/client/event/client.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

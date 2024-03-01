@@ -55,9 +55,9 @@ public class admin_event {
 
             ObservableList<Evenement> observableList = FXCollections.observableList(se.afficher());
 
-            // Filter the list based on the search text
+            // Filter the list based on the search text b stream ya madame salma
             List<Evenement> filteredList = observableList.stream()
-                    .filter(e -> e.getNom_event().toLowerCase().contains(searchText.toLowerCase()))
+                    .filter(e->e.getNom_event().toLowerCase().contains(searchText.toLowerCase()))
                     .collect(Collectors.toList());
 
             // Load and display filtered data
