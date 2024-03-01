@@ -23,7 +23,7 @@
       </ImageView>
       <Pane layoutX="107.0" layoutY="131.0" prefHeight="645.0" prefWidth="1072.0" styleClass="dash__container-card" stylesheets="/css/Style.css">
          <children>
-            <VBox fx:id="pnItems" layoutX="189.0" layoutY="126.0" prefHeight="318.0" prefWidth="744.0" spacing="5.0" style="-fx-background-color: #defee6;">
+            <VBox fx:id="pnItems" layoutX="182.0" layoutY="129.0" prefHeight="318.0" prefWidth="744.0" spacing="5.0" style="-fx-background-color: #defee6;">
                <padding>
                   <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                </padding>

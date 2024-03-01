@@ -45,6 +45,9 @@ public class SinginController implements Initializable {
     private Parent fxml;
 
     public Captcha setCaptcha() {
+
+
+
         Captcha captchaV = new Captcha.Builder(250, 150)
                 .addText()
                 .addBackground()

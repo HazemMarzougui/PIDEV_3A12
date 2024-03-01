@@ -105,7 +105,7 @@
     -fx-background: #fff;
     -fx-background-color: #b5e8c9;
     -fx-border-radius: 50px;
--fx-background-radius: 10px;
+    -fx-background-radius: 10px;
 }
 .nav-linksbtn {
     -fx-background-color : #54cb92;
@@ -116,8 +116,8 @@
 }
 
 .nav-linksbtn:hover {
-     -fx-background-color : #1c9b57;
- }
+    -fx-background-color : #1c9b57;
+}
 .nav-linksbtn:pressed {
     -fx-background-color : #064b1c;
 }

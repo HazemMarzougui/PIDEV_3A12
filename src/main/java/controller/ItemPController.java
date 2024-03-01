@@ -78,7 +78,7 @@ public class ItemPController implements Initializable {
         } catch (IOException | NullPointerException e) {
             e.printStackTrace();
         }
-            
+
     }
 
     @FXML
