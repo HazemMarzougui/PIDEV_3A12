@@ -76,11 +76,6 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </ComboBox>
-                  <ComboBox fx:id="combo_produit" layoutX="99.0" layoutY="382.0" prefHeight="35.0" prefWidth="349.0" promptText="Produit">
-                     <cursor>
-                        <Cursor fx:constant="HAND" />
-                     </cursor>
-                  </ComboBox>
                   <Button layoutX="456.0" layoutY="243.0" mnemonicParsing="false" onAction="#upload_video" prefHeight="40.0" prefWidth="40.0" styleClass="btn_action_add" stylesheets="@css/styles.css">
                      <cursor>
                         <Cursor fx:constant="HAND" />
@@ -110,6 +105,7 @@
                   <Label fx:id="Description_empty" layoutX="111.0" layoutY="334.0" prefHeight="25.0" prefWidth="242.0" text="Description must not be empty" textFill="RED" />
                   <Label fx:id="produit_empty" layoutX="109.0" layoutY="423.0" prefHeight="25.0" prefWidth="242.0" text="Produit must not be empty" textFill="RED" />
                   <Label fx:id="cqtegorie_empty" layoutX="107.0" layoutY="518.0" prefHeight="25.0" prefWidth="242.0" text="Categorie must not be empty" textFill="RED" />
+                  <ComboBox fx:id="combo_produit" layoutX="96.0" layoutY="387.0" prefHeight="35.0" prefWidth="349.0" promptText="Produit" />
                </children>
             </Pane>
          </children>

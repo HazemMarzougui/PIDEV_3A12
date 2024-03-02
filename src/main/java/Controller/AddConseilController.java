@@ -8,15 +8,25 @@ import Services.ProduitService;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.geometry.Pos;
 import javafx.scene.Node;
 import javafx.scene.control.*;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import Entities.Conseil;
+import javafx.util.Duration;
+import org.controlsfx.control.Notifications;
 
+import javax.management.Notification;
+import java.awt.*;
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
@@ -124,12 +134,33 @@ public class AddConseilController  implements Initializable {
                     selectedProduit.getId_produit(),
                     selectedCategorie.getId_categorie()
             ));
-
-            showAlert("Success", "Ajout Effectué", Alert.AlertType.INFORMATION);
+            Image originalImage = new Image(String.valueOf(getClass().getResource("/uploads/verifie.png")));
+            double targetWidth = 50; // Set the desired width
+            double targetHeight = 50; // Set the desired height
+            Image resizedImage = new Image(originalImage.getUrl(), targetWidth, targetHeight, true, true);
+            Notifications notification = Notifications.create();
+            notification.graphic(new ImageView(resizedImage));
+            notification.text("Conseil est ajouté avec Succés");
+            notification.title("Ajout Effectué");
+            notification.hideAfter(Duration.seconds(4));
+            notification.position(Pos.BOTTOM_RIGHT);
+            notification.darkStyle();
+            notification.show();
         } catch (SQLException e) {
-            showAlert("Error", "Impossible d'ajouter une conseil", Alert.AlertType.ERROR);
+            Image originalImage = new Image(String.valueOf(getClass().getResource("/uploads/annuler.png")));
+            double targetWidth = 50; // Set the desired width
+            double targetHeight = 50; // Set the desired height
+            Image resizedImage = new Image(originalImage.getUrl(), targetWidth, targetHeight, true, true);
+            Notifications notification = Notifications.create();
+            notification.graphic(new ImageView(resizedImage));
+            notification.text("Ajouter Conseil n'est pas Effectué");
+            notification.title("Erreur");
+            notification.hideAfter(Duration.seconds(4));
+            notification.position(Pos.BOTTOM_RIGHT);
+            notification.show();
             throw new RuntimeException(e);
         }
+
     }
 
     private void showAlert(String title, String content, Alert.AlertType alertType) {

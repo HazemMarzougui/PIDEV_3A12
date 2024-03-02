@@ -130,6 +130,7 @@ public class PlayVideoController  {
         }
     }
 
+
     @FXML
     private void sliderPressed(MouseEvent event) {
         mediaPlayer.seek(Duration.seconds(slider.getValue()));

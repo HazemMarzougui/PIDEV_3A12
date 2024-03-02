@@ -1,6 +1,7 @@
 package Controller;
 
 import Entities.Conseil;
+import Entities.Produit;
 import Services.CategorieService;
 import Services.ConseilService;
 import Services.ProduitService;
@@ -70,7 +71,7 @@ public class ConseilItemController implements Initializable {
         this.parentController = parentController;
     }
 
-    private Runnable onUpdateClickListener;
+    private Runnable onUpdateClickListener;  // it is used for defining code that should be executed in a separate thread
 
 
     public void setOnUpdateClickListener(Runnable onUpdateClickListener) {
@@ -88,9 +89,11 @@ public class ConseilItemController implements Initializable {
         video.setText("" + conseil.getVideo());
         description.setText("" + conseil.getDescription());
         //id_produit.setText("" + conseil.getId_produit());
+
+
         int idProduit = conseil.getId_produit();
-        String ProduitName = ps.getProduitsName(idProduit);
-        id_produit.setText(ProduitName);
+        Produit  ProduitName = ps.getProduitsName(idProduit);
+        id_produit.setText(ProduitName.getNom_produit());
 
         int idCategory = conseil.getId_typeC();
         String categoryName = cs.getCategoriesName(idCategory);

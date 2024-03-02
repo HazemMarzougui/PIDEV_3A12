@@ -34,18 +34,18 @@ public class ProduitService {
         }
         return produits;
     }
-    public String getProduitsName(int idProduit) throws SQLException {
-        String productName = ""; // Default value
+    public Produit getProduitsName(int idProduit) throws SQLException {
+        Produit produit =new Produit();
         String req = "SELECT nom_produit FROM produits WHERE id_produit = ?";
         try (PreparedStatement pre = connection.prepareStatement(req)) {
             pre.setInt(1, idProduit);
             try (ResultSet res = pre.executeQuery()) {
                 if (res.next()) {
-                    productName = res.getString(1);
+                   produit.setNom_produit(res.getString("nom_produit"));
                 }
             }
         }
-        return productName;
+        return produit;
     }
 
 }

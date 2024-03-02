@@ -11,10 +11,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseButton;
@@ -38,6 +35,10 @@ public class CategorieController implements Initializable {
 
     @FXML
     private Button btn_refr;
+
+
+    @FXML
+    private ComboBox<String> combo_menu;
 
     @FXML
     private Pane btn_userList;
@@ -80,6 +81,14 @@ public class CategorieController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        ObservableList<String> management = FXCollections.observableArrayList("Liste Conseils", "Statistiques");
+        combo_menu.setItems(management);
+        combo_menu.setOnAction(event ->
+        {
+            String selectedItem = combo_menu.getSelectionModel().getSelectedItem();
+            navigateToPage(selectedItem);
+        });
+
         try {
             observableList = FXCollections.observableList(categorieService.displayCategorie());
             tv_categories.setItems(observableList);
@@ -144,6 +153,40 @@ public class CategorieController implements Initializable {
 
         } catch (SQLException e) {
             System.out.println(e.getMessage());
+        }
+    }
+
+    private void navigateToPage(String selectedItem) {
+        // Implement navigation logic based on the selected item
+        switch (selectedItem) {
+            case "Liste Conseils":
+                try {
+                    Parent categorieListRoot = FXMLLoader.load(getClass().getResource("/ConseilList.fxml"));
+                    Stage stage = new Stage();
+                    stage.setScene(new Scene(categorieListRoot));
+                    stage.show();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+                break;
+            case "Liste Categories":
+                // Navigate to the "CategorieList.fxml" file
+                try {
+                    Parent categorieListRoot = FXMLLoader.load(getClass().getResource("/CategorieList.fxml"));
+                    Stage stage = new Stage();
+                    stage.setScene(new Scene(categorieListRoot));
+                    stage.show();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+                break;
+            case "Statistiques":
+                // Navigate to the "Statistiques" page
+                System.out.println("Navigating to Statistiques page");
+                break;
+            default:
+                // Handle unknown selection
+                System.out.println("Unknown selection");
         }
     }
 

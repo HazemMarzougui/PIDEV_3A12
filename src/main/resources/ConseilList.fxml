@@ -4,6 +4,7 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.TextField?>
@@ -97,24 +98,17 @@
                </VBox.margin>
             </Pane>
             <Pane prefHeight="50.0" prefWidth="214.0" stylesheets="@css/styles.css">
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin>
                <children>
-                  <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="7.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+                  <ComboBox fx:id="combo_menu" layoutX="47.0" layoutY="8.0" prefHeight="35.0" prefWidth="182.0" promptText="Gestion Conseils" stylesheets="@css/ComboStyle.css" />
+                  <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="4.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@uploads/conseil_active.png" />
                      </image>
                   </ImageView>
-                  <Label layoutX="55.0" layoutY="14.0" stylesheets="@css/styles.css" text="Gestion Conseils" textFill="WHITE">
-                     <styleClass>
-                        <String fx:value="activeText" />
-                        <String fx:value="text" />
-                     </styleClass>
-                     <padding>
-                        <Insets left="10.0" />
-                     </padding></Label>
                </children>
-               <VBox.margin>
-                  <Insets top="10.0" />
-               </VBox.margin>
                <styleClass>
                   <String fx:value="nav-links" />
                   <String fx:value="activeLink" />
@@ -141,7 +135,7 @@
       </VBox>
       <HBox layoutX="250.0" prefHeight="75.0" prefWidth="1053.0">
          <children>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="GESTION CONSEILS">
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="LISTE DES CONSEILS">
                <HBox.margin>
                   <Insets left="55.0" top="25.0" />
                </HBox.margin>
@@ -155,6 +149,11 @@
             </Text>
             <HBox prefHeight="75.0" prefWidth="385.0" spacing="10.0">
                <children>
+                  <TextField fx:id="search_bar" maxWidth="347.0" prefWidth="347.0" promptText="Tapez pour chercher" styleClass="conseil__list-searchInput" stylesheets="@css/styles.css">
+                     <HBox.margin>
+                        <Insets top="20.0" />
+                     </HBox.margin>
+                  </TextField>
                   <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
                      <HBox.margin>
                         <Insets top="28.0" />
@@ -163,16 +162,12 @@
                         <Image url="@uploads/search.png" />
                      </image>
                   </ImageView>
-                  <TextField fx:id="search_bar" maxWidth="347.0" onKeyTyped="#searchConseil" prefWidth="347.0" promptText="Tapez pour chercher" styleClass="conseil__list-searchInput" stylesheets="@css/styles.css">
-                     <HBox.margin>
-                        <Insets top="20.0" />
-                     </HBox.margin>
-                  </TextField>
                </children>
                <HBox.margin>
                   <Insets left="35.0" />
                </HBox.margin>
             </HBox>
+
          </children>
       </HBox>
       <Pane fx:id="content_area" layoutX="268.0" layoutY="76.0" prefHeight="668.0" prefWidth="1026.0" styleClass="dash__container-card">
@@ -181,7 +176,7 @@
                <graphic>
                   <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@uploads/plus.png" />
+                        <Image url="@uploads/add.png" />
                      </image>
                      <cursor>
                         <Cursor fx:constant="HAND" />
@@ -192,11 +187,11 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
                <styleClass>
-                  <String fx:value="btn_action_add" />
+                  <String fx:value="btn_ajoutConseil" />
                   <String fx:value="nav-links" />
                </styleClass>
             </Button>
-            <Button fx:id="btn_add1" layoutX="57.0" layoutY="3.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="40.0" stylesheets="@css/styles.css">
+            <Button layoutX="57.0" layoutY="3.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="40.0" stylesheets="@css/styles.css">
                <graphic>
                   <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -215,27 +210,11 @@
                   <String fx:value="nav-links" />
                </styleClass>
             </Button>
-            <Button fx:id="cat_btn" layoutX="865.0" layoutY="3.0" mnemonicParsing="false" onAction="#go_categorie" prefHeight="40.0" prefWidth="147.0" stylesheets="@css/styles.css" text="  Categories" textFill="#43882b">
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-               <styleClass>
-                  <String fx:value="btn_action_add" />
-                  <String fx:value="nav-links" />
-               </styleClass>
-               <graphic>
-                  <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@uploads/en-arriere.png" />
-                     </image>
-                  </ImageView>
-               </graphic>
-            </Button>
             <ScrollPane fx:id="scrollPane" layoutX="47.0" layoutY="213.0" prefHeight="422.0" prefWidth="928.0" stylesheets="@css/styles.css">
                <content>
                   <GridPane fx:id="gridPane">
                     <rowConstraints>
-                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="ALWAYS" />
                     </rowConstraints>
                   </GridPane>
                </content>
@@ -259,6 +238,7 @@
                   <String fx:value="hbox" />
                </styleClass>
             </HBox>
+            <ComboBox fx:id="combo_tri" layoutX="853.0" layoutY="14.0" prefWidth="150.0" promptText="Tri Par" styleClass="combo-box" stylesheets="@css/styles.css" />
          </children>
       </Pane>
    </children>

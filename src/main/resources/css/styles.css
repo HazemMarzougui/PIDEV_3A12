@@ -23,6 +23,19 @@
     -fx-transition: all 2s ease;
     -fx-cursor: hand;
 }
+.nav-links {
+    -fx-background-radius: 30px;
+    -fx-border-radius: 30px;
+    -fx-transition: all 2s ease;
+    -fx-cursor: hand;
+}
+
+.combo-box
+{
+    -fx-background-color: rgb(250, 250, 250);
+    -fx-background-radius: 500px;
+    -fx-font-size:16px ;
+}
 
 .nav-links:hover {
     -fx-background-color: rgba(45, 100, 33, 0.38);
@@ -129,7 +142,21 @@
 .product-card-scrollPane {
     -fx-background: #fff;
     -fx-background-color: transparent;
+
 }
+.pie-chart {
+    -fx-pie-chart-size: 200px; /* Adjust the size as needed */
+}
+.pie-chart-label {
+    -fx-pie-slice-stroke: transparent;
+}
+
+.pie-chart-label:hover {
+    -fx-pie-slice-stroke-width: 2.5;
+}
+
+
+
 .pane
 {
     -fx-background-color: #defee6;
@@ -174,6 +201,14 @@
 
 .text-field {
     -fx-background-color: rgb(250, 250, 250);
+    -fx-border-color: #defee6;
+    -fx-border-radius: 500px;
+    -fx-background-radius: 500px;
+    -fx-font-size:16px ;
+}
+.text-area {
+    -fx-background-color: rgb(250, 250, 250);
+    -fx-border-color: #defee6;
     -fx-background-radius: 500px;
     -fx-font-size:16px ;
 }
@@ -195,18 +230,14 @@
     -fx-border-radius: 30px;
 }
 
-.combo-box
-{
-    -fx-background-color: rgb(250, 250, 250);
-    -fx-background-radius: 500px;
-    -fx-font-size:16px ;
-}
+
 
 .btn_cat_btn
 {
     -fx-background-color: transparent;
     -fx-background-radius: transparent;
 }
+
 
 .conseil__list-searchInput {
     -fx-background-color: #FFFFFF;
@@ -268,3 +299,110 @@
     -fx-background-radius: 30px;
     -fx-border-radius: 30px;
 }
+
+.item
+{
+    -fx-background-radius: 25px;
+    -fx-border-radius: 25px;
+}
+
+/* styles.css */
+
+/* styles.css */
+
+.slider .track {
+    -fx-background-color: #43882b; /* Set the track color */
+}
+
+.slider .thumb {
+    -fx-background-color: linear-gradient(to bottom, #6fa953 0%, #43882b 100%); /* Set gradient color for thumb */
+    -fx-background-insets: 0, 1, 1; /* Add some shadow to the thumb */
+    -fx-background-radius: 5; /* Set the thumb shape */
+}
+
+.slider .thumb:hover {
+    -fx-background-color: linear-gradient(to bottom, #8fd87e 0%, #5a9e41 100%); /* Set gradient color for thumb on hover */
+}
+
+
+/* styles.css */
+
+/* Style the VBox representing the cart */
+.cart-vbox {
+    -fx-background-color: #fff; /* Set the background color for the cart */
+    -fx-border-color: #fff;
+    -fx-background-radius: 30px;
+    -fx-border-radius: 30px;
+    -fx-padding: 10; /* Add some padding to the cart */
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.09), 15, 0.1, 0, 0);
+}
+
+.cartItemConseil {
+    -fx-background-color: #fff; /* Set the background color for the cart */
+    -fx-border-color: #fff;
+    -fx-background-radius: 30px;
+    -fx-border-radius: 30px;
+    -fx-padding: 10; /* Add some padding to the cart */
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.09), 25, 0.1, 0, 0);
+}
+
+.btn_play_front
+{
+    -fx-background-color: #43882b;
+    -fx-border-color: #43882b;
+    -fx-background-radius: 30px;
+    -fx-border-radius: 30px;
+}
+
+.btn_ajoutConseil
+{
+    -fx-background-color: #43882b;
+    -fx-border-color: #43882b;
+    -fx-background-radius: 30px;
+    -fx-border-radius: 30px;
+}
+
+.anchor_video
+{
+    -fx-background-color: #defee6; /* Set the background color for the cart */
+    -fx-border-color: #defee6;
+    -fx-background-radius: 30px;
+    -fx-border-radius: 30px;
+    -fx-padding: 10; /* Add some padding to the cart */
+
+    /* Add a more blurry drop shadow to the VBox */
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.2), 5, 0, 5, 5);
+}
+
+
+.productDetails__Container {
+    -fx-background-radius: 60px;
+    -fx-border-radius: 60px;
+    -fx-background-color: #fff;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.09), 15, 0.1, 0, 0);
+}
+
+.PaneFront {
+    -fx-background-radius: 60px;
+    -fx-border-radius: 60px;
+    -fx-background-color: #fff;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.09), 15, 0.1, 0, 0);
+}
+
+.reviewsContainer {
+    -fx-background-color: #defee6;
+    -fx-background-radius: 8px;
+    -fx-border-radius: 8px;
+}
+
+.ReviewForm {
+    -fx-background-color: rgba(0, 0, 0, 0.7);
+}
+
+.vbox_formReview {
+    -fx-background-color: #fff;
+    -fx-background-radius: 30px;
+    -fx-border-radius: 30px;
+}
+
+

@@ -1,6 +1,8 @@
 package Entities;
 
 
+import java.sql.Timestamp;
+
 public class Conseil {
     public int id_conseil ;
     public String nom_conseil;
@@ -8,6 +10,8 @@ public class Conseil {
     public String description;
     public int id_produit ;
     public int id_typeC ;
+
+    private Timestamp dateCreation;
 
 
 
@@ -75,6 +79,15 @@ public class Conseil {
 
     public void setId_typeC(int id_typeC) {
         this.id_typeC = id_typeC;
+    }
+
+
+    public Timestamp getDateCreation() {
+        return dateCreation;
+    }
+
+    public void setDateCreation(Timestamp dateCreation) {
+        this.dateCreation = dateCreation;
     }
 
     @Override

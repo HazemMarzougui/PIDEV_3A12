@@ -96,7 +96,7 @@
                         </ImageView>
                      </graphic>
                   </Button>
-                  <ComboBox fx:id="combo_produit" layoutX="89.0" layoutY="388.0" prefHeight="35.0" prefWidth="349.0" promptText="Produit">
+                  <ComboBox fx:id="combo_produit" layoutX="89.0" layoutY="388.0" prefHeight="35.0" prefWidth="349.0" promptText="Produit" styleClass="comboooo">
                      <cursor>
                         <Cursor fx:constant="HAND" />
                      </cursor>

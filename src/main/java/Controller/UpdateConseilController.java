@@ -4,13 +4,13 @@ import Entities.Conseil;
 import Entities.Produit;
 import Services.CategorieService;
 import Services.ConseilService;
-import com.sun.scenario.effect.impl.prism.PrDrawable;
+import Services.ProduitService;
 import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.geometry.Pos;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -18,27 +18,31 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
+import javafx.util.Duration;
+import org.controlsfx.control.Notifications;
+
+import java.net.URL;
 import java.util.List;
 import java.io.File;
 import java.io.IOException;
-import java.net.URL;
 import java.nio.file.Files;
 import java.nio.file.StandardCopyOption;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
 
 
-
 public class UpdateConseilController implements Initializable {
     ConseilService conseilService = new ConseilService();
     CategorieService categorieService = new CategorieService();
+    ProduitService ps = new ProduitService();
 
-    private ConseilController conseilController ;
+    private ConseilController conseilController;
 
-    public void setConseilController(ConseilController conseilController)
-    {
+    public void setConseilController(ConseilController conseilController) {
         this.conseilController = conseilController;
     }
 
@@ -62,6 +66,8 @@ public class UpdateConseilController implements Initializable {
     private TextField tf_description;
 
     @FXML
+    private ComboBox<Produit> combo_produit;
+    @FXML
     private TextField tf_idproduit;
 
     @FXML
@@ -69,9 +75,6 @@ public class UpdateConseilController implements Initializable {
 
     @FXML
     private ComboBox<Categorie> combo_typeC;
-
-    @FXML
-    private ComboBox<Produit> combo_produit;
 
     @FXML
     private TextField tf_video;
@@ -91,23 +94,18 @@ public class UpdateConseilController implements Initializable {
         tf_nomConseil.setText(conseil.getNom_conseil());
         tf_video.setText(conseil.getVideo());
         tf_description.setText(conseil.getDescription());
-        int produitId = conseil.getId_produit();
 
-        // Find the category with the matching idTypeC
-        Produit selectedProduct = null;
+        int prodid = conseil.getId_produit();
+        Produit selectedProduit = null;
         for (Produit produit : combo_produit.getItems()) {
-            if (produit.getId_produit() == produitId) {
-                selectedProduct = produit;
+            if (produit.getId_produit() == prodid) {
+                selectedProduit = produit;
                 break;
             }
         }
-
-        // Set the selected category in the ComboBox
-        combo_produit.setValue(selectedProduct);
+        combo_produit.setValue(selectedProduit);
 
         int categoryId = conseil.getId_typeC();
-
-        // Find the category with the matching idTypeC
         Categorie selectedCategory = null;
         for (Categorie cat : combo_typeC.getItems()) {
             if (cat.getId_categorie() == categoryId) {
@@ -115,13 +113,8 @@ public class UpdateConseilController implements Initializable {
                 break;
             }
         }
-
-        // Set the selected category in the ComboBox
         combo_typeC.setValue(selectedCategory);
     }
-
-
-
 
 
     @FXML
@@ -140,16 +133,13 @@ public class UpdateConseilController implements Initializable {
             String videoPath = tf_video.getText().trim();
             String description = tf_description.getText().trim();
 
-            if(nomConseil.isEmpty())
-            {
+            if (nomConseil.isEmpty()) {
                 nomC_empty.setVisible(true);
             }
-            if(videoPath.isEmpty())
-            {
+            if (videoPath.isEmpty()) {
                 Video_empty.setVisible(true);
             }
-            if(description.isEmpty())
-            {
+            if (description.isEmpty()) {
                 Description_empty.setVisible(true);
             }
             Produit selectedProduit = combo_produit.getValue();    /// getting all combo categorie values
@@ -170,15 +160,30 @@ public class UpdateConseilController implements Initializable {
             );
             conseilService.modifierConseil(updatedConseil, selectedConseil.getId_conseil());
 
-            Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setTitle("Succès !");
-            alert.setContentText("Modification Effectuée");
-            alert.showAndWait();
+            Image originalImage = new Image(String.valueOf(getClass().getResource("/uploads/verifie.png")));
+            double targetWidth = 50; // Set the desired width
+            double targetHeight = 50; // Set the desired height
+            Image resizedImage = new Image(originalImage.getUrl(), targetWidth, targetHeight, true, true);
+            Notifications notification = Notifications.create();
+            notification.graphic(new ImageView(resizedImage));
+            notification.text("Conseil est ajouté avec Succés");
+            notification.title("Ajout Effectué");
+            notification.hideAfter(Duration.seconds(4));
+            notification.position(Pos.BOTTOM_RIGHT);
+            notification.darkStyle();
+            notification.show();
         } catch (SQLException e) {
-            Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setTitle("Erreur !");
-            alert.setContentText("Impossible de modifier le conseil");
-            alert.showAndWait();
+            Image originalImage = new Image(String.valueOf(getClass().getResource("/uploads/annuler.png")));
+            double targetWidth = 50; // Set the desired width
+            double targetHeight = 50; // Set the desired height
+            Image resizedImage = new Image(originalImage.getUrl(), targetWidth, targetHeight, true, true);
+            Notifications notification = Notifications.create();
+            notification.graphic(new ImageView(resizedImage));
+            notification.text("Ajouter Conseil n'est pas Effectué");
+            notification.title("Erreur");
+            notification.hideAfter(Duration.seconds(4));
+            notification.position(Pos.BOTTOM_RIGHT);
+            notification.show();
             e.printStackTrace();
         }
     }
@@ -233,7 +238,6 @@ public class UpdateConseilController implements Initializable {
                 return cat;
             }
         }
-
         Alert alert = new Alert(Alert.AlertType.WARNING);
         alert.setTitle("Warning");
         alert.setContentText("no category");
@@ -241,30 +245,26 @@ public class UpdateConseilController implements Initializable {
         return null;
     }
 
-    @Override
-    public void initialize(URL location, ResourceBundle resources) {
-        try {
-            nomC_empty.setVisible(false);
-            Video_empty.setVisible(false);
-            Description_empty.setVisible(false);
-            produit_empty.setVisible(false);
-            cqtegorie_empty.setVisible(false);
-            // Fetch categories from your service
-            List<Categorie> categories = categorieService.displayCategorie();
+    private Produit getSelectedPRDT() {
+        int produitId = selectedConseil.getId_produit();
 
-            // Set categories as items in the ComboBox
-            combo_typeC.setItems(FXCollections.observableList(categories));
-
-            // Now set the selected value if available
-            if (selectedConseil != null) {
-                Categorie selectedCategory = getSelectedCategory(); // Implement this method to get the selected category
-                combo_typeC.setValue(selectedCategory);
+        // Find the category with the matching idTypeC
+        for (Produit pd : combo_produit.getItems()) {
+            if (pd.getId_produit() == produitId) {
+                return pd;
             }
-        } catch (SQLException e) {
-            // Handle the exception or display an error message
-            e.printStackTrace();
         }
+        Alert alert = new Alert(Alert.AlertType.WARNING);
+        alert.setTitle("Warning");
+        alert.setContentText("no category");
+        alert.showAndWait();
+        return null;
     }
+
+
+
+
+
     @FXML
     void annuler_conseil(ActionEvent event) {
         Node source = (Node) event.getSource();
@@ -272,7 +272,36 @@ public class UpdateConseilController implements Initializable {
         stage.close();
     }
 
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        try {
+
+        nomC_empty.setVisible(false);
+        Video_empty.setVisible(false);
+        Description_empty.setVisible(false);
+        produit_empty.setVisible(false);
+        cqtegorie_empty.setVisible(false);
+
+            // Fetch categories from your service
+            List<Categorie> categories = categorieService.displayCategorie();
+            combo_typeC.setItems(FXCollections.observableList(categories));
+
+            // Set items for combo_produit
+            List<Produit> produitList = ps.displayProduit();
+            combo_produit.setItems(FXCollections.observableList(produitList));
+
+            if (selectedConseil != null) {
+                Categorie selectedCategory = getSelectedCategory();
+                combo_typeC.setValue(selectedCategory);
+
+                Produit selectedProduit = getSelectedPRDT();
+                combo_produit.setValue(selectedProduit);
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
     }
+}
 
 
 

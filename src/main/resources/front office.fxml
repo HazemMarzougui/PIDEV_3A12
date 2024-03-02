@@ -151,7 +151,7 @@
       </HBox>
       <Pane fx:id="content_area" layoutX="142.0" layoutY="65.0" prefHeight="672.0" prefWidth="1147.0" styleClass="dash__container-card" stylesheets="@Style.css">
          <children>
-            <ScrollPane fx:id="scrollPane" layoutX="35.0" layoutY="130.0" prefHeight="523.0" prefWidth="1079.0" styleClass="product-card-scrollPane" stylesheets="@css/styles.css">
+            <ScrollPane fx:id="scrollPane" layoutX="35.0" layoutY="130.0" prefHeight="523.0" prefWidth="1079.0" stylesheets="@css/styles.css">
                <content>
                   <GridPane fx:id="gridPane">
                     <rowConstraints>
@@ -159,6 +159,10 @@
                     </rowConstraints>
                   </GridPane>
                </content>
+               <styleClass>
+                  <String fx:value="product-card-scrollPane" />
+                  <String fx:value="PaneFront" />
+               </styleClass>
             </ScrollPane>
             <Text fill="#43882b" layoutX="27.0" layoutY="57.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="activeText" text="Nos Conseils" wrappingWidth="284.0">
                <font>
@@ -166,6 +170,9 @@
                </font>
             </Text>
             <ComboBox layoutX="954.0" layoutY="15.0" prefWidth="150.0" promptText="Tri Par" styleClass="combo-box" stylesheets="@css/styles.css" />
+            <Text layoutX="56.0" layoutY="106.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text" text="Il ya " />
+            <Text fx:id="nbreConseils" fill="#397425" layoutX="96.0" layoutY="106.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text" text="10" />
+            <Text layoutX="114.0" layoutY="106.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text" text="Conseils" />
          </children></Pane>
       <ImageView fitHeight="115.0" fitWidth="128.0" layoutX="6.0" pickOnBounds="true" preserveRatio="true">
          <image>

@@ -6,95 +6,109 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
+<?import org.controlsfx.control.Rating?>
 
-<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="130.0" prefWidth="800.0" style="-fx-border-radius: 30px;" styleClass="product-card" stylesheets="@css/styles.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.ItemCardController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="1050.0" styleClass="cartItemConseil" stylesheets="@css/styles.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.ItemCardController">
    <children>
-      <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="130.0" prefWidth="210.0" styleClass="product__list-imgContainer">
+      <HBox layoutX="17.0" layoutY="24.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="130.0" prefWidth="800.0" styleClass="item" stylesheets="@css/styles.css">
          <children>
-            <ImageView fx:id="img" fitHeight="130.0" fitWidth="210.0" pickOnBounds="true" preserveRatio="true">
+            <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="130.0" prefWidth="210.0" styleClass="product__list-imgContainer">
+               <children>
+                  <ImageView fx:id="img" fitHeight="130.0" fitWidth="210.0" pickOnBounds="true" preserveRatio="true">
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                     <image>
+                        <Image url="@uploads/Logo.png" />
+                     </image>
+                  </ImageView>
+                  <Label fx:id="video" text="video">
+                     <font>
+                        <Font size="1.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="id_produit" prefHeight="3.0" prefWidth="42.0" text="video">
+                     <font>
+                        <Font size="1.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="125.0" prefWidth="599.0" translateY="2.0">
                <HBox.margin>
-                  <Insets />
+                  <Insets left="20.0" />
                </HBox.margin>
-               <image>
-                  <Image url="@uploads/Logo.png" />
-               </image>
-            </ImageView>
+               <children>
+                  <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="34.0" prefWidth="803.0" spacing="270.0">
+                     <children>
+                        <Text fx:id="nom_conseil" fill="#32594a" strokeType="OUTSIDE" strokeWidth="0.0" text="Nike Air Deldon ">
+                           <font>
+                              <Font name="Fira Sans Bold" size="19.0" />
+                           </font>
+                        </Text>
+                        <Text fx:id="id_typeC" fill="#32594a" strokeType="OUTSIDE" strokeWidth="0.0" text="Perdre du poids" wrappingWidth="185.5860137939453">
+                           <font>
+                              <Font name="Fira Sans Bold" size="19.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets left="200.0" />
+                           </HBox.margin>
+                        </Text>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="42.0" prefWidth="802.0">
+                     <children>
+                        <Text fx:id="description" fill="#32594a" strokeType="OUTSIDE" strokeWidth="0.0" text="Nike Air Deldon &quot;Deldon Designs&quot;" wrappingWidth="406.10546875" />
+                        <Text fx:id="totalReviews" fill="#32594a" strokeType="OUTSIDE" strokeWidth="0.0" text="50">
+                           <HBox.margin>
+                              <Insets left="300.0" />
+                           </HBox.margin>
+                           <font>
+                              <Font name="Fira Sans Bold" size="14.0" />
+                           </font>
+                        </Text>
+                        <Text fill="#32594a" strokeType="OUTSIDE" strokeWidth="0.0" text="Review">
+                           <HBox.margin>
+                              <Insets left="5.0" />
+                           </HBox.margin>
+                           <font>
+                              <Font name="Fira Sans Bold" size="14.0" />
+                           </font>
+                        </Text>
+                     </children>
+                     <VBox.margin>
+                        <Insets top="5.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="47.0" prefWidth="803.0">
+                     <children>
+                        <Label />
+                        <HBox alignment="CENTER_LEFT" prefHeight="39.0" prefWidth="249.0">
+                           <children>
+                              <Button fx:id="OneConseil" mnemonicParsing="false" onAction="#consulterOneConseil" stylesheets="@css/styles.css" text="Consulter" textFill="#43882b">
+                                 <styleClass>
+                                    <String fx:value="nav-links" />
+                                    <String fx:value="btn_action_add" />
+                                 </styleClass>
+                              </Button>
+                           </children>
+                        </HBox>
+                        <Rating fx:id="valiue_stars" maxHeight="32.0" maxWidth="176.0" prefHeight="32.0" prefWidth="176.0">
+                           <HBox.margin>
+                              <Insets left="350.0" />
+                           </HBox.margin>
+                        </Rating>
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="100.0" prefWidth="200.0" />
+               </children>
+            </VBox>
          </children>
       </HBox>
-      <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="125.0" prefWidth="599.0" translateY="2.0">
-         <HBox.margin>
-            <Insets left="20.0" />
-         </HBox.margin>
-         <children>
-            <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="34.0" prefWidth="599.0" spacing="270.0">
-               <children>
-                  <Text fx:id="nom_conseil" fill="#32594a" strokeType="OUTSIDE" strokeWidth="0.0" text="Nike Air Deldon ">
-                     <font>
-                        <Font name="Fira Sans Bold" size="19.0" />
-                     </font>
-                  </Text>
-                  <Text fx:id="id_typeC" fill="#32594a" strokeType="OUTSIDE" strokeWidth="0.0" text="Nike Air Deldon ">
-                     <font>
-                        <Font name="Fira Sans Bold" size="19.0" />
-                     </font>
-                  </Text>
-               </children>
-            </HBox>
-            <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="42.0" prefWidth="599.0">
-               <children>
-                  <Text fx:id="description" fill="#32594a" strokeType="OUTSIDE" strokeWidth="0.0" text="Nike Air Deldon &quot;Deldon Designs&quot;" wrappingWidth="406.10546875" />
-               </children>
-            </HBox>
-            <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="47.0" prefWidth="599.0">
-               <children>
-                  <Label />
-                  <HBox alignment="CENTER_LEFT" prefHeight="39.0" prefWidth="249.0">
-                     <children>
-                        <Button mnemonicParsing="false" onAction="#consulterOneConseil" stylesheets="@css/styles.css" text="Consulter" textFill="#43882b">
-                           <styleClass>
-                              <String fx:value="nav-links" />
-                              <String fx:value="btn_action_add" />
-                           </styleClass>
-                        </Button>
-                     </children>
-                  </HBox>
-                  <HBox alignment="CENTER_RIGHT" prefHeight="50.0" prefWidth="306.0" spacing="5.0">
-                     <children>
-                        <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@uploads/favori.png" />
-                           </image>
-                        </ImageView>
-                        <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@uploads/favori.png" />
-                           </image>
-                        </ImageView>
-                        <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@uploads/favori.png" />
-                           </image>
-                        </ImageView>
-                        <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@uploads/favori.png" />
-                           </image>
-                        </ImageView>
-                        <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@uploads/favori.png" />
-                           </image>
-                        </ImageView>
-                     </children>
-                  </HBox>
-               </children>
-            </HBox>
-            <HBox prefHeight="100.0" prefWidth="200.0" />
-         </children>
-      </VBox>
    </children>
-</HBox>
+</AnchorPane>

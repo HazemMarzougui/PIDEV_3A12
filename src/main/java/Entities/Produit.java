@@ -2,10 +2,20 @@ package Entities;
 
 public class Produit {
 
-    private int id_produit ;
-    private String nom_produit ;
+    public int id_produit ;
+    public String nom_produit ;
 
     public Produit(){}
+
+    public Produit(int id_produit , String nom_produit)
+    {
+        this.id_produit = id_produit;
+        this.nom_produit = nom_produit;
+    }
+    public Produit( String nom_produit)
+    {
+        this.nom_produit = nom_produit;
+    }
 
     public int getId_produit() {
         return id_produit;
