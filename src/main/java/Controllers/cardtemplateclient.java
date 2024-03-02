@@ -1,10 +1,18 @@
 package Controllers;
 
+import javax.imageio.ImageIO;
 import javax.mail.*;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
+import javafx.embed.swing.SwingFXUtils;
 
 //import com.mysql.cj.Session;
+import com.google.zxing.BarcodeFormat;
+import com.google.zxing.EncodeHintType;
+import com.google.zxing.WriterException;
+import com.google.zxing.client.j2se.MatrixToImageWriter;
+import com.google.zxing.common.BitMatrix;
+import com.google.zxing.qrcode.QRCodeWriter;
 import entities.Evenement;
 import entities.user;
 import javafx.event.ActionEvent;
@@ -14,9 +22,17 @@ import javafx.scene.Parent;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import services.SMSService;
 import services.UserService;
 
+import java.awt.image.BufferedImage;
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
+import java.io.InputStream;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Properties;
 
 import java.io.IOException;
@@ -30,6 +46,10 @@ public class cardtemplateclient {
    //private final ServiceEmail serviceEmail = new ServiceEmail();
    // private final ServiceEmail.EmailService serviceEmail = new ServiceEmail.EmailService();
 
+    @FXML
+    private Button button_qr;
+    @FXML
+    private ImageView qr_code;
 
     @FXML
     private Button id_button_intrest;
@@ -52,6 +72,7 @@ public class cardtemplateclient {
     @FXML
     private Button id_event_name;
 
+
     @FXML
     void go_to_event(ActionEvent event) {
         try{
@@ -64,6 +85,39 @@ public class cardtemplateclient {
             e.printStackTrace();
         }
 
+    }
+
+    @FXML
+    void event_qr(ActionEvent event) {
+        // Generate QR code with event information
+        String eventInfo = "Event Name: " + this.event.getNom_event() + "\n"
+                + "Start Date: " + this.event.getDate_debut() + "\n"
+                + "End Date: " + this.event.getDate_fin() + "\n"
+                + "Description: " + this.event.getDescription();
+
+        try {
+            BufferedImage qrImage = generateQRCode(eventInfo, 300, 300);
+            Image qrFXImage = SwingFXUtils.toFXImage(qrImage, null);
+            qr_code.setImage(qrFXImage);
+        } catch (WriterException | IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private BufferedImage generateQRCode(String text, int width, int height) throws WriterException, IOException {
+        Map<EncodeHintType, Object> hints = new HashMap<>();
+        hints.put(EncodeHintType.CHARACTER_SET, "UTF-8");
+
+        QRCodeWriter qrCodeWriter = new QRCodeWriter();
+        BitMatrix bitMatrix = qrCodeWriter.encode(text, BarcodeFormat.QR_CODE, width, height, hints);
+
+        ByteArrayOutputStream out = new ByteArrayOutputStream();
+        MatrixToImageWriter.writeToStream(bitMatrix, "PNG", out);
+        out.flush();
+        byte[] imageBytes = out.toByteArray();
+        out.close();
+
+        return ImageIO.read(new ByteArrayInputStream(imageBytes));
     }
 
 

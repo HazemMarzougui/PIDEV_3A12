@@ -7,10 +7,11 @@
     <list default="true" id="9e3f97d6-6f90-4c18-b8d2-6d637432e52e" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/admin_event.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/admin_event.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/cardtemplateclient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/cardtemplateclient.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/test/MainFX.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/test/MainFX.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/client/event/client.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/client/event/client.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/admin/event/admin_event.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/admin/event/admin_event.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/client/event/cardtemplate_client.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/client/event/cardtemplate_client.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/test/MainFX.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/test/MainFX.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
