@@ -1,13 +1,8 @@
 package controller;
 
+import entities.panier;
 import javafx.fxml.FXML;
 import javafx.scene.text.Text;
-import entities.panier;
-
-import java.sql.SQLException;
-import java.util.List;
-import services.commandeService;
-import entities.commande;
 public class AdminProduitCommanderController {
 
     @FXML
@@ -23,9 +18,4 @@ public class AdminProduitCommanderController {
 
 
     }
-
-
-
-
-
 }

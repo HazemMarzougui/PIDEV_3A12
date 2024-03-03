@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="addCategoriePane" prefHeight="694.0" prefWidth="779.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.produit.addCategorieController">
+    <children>
+        <Label layoutX="171.0" layoutY="329.0" prefHeight="17.0" prefWidth="57.0" styleClass="label-ajout" stylesheets="@hello-view.css" text="Nom :" />
+        <TextField fx:id="textNomCateg" layoutX="273.0" layoutY="325.0" prefHeight="26.0" prefWidth="216.0" promptText="Nom Categorie" styleClass="textfield" stylesheets="@hello-view.css" />
+        <Button fx:id="btnAddCateg" layoutX="501.0" layoutY="434.0" mnemonicParsing="false" onAction="#AjoutCategorie" prefHeight="34.0" prefWidth="66.0" styleClass="btn" stylesheets="@hello-view.css" text="Add" />
+        <Button fx:id="btnClearCateg" layoutX="409.0" layoutY="435.0" mnemonicParsing="false" onAction="#clearFieldsCategorie" prefHeight="34.0" prefWidth="77.0" styleClass="btn" stylesheets="@hello-view.css" text="Clear" />
+        <Button fx:id="btnReturnCateg" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#return_ListCategorie" prefHeight="34.0" prefWidth="47.0" styleClass="btn" stylesheets="@hello-view.css">
+        </Button>
+        <Label layoutX="251.0" layoutY="172.0" prefHeight="52.0" prefWidth="263.0" text="Ajouter une Catégorie" textFill="#0d260c">
+            <font>
+                <Font name="System Bold Italic" size="24.0" />
+            </font>
+        </Label>
+        <ImageView fitHeight="26.0" fitWidth="29.0" layoutX="24.0" layoutY="18.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@assets/img/back.png" />
+            </image>
+        </ImageView>
+        <ImageView fitHeight="52.0" fitWidth="140.0" layoutX="625.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@assets/img/logooo.png" />
+            </image>
+        </ImageView>
+    </children>
+</AnchorPane>

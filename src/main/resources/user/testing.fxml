@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="1300.0" styleClass="bg" stylesheets="@../css/styles.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.user.DashboardController">
+   <children>
+      <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="215.0" prefWidth="250.0" styleClass="dash__side-bar">
+         <children>
+            <ImageView fitHeight="185.0" fitWidth="217.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../uploads/dddddd.png" />
+               </image>
+            </ImageView>
+         </children>
+      </VBox>
+      <VBox layoutX="6.0" layoutY="221.0" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="392.0" prefWidth="250.0">
+         <children>
+            <Pane fx:id="dash_btn" focusTraversable="true" prefHeight="50.0" prefWidth="214.0" styleClass="nav-links" stylesheets="@../css/styles.css">
+               <children>
+                  <ImageView fx:id="dashIcon" fitHeight="40.0" fitWidth="40.0" layoutX="7.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../uploads/rapport.png" />
+                     </image>
+                  </ImageView>
+                  <Label fx:id="dashText" layoutX="78.0" layoutY="16.0" styleClass="text" stylesheets="@css/styles.css" text="Dashboard" textFill="WHITE" />
+               </children>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Pane>
+            <Pane fx:id="btn_userList" onMouseClicked="#user" prefHeight="50.0" prefWidth="214.0" styleClass="nav-links" stylesheets="@css/styles.css">
+               <children>
+                  <ImageView fx:id="user_icon" fitHeight="40.0" fitWidth="40.0" layoutX="7.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../uploads/profil.png" />
+                     </image>
+                  </ImageView>
+                  <Label fx:id="userText" layoutX="55.0" layoutY="14.0" stylesheets="@css/styles.css" text="Gestion Utilisateurs" textFill="WHITE" />
+               </children>
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Pane>
+            <Pane onMouseClicked="#open_product" prefHeight="50.0" prefWidth="214.0" styleClass="nav-links" stylesheets="@css/styles.css">
+               <children>
+                  <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="7.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../uploads/traits.png" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="55.0" layoutY="14.0" text="Gestion Produits" textFill="WHITE" />
+               </children>
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Pane>
+            <Pane onMouseClicked="#open_categorie" prefHeight="50.0" prefWidth="214.0" styleClass="nav-links" stylesheets="@css/styles.css">
+               <children>
+                  <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="7.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../uploads/event-management.png" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="55.0" layoutY="14.0" text="Gestion Categories" textFill="WHITE" />
+               </children>
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Pane>
+            <Pane onMouseClicked="#commande" prefHeight="50.0" prefWidth="214.0" styleClass="nav-links" stylesheets="@css/styles.css">
+               <children>
+                  <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="7.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../uploads/shipping-and-delivery.png" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="55.0" layoutY="14.0" prefHeight="21.0" prefWidth="147.0" text="Gestion Commande" textFill="WHITE" />
+               </children>
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Pane>
+            <Pane onMouseClicked="#gestion_evenement" prefHeight="50.0" prefWidth="214.0" styleClass="nav-links" stylesheets="@css/styles.css">
+               <children>
+                  <Label layoutX="55.0" layoutY="14.0" text="Gestion Evenements" textFill="WHITE" />
+                  <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="6.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../uploads/event-management.png" />
+                     </image>
+                  </ImageView>
+               </children>
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Pane>
+            <Pane prefHeight="50.0" prefWidth="214.0" styleClass="nav-links" stylesheets="@css/styles.css">
+               <children>
+                  <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="7.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../uploads/conseil.png" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="55.0" layoutY="14.0" text="Gestion Conseils" textFill="WHITE" />
+               </children>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Pane>
+         </children>
+      </VBox>
+      <HBox layoutX="250.0" prefHeight="110.0" prefWidth="573.0">
+         <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Dashboard">
+               <HBox.margin>
+                  <Insets left="55.0" top="45.0" />
+               </HBox.margin>
+               <font>
+                  <Font name="Arial Narrow" size="15.0" />
+               </font>
+               <styleClass>
+                  <String fx:value="nav-user-fullname" />
+                  <String fx:value="ha" />
+               </styleClass>
+            </Text>
+         </children>
+      </HBox>
+      <Pane fx:id="content_area" layoutX="268.0" layoutY="101.0" prefHeight="650.0" prefWidth="1026.0" styleClass="dash__container-card">
+         <children>
+            <ImageView fitHeight="17.0" fitWidth="16.0" layoutX="951.0" layoutY="62.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/icons8_Search_52px.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="adminIMG1" fitHeight="97.0" fitWidth="125.0" layoutX="850.0" layoutY="482.0" pickOnBounds="true" preserveRatio="true" />
+            <Label fx:id="titre_dash" layoutX="214.0" layoutY="70.0" prefHeight="26.0" prefWidth="147.0" textFill="#e7e5e5">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <ImageView fx:id="adminIMG" fitHeight="73.0" fitWidth="67.0" layoutX="1201.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></ImageView>
+      <Label fx:id="username" layoutX="1049.0" layoutY="35.0" prefHeight="26.0" prefWidth="114.0" textFill="#e7e5e5" />
+      <Pane fx:id="btnSignout1" layoutX="29.0" layoutY="666.0" onMouseClicked="#btnSignout" prefHeight="50.0" prefWidth="138.0" styleClass="nav-links" stylesheets="@css/styles.css">
+         <children>
+            <Label layoutX="55.0" layoutY="14.0" text="Sign Out" textFill="WHITE" />
+            <ImageView fitHeight="28.0" fitWidth="30.0" layoutX="17.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../uploads/se-deconnecter.png" />
+               </image>
+            </ImageView>
+         </children>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Pane>
+   </children>
+</AnchorPane>

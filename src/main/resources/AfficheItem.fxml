@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+
+<VBox fx:id="Item" minWidth="-Infinity" prefHeight="133.0" prefWidth="630.0" styleClass="paymentCoordonnee" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <HBox maxHeight="-Infinity" minHeight="-Infinity" prefHeight="44.0" prefWidth="700.0">
+         <children>
+            <HBox alignment="CENTER" prefHeight="70.0" prefWidth="74.0">
+               <children>
+                  <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../../../zeroWaste-javaFX-main/zeroWaste-javaFX-main/src/assets/img/check.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" prefHeight="44.0" prefWidth="250.0">
+               <children>
+                  <Text fill="#43882b" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="verifiedAddress" text="  Commande" />
+                  <Text fx:id="prenom1" fill="#32594a" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="verifiedAddress_fullname" text=":" />
+                  <Text fx:id="id_commande" fill="#32594a" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="verifiedAddress_fullname" text="12345678" />
+               </children>
+            </HBox>
+         </children>
+      </HBox>
+      <Line endX="450.8406982421875" endY="-10.618743896484375" startX="-148.09860229492188" startY="-9.558075904846191" stroke="#43882b" strokeWidth="1.5">
+         <VBox.margin>
+            <Insets left="30.0" />
+         </VBox.margin>
+      </Line>
+      <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="700.0">
+         <children>
+            <VBox alignment="CENTER_LEFT" prefHeight="54.0" prefWidth="426.0">
+               <padding>
+                  <Insets left="74.0" />
+               </padding>
+               <children>
+                  <HBox maxHeight="-Infinity" minHeight="-Infinity" prefHeight="21.0" prefWidth="395.0">
+                     <children>
+                        <Text fx:id="nom" fill="#32594a" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="verifiedAddress_fullname" text="khairdinne" />
+                     </children>
+                     <VBox.margin>
+                        <Insets bottom="4.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <HBox maxHeight="-Infinity" minHeight="-Infinity" prefHeight="16.0" prefWidth="351.0">
+                     <children>
+                        <Text fx:id="adresse" fill="#32594a" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="verifiedAddress_details" text="ariana" />
+                     </children>
+                     <VBox.margin>
+                        <Insets bottom="1.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <HBox maxHeight="-Infinity" minHeight="-Infinity" prefHeight="21.0" prefWidth="395.0">
+                     <children>
+                        <Text fill="#32594a" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="verifiedAddress_details" text="+216" />
+                        <Text fx:id="telephone" fill="#32594a" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="verifiedAddress_details" text="55516530" />
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+            <HBox alignment="CENTER_RIGHT" prefHeight="54.0" prefWidth="276.0">
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+               <padding>
+                  <Insets right="30.0" />
+               </padding>
+               <children>
+                  <HBox fx:id="editAddress" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#editAdresse" prefHeight="35.0" prefWidth="46.0" styleClass="product__card-btns">
+                     <children>
+                        <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@assets/img/edit.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </HBox>
+                  <HBox fx:id="deleteAchat" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="46.0" styleClass="product__card-btns">
+                     <children>
+                        <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@assets/img/trash.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin>
+                  </HBox>
+                  <HBox fx:id="pdf" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="46.0" styleClass="product__card-btns">
+                     <children>
+                        <ImageView fitHeight="27.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@assets/img/imprimante%20(1).png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                     <HBox.margin>
+                        <Insets left="7.0" />
+                     </HBox.margin>
+                  </HBox>
+               </children>
+            </HBox>
+         </children>
+      </HBox>
+   </children>
+   <stylesheets>
+      <URL value="@Style.css" />
+      <URL value="@Style.css" />
+   </stylesheets>
+</VBox>

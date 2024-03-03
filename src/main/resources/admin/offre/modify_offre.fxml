@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="487.0" prefWidth="572.0" style="-fx-background-color: #90EE90;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <ImageView fitHeight="108.0" fitWidth="251.0" pickOnBounds="true" preserveRatio="true">
+         <VBox.margin>
+            <Insets top="20.0" />
+         </VBox.margin>
+         <image>
+            <Image url="@../../kits/Kitsune/prod.jpg" />
+         </image>
+      </ImageView>
+      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Description">
+         <VBox.margin>
+            <Insets />
+         </VBox.margin>
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Text>
+      <TextArea fx:id="id_desc_offre" prefHeight="46.0" prefWidth="472.0">
+         <VBox.margin>
+            <Insets left="50.0" right="50.0" top="15.0" />
+         </VBox.margin>
+      </TextArea>
+      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="FROM">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Text>
+      <DatePicker fx:id="id_date_deb_offre" prefHeight="34.0" prefWidth="112.0" />
+      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="TO" />
+      <DatePicker fx:id="id_date_fin_offre" prefHeight="34.0" prefWidth="112.0" />
+      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="PRIX :">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+         <VBox.margin>
+            <Insets top="5.0" />
+         </VBox.margin>
+      </Text>
+      <TextField fx:id="id_prix_remise_offre" prefHeight="25.0" prefWidth="52.0">
+         <VBox.margin>
+            <Insets left="120.0" right="120.0" top="20.0" />
+         </VBox.margin>
+      </TextField>
+      <Label />
+      <Label fx:id="id_nom_prod" alignment="CENTER" prefHeight="36.0" text="nom prod">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <HBox alignment="CENTER" prefHeight="94.0" prefWidth="572.0" spacing="50.0">
+         <VBox.margin>
+            <Insets top="10.0" />
+         </VBox.margin>
+         <children>
+            <Button fx:id="id_save_offre" mnemonicParsing="false" onAction="#save_and_return_to_prod" prefHeight="41.0" prefWidth="74.0" style="-fx-background-color: #7bb225;" text="save" />
+            <Button fx:id="id_delete_offre" mnemonicParsing="false" onAction="#delete_and_return_to_prod" prefHeight="41.0" prefWidth="74.0" style="-fx-background-color: #7bb225;" text="delete" />
+         </children>
+      </HBox>
+   </children>
+   <opaqueInsets>
+      <Insets top="3.0" />
+   </opaqueInsets>
+</VBox>

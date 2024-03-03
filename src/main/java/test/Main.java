@@ -1,25 +1,21 @@
 package test;
 
 
-import entities.produit;
-import services.produitService;
 import utils.MyDB;
-
-import java.sql.SQLException;
 
 public class Main {
 
     public static void main(String[] args)  {
         MyDB conn1 = MyDB.getInstance();
 
-        produitService ps = new produitService();
 
-        produit p = new produit(54,5,"test");
+
+       /* produit p = new produit(54,5,"test");
         try {
             ps.getAllProducts();
         } catch (SQLException e) {
             throw new RuntimeException(e);
-        }
+        }*/
 
 
 

@@ -1,11 +1,9 @@
 package controller;
 
-import entities.produit;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.layout.HBox;
 import javafx.scene.text.Text;
-import test.MainFX;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -24,7 +22,12 @@ public class cardcontroller implements Initializable {
         @FXML
         private Text produitquantite;
 
-    public void setProductData(produit produit) {
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+
+    }
+
+   /* public void setProductData(produit produit) {
         // Instantiate the produitService
 
         productName.setText("Nom: "+produit.getNom());
@@ -40,13 +43,11 @@ public class cardcontroller implements Initializable {
 
 
 
-                MainFX.GlobalData.produits.add(produit.getId_produit());
+            MainFX.GlobalData.produits.add(produit.getId_produit());
 
             //HBox addedCartModel = (HBox) ((Node) event.getSource()).getScene().lookup("#addedCartModel");
             //addedCartModel.setVisible(true);
-               /* Text addedCartModelText = (Text) ((Node) event.getSource()).getScene().lookup("#addedCartModelText");
-                addedCartModelText.setText("Product Added To Cart Successfully");
-*/
+
 
 
             /*else { // produit existe deja dans la commande => msg affiché
@@ -56,7 +57,7 @@ public class cardcontroller implements Initializable {
                 HBox addedCartModel = (HBox) ((Node) event.getSource()).getScene().lookup("#addedCartModel");
                 addedCartModel.setVisible(true);
 
-            }*/
+            }
 
 
         });
@@ -66,7 +67,7 @@ public class cardcontroller implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
-    }
+    }*/
 }
 
 

@@ -1,20 +1,7 @@
 package controller;
 
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.fxml.Initializable;
-import javafx.geometry.Insets;
-import javafx.scene.Parent;
 import javafx.scene.layout.GridPane;
-import entities.produit;
-import javafx.scene.layout.VBox;
-import services.produitService;
-
-import java.io.IOException;
-import java.net.URL;
-import java.sql.SQLException;
-import java.util.List;
 
 public class listeproduitcontroller {
 
@@ -32,11 +19,11 @@ public class listeproduitcontroller {
 
     @FXML
     private void initialize() {
-        afficherProduitsDansGridPane();
+       // afficherProduitsDansGridPane();
 
     }
-    produitService ps = new produitService();
-    private void afficherProduitsDansGridPane() {
+
+    /*private void afficherProduitsDansGridPane() {
         int column = 0;
         int row = 1;
         try {
@@ -60,6 +47,6 @@ public class listeproduitcontroller {
         }
 
 
-    }
+    }*/
 
 }

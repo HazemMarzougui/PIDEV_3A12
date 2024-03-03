@@ -53,7 +53,7 @@
                   <Insets top="10.0" />
                </VBox.margin>
             </Pane>
-            <Pane prefHeight="50.0" prefWidth="214.0" styleClass="nav-links" stylesheets="@css/styles.css">
+            <Pane onMouseClicked="#open_product" prefHeight="50.0" prefWidth="214.0" styleClass="nav-links" stylesheets="@css/styles.css">
                <children>
                   <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="7.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -83,7 +83,7 @@
                   <String fx:value="activeLink" />
                </styleClass>
             </Pane>
-            <Pane prefHeight="50.0" prefWidth="214.0" styleClass="nav-links" stylesheets="@css/styles.css">
+            <Pane onMouseClicked="#produit" prefHeight="50.0" prefWidth="214.0" styleClass="nav-links" stylesheets="@css/styles.css">
                <children>
                   <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="7.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
                      <image>

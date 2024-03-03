@@ -5,8 +5,12 @@ import com.google.zxing.WriterException;
 import com.google.zxing.client.j2se.MatrixToImageWriter;
 import com.google.zxing.common.BitMatrix;
 import com.google.zxing.qrcode.QRCodeWriter;
-import entities.commande;
 import javafx.embed.swing.SwingFXUtils;
+import entities.commande;
+import services.commandeService;
+
+
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -18,7 +22,7 @@ import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
-import services.commandeService;
+
 import services.panierService;
 import test.MainFX;
 
@@ -81,7 +85,7 @@ public class AdminListCommandItem implements Initializable {
 
     @FXML
     private Pane content_areaa;
-
+    AdminListCommandController adminListCommandController =new AdminListCommandController();
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
@@ -101,7 +105,7 @@ public class AdminListCommandItem implements Initializable {
         panierService p = new panierService();
         detailsCommand.setOnMouseClicked(event -> {
             System.out.println("ID de la commande est affichée : " + commande.getId_commande());
-
+            //adminListCommandController.getCommandModel().setVisible(true);
             try {
                 MainFX.GlobalData.PanierProCom = p.getAllProductsForCommand(commande.getId_commande());
             } catch (SQLException e) {
@@ -141,15 +145,9 @@ public class AdminListCommandItem implements Initializable {
                 // Convertir la matrice de bits en image BufferedImage
                 BufferedImage bufferedImage = MatrixToImageWriter.toBufferedImage(bitMatrix);
                 // Enregistrer l'image en format PNG
-                // File outputFile = new File("qrcode.png");
-                // ImageIO.write(bufferedImage, "png", outputFile);
-                // Afficher l'image dans l'interface utilisateur
 
                 ImageView qrCodeImg = (ImageView) ((Node) event.getSource()).getScene().lookup("#qrCodeImg");
-
-
                 qrCodeImg.setImage(SwingFXUtils.toFXImage(bufferedImage, null));
-
                 HBox qrCodeImgModel = (HBox) ((Node) event.getSource()).getScene().lookup("#qrCodeImgModel");
                 qrCodeImgModel.setVisible(true);
             } catch (WriterException e) {

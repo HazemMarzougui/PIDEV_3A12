@@ -1,44 +1,65 @@
 package controller;
 
-import com.itextpdf.text.*;
-import com.itextpdf.text.pdf.PdfPCell;
-import com.itextpdf.text.pdf.PdfPTable;
-import com.itextpdf.text.pdf.PdfWriter;
+import com.stripe.Stripe;
+import com.stripe.exception.StripeException;
+import com.stripe.model.Charge;
+import com.stripe.model.Token;
+import entities.Produit;
 import entities.commande;
 import entities.panier;
-import entities.produit;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.geometry.Insets;
-import javafx.scene.Node;
-import javafx.scene.control.Alert;
+import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TextField;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
+import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
-import javafx.stage.FileChooser;
+import javafx.util.Duration;
 import services.commandeService;
 import services.panierService;
 import test.MainFX;
+import tray.animations.AnimationType;
+import tray.notification.NotificationType;
+import utils.TrayNotificationAlert;
 
-import java.io.File;
-import java.io.FileOutputStream;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
-import java.time.LocalDate;
 import java.time.LocalDateTime;
-import java.util.List;
-import java.util.ResourceBundle;
+import java.util.*;
+
 public class ListePaniercontroller implements Initializable {
     panierService ps = new panierService();
     commandeService commandeService = new commandeService();
-    int addressTest = -1;
-    int phoneTest = -1;
+
+
+    public HBox getCommandModel() {
+        return commandModel;
+    }
+
+
+    // Method to refresh the commandModel HBox
+    public void refreshCommandModel() {
+
+            // Clear existing content if needed
+            commandModel.getChildren().clear();
+
+            // Add new content or refresh content as required
+            // Example: Add new content to commandModel
+
+    }
+
+    @FXML
+    private ScrollPane scroll;
+
+
 
     @FXML
     private Text totalPrice;
@@ -56,9 +77,15 @@ public class ListePaniercontroller implements Initializable {
 
     @FXML
     private HBox checkoutModel;
+    @FXML
+    private HBox checkoutModel2;
+
+
 
     @FXML
     private Pane content_area;
+    @FXML
+    private Pane content_areaa;
 
     @FXML
     private TextField email;
@@ -109,26 +136,16 @@ public class ListePaniercontroller implements Initializable {
     private Text telephoneE1;
     @FXML
     private TextField telephone1;
-    @FXML
-    private HBox prenomHbox1;
-    @FXML
-    private Text prenomE1;
-    @FXML
-    private TextField prenom1;
 
-    @FXML
-    private HBox nomHbox1;
-    @FXML
-    private Text nomE1;
-    @FXML
-    private TextField nom1;
 
-    @FXML
-    private HBox emailHbox1;
-    @FXML
-    private Text emailE1;
-    @FXML
-    private TextField email1;
+
+
+
+
+
+
+
+
     @FXML
     private HBox checkoutModel1;
 
@@ -156,7 +173,21 @@ public class ListePaniercontroller implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
+        String nomm = MainFX.connecteduser.getNom();
+        nom.setText(nomm);
 
+        String prenomm = MainFX.connecteduser.getPrenom();
+        prenom.setText(prenomm);
+
+        String adressee = MainFX.connecteduser.getAddresse();
+        adresse.setText(adressee);
+
+        int tell = MainFX.connecteduser.getTel();
+        telephone.setText(""+tell);
+
+        String mail = MainFX.connecteduser.getEmail();
+        email.setText(mail);
+        commandModel.setVisible(false);
         checkoutModel.setVisible(false);
         nomHbox.setVisible(false);
         prenomHbox.setVisible(false);
@@ -164,20 +195,26 @@ public class ListePaniercontroller implements Initializable {
         telephoneHbox.setVisible(false);
         emailHbox.setVisible(false);
         checkoutModel1.setVisible(false);
-        prenomHbox1.setVisible(false);
-        nomHbox1.setVisible(false);
         adresseHbox1.setVisible(false);
         telephoneHbox1.setVisible(false);
-        emailHbox1.setVisible(false);
+        checkoutModel2.setVisible(false);
+
         afficherProduitsDansGridPane();
+
+
+    }
+    @FXML
+    void fermer1(MouseEvent event) {
+        checkoutModel2.setVisible(false);
+
     }
 
-    private void afficherProduitsDansGridPane() {
+  private void afficherProduitsDansGridPane() {
         Float tot = 0f;
         int column = 0;
         int row = 2;
         try {
-            List<produit> produits = ps.getAllProducts();
+            List<Produit> produits = ps.getAllProducts();
 
             for (int i = 0; i < produits.size(); i++) {
                 FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/ListeCommande.fxml"));
@@ -185,7 +222,7 @@ public class ListePaniercontroller implements Initializable {
                 fxmlLoader.setController(listeCommandeController);
                 HBox productCard = fxmlLoader.load();
 
-                listeCommandeController.setProduit(produits.get(i));
+               listeCommandeController.setProduit(produits.get(i));
                 String textFieldText = listeCommandeController.getPrixp().getText();
                 float prix = Float.parseFloat(textFieldText);
                 MainFX.GlobalData.prix.add(prix);
@@ -312,6 +349,300 @@ public class ListePaniercontroller implements Initializable {
             return;
         }
 
+        checkoutModel.setVisible(false);
+        checkoutModel2.setVisible(true);
+
+
+    }
+
+
+    @FXML
+    void close(MouseEvent event) {
+
+        checkoutModel1.setVisible(false);
+    }
+
+
+
+
+    public void setdata(commande c) {
+
+        adresse1.setText(c.getAdresse());
+        telephone1.setText("" + c.getTelephone());
+    }
+
+
+    @FXML
+    void modifier(MouseEvent event) {
+
+
+
+        adresseHbox1.setVisible(false);
+        telephoneHbox1.setVisible(false);
+
+        // Vérifier si tous les champs sont remplis
+
+        if (adresse1.getText().isEmpty()) {
+            adresseHbox1.setVisible(true);
+            return;
+        }
+
+
+
+        if (telephone1.getText().isEmpty()) {
+            telephoneHbox1.setVisible(true);
+            return;
+        }
+
+
+
+        // Vérifier le format du numéro de téléphone
+
+        if (!telephone1.getText().matches("\\d{8}")) {
+            telephoneE1.setText("Le téléphone doit contenir 8 chiffres");
+            telephoneHbox1.setVisible(true);
+            return;
+        }
+
+
+        int id = MainFX.GlobalData.idc.getId_commande();
+
+        String adresse = adresse1.getText();
+        int telephone = Integer.parseInt(telephone1.getText());
+
+        commande commande = new commande(id, telephone,  adresse);
+
+
+        // Vérifier si la commande existe
+        if (commande != null) {
+            try {
+                // Appeler la méthode de mise à jour dans votre service ou gestionnaire de données
+                commandeService.modifierCommande(commande, id);
+                System.out.println(" commande modifier");
+
+                // Afficher une notification pour informer l'utilisateur
+                TrayNotificationAlert.notif("Commande", "Commande Modifier  avec Success .",
+                        NotificationType.SUCCESS, AnimationType.POPUP, Duration.millis(2500));
+
+            } catch (SQLException e) {
+                System.out.println("Erreur lors de la mise à jour de la commande : " + e.getMessage());
+                // Vous pouvez également afficher une boîte de dialogue ou une alerte pour informer l'utilisateur de l'erreur.
+            }
+        } else {
+            System.out.println("Impossible de modifier la commande car elle est null.");
+        }
+    }
+
+
+
+
+
+
+
+
+
+    // Méthode pour calculer le total
+    private double calculateTotal(List<panier> paniers) {
+        double total = 0;
+        for (panier p : paniers) {
+            total += p.getPrix_u() * p.getQuantite();
+        }
+        return total;
+    }
+
+
+    @FXML
+    private HBox commandModel;
+
+    @FXML
+    void close_commandDetailsModel(MouseEvent event) {
+        commandModel.setVisible(false);
+
+    }
+
+    @FXML
+    private GridPane commandDetailsContainer;
+    List<AfficheItemController> afficheItemControllerList = new ArrayList<>();
+
+
+
+
+
+
+
+
+    @FXML
+    void liste_commande(MouseEvent event) throws IOException, SQLException {
+
+
+        int Column = 0;
+        int Row = 1;
+
+        // Vous avez commenté cette ligne
+        //commandModel.setVisible(true);
+        //AdminListCommandItem adminListCommandItem = new AdminListCommandItem();
+        List<commande> commandes = commandeService.getCommandUser(MainFX.connecteduser.getId()); // Supposons que getId() retourne l'ID de la commande
+        for (int i = 0; i < commandes.size(); i++) {
+            commandModel.setVisible(true);
+            adresse1.setText(commandes.get(i).getAdresse());
+            telephone1.setText(""+commandes.get(i).getTelephone());
+
+            AfficheItemController afficheItemController = new AfficheItemController();
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/AfficheItem.fxml"));
+            fxmlLoader.setController(afficheItemController);
+            VBox commandee = fxmlLoader.load();
+            afficheItemController.setCommandeData(commandes.get(i));
+            if (Column == 1) {
+                Column = 0;
+                ++Row;
+            }
+            commandDetailsContainer.add(commandee, Column++, Row);
+            GridPane.setMargin(commandee, new Insets(0, 5, 5, 5));
+        }
+
+    }
+
+
+
+
+
+
+
+
+
+
+    @FXML
+    void mmInputTyped(KeyEvent event) {
+
+    }
+    @FXML
+    void cvcInputTyped(KeyEvent event) {
+
+    }
+
+    @FXML
+    void yyInputTyped(KeyEvent event) {
+
+    }
+
+    @FXML
+    void zipInputTyped(KeyEvent event) {
+
+    }
+    @FXML
+    void cardNumberInputTyped(KeyEvent event) {
+
+    }
+
+
+    @FXML
+    private TextField yyInput;
+
+    @FXML
+    private Text yyInputError;
+
+    @FXML
+    private HBox yyInputErrorHbox;
+
+    @FXML
+    private TextField zipInput;
+
+    @FXML
+    private Text zipInputError;
+
+    @FXML
+    private HBox zipInputErrorHbox;
+
+    @FXML
+    private TextField cardNumberInput;
+
+    @FXML
+    private Text cardNumberInputError;
+
+    @FXML
+    private HBox cardNumberInputErrorHbox;
+
+
+    @FXML
+    private TextField cvcInput;
+
+    @FXML
+    private Text cvcInputError;
+
+    @FXML
+    private HBox cvcInputErrorHbox;
+
+
+    @FXML
+    private TextField mmInput;
+
+    @FXML
+    private Text mmInputError;
+
+    @FXML
+    private HBox mmInputErrorHbox;
+
+
+    private void StripeFunction() {
+        String STRIPE_SECRET_KEY = "sk_test_51MgYOOFXYK38vFYwOPGPKxftWYpStBWSuhx2ltC4jYfuyWkTxrXbpuVAGx6VrBBehZQtX5uJFFA7os4WQTVCFORz00pGTPG1FH";
+        // Set up the Stripe API key
+        Stripe.apiKey = STRIPE_SECRET_KEY;
+        // Get the credit card details from the text fields
+        String cardNumber = cardNumberInput.getText();// "4242 4242 4242 4242"
+        int expMonth = Integer.parseInt(mmInput.getText());// 03
+        int expYear = Integer.parseInt(yyInput.getText());// 45
+        String cvc = cvcInput.getText();// "678"
+        String zip = zipInput.getText();// "12345"
+
+        // Create a map of the credit card details
+        Map<String, Object> cardParams = new HashMap<>();
+        cardParams.put("number", cardNumber);
+        cardParams.put("exp_month", expMonth);
+        cardParams.put("exp_year", expYear);
+        cardParams.put("cvc", cvc);
+        cardParams.put("address_zip", zip); // Add the zip code to the cardParams map
+
+            cardParams.put("name", "Hleli Khairidinne");
+        cardParams.put("address_line1", "123 Main St");
+        cardParams.put("address_line2", "Apt 4");
+        cardParams.put("address_city", "Anytown");
+        cardParams.put("address_state", "CA");
+        cardParams.put("address_country", "US");
+
+        // Create a Stripe token for the credit card details
+        Token token = null;
+        try {
+            Map<String, Object> tokenParams = new HashMap<>();
+            tokenParams.put("card", cardParams);
+            token = Token.create(tokenParams);
+            System.out.println("Stripe token ID: " + token.getId());
+        } catch (StripeException e) {
+            e.printStackTrace();
+            // handle the error appropriately
+        }
+
+        // Create a charge for the payment
+        Charge charge = null;
+        try {
+            Map<String, Object> chargeParams = new HashMap<>();
+            chargeParams.put("amount",1000);
+            chargeParams.put("currency", "usd");
+            chargeParams.put("source", token.getId()); // Use the token ID as the source for the charge
+            charge = Charge.create(chargeParams);
+        } catch (StripeException e) {
+            System.out.println("Error creating charge: " + e.getMessage());
+            e.printStackTrace();
+        }
+
+        if (charge == null || charge.getFailureMessage() != null) {
+            System.out.println("Charge failed: " + charge.getFailureMessage());
+        }
+    }
+
+
+    @FXML
+    void payemant(ActionEvent event) throws StripeException {
+       StripeFunction();
 
         // Continuer avec le processus de commande si tous les champs sont remplis
 
@@ -324,280 +655,37 @@ public class ListePaniercontroller implements Initializable {
         }
 
         try {
-            commandeService.ajoutercommande(new commande(id, Integer.parseInt(telephone.getText()), prenom.getText(), nom.getText(), adresse.getText(), email.getText(), tot));
+            commandeService.ajoutercommande(new commande(id, Integer.parseInt(telephone.getText()), prenom.getText(), nom.getText(), adresse.getText(), email.getText(), tot ,MainFX.connecteduser.getId()));
 
-            // Effacer les champs après la commande
+            //Effacer les champs après la commande
             prenom.clear();
             nom.clear();
             adresse.clear();
             telephone.clear();
             email.clear();
 
-            Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setTitle("Success");
-            alert.setContentText("Commande ajoutée");
-            alert.showAndWait();
+            TrayNotificationAlert.notif("Commande", "Commande Ajouter avec Success .",
+                    NotificationType.SUCCESS, AnimationType.POPUP, Duration.millis(2500));
+
 
             for (int i = 0; i < MainFX.GlobalData.produits.size(); i++) {
-                ps.ajouterProduitPanier(new panier(MainFX.GlobalData.produits.get(i), id, MainFX.GlobalData.quantites.get(i), MainFX.GlobalData.prix.get(i)));
+                ps.ajouterProduitPanier(new panier(MainFX.GlobalData.produits.get(i), id, MainFX.GlobalData.quantites.get(i), MainFX.GlobalData.prix.get(i),MainFX.connecteduser.getId()));
             }
 
             MainFX.GlobalData.produits.clear();
             MainFX.GlobalData.prix.clear();
             MainFX.GlobalData.quantites.clear();
         } catch (SQLException e) {
-            Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setTitle("Error");
-            alert.setContentText(e.getMessage());
-            alert.showAndWait();
+            TrayNotificationAlert.notif("Commande", "error .",
+                    NotificationType.ERROR, AnimationType.POPUP, Duration.millis(2500));
         }
     }
 
 
-    @FXML
-    void close(MouseEvent event) {
-        checkoutModel1.setVisible(false);
-    }
-
-    @FXML
-    void modifie_commande(MouseEvent event) throws SQLException {
-        // Récupérer l'ID de la commande
-        int id = (int) MainFX.GlobalData.globalLong;
-
-        // Récupérer la commande correspondant à cet ID
-        commande c = commandeService.getOneCommmande(id);
-
-        if (c != null) {
-            // Afficher le modèle de modification de commande
-            checkoutModel1.setVisible(true);
-            setdata(c);
-        } else {
-            // Afficher un message d'erreur si la commande n'est pas trouvée
-            System.out.println("Commande non trouvée pour l'ID : " + id);
-        }
-    }
-
-    public void setdata(commande c) {
-        // Mettre à jour les champs de l'interface utilisateur avec les données de la commande
-        prenom1.setText(c.getPrenom());
-        nom1.setText(c.getNom());
-        adresse1.setText(c.getAdresse());
-        telephone1.setText("" + c.getTelephone());
-        email1.setText(c.getEmail());
-
-
-    }
-
-
-    @FXML
-    void modifier(MouseEvent event) {
-
-
-        // Récupérer l'ID de la commande
-        int id = (int) MainFX.GlobalData.globalLong;
-
-        // Récupérer la commande à partir des champs de l'interface utilisateur
-        String prenom = prenom1.getText();
-        String nom = nom1.getText();
-        String adresse = adresse1.getText();
-        int telephone = Integer.parseInt(telephone1.getText());
-        String email = email1.getText();
-
-        // Créer un objet commande avec les nouvelles valeurs
-        commande commande = new commande(id, telephone, prenom, nom, adresse, email);
-
-        nomHbox1.setVisible(false);
-        prenomHbox1.setVisible(false);
-        adresseHbox1.setVisible(false);
-        telephoneHbox1.setVisible(false);
-        emailHbox1.setVisible(false);
-        // Vérifier si tous les champs sont remplis
-        if (prenom1.getText().isEmpty()) {
-            prenomHbox1.setVisible(true);
-            return;
-        }
-        if (adresse1.getText().isEmpty()) {
-            adresseHbox1.setVisible(true);
-            return;
-        }
-
-        if (nom1.getText().isEmpty()) {
-            nomHbox1.setVisible(true);
-            return;
-        }
-        if (email1.getText().isEmpty()) {
-            emailHbox1.setVisible(true);
-            return;
-        }
-        if (telephone1.getText().isEmpty()) {
-            telephoneHbox1.setVisible(true);
-            return;
-        }
-
-        String emailPattern = "[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}";
-        if (!email1.getText().matches(emailPattern)) {
-            emailE1.setText("email invalid");
-            emailHbox1.setVisible(true);
-            return;
-        }
-
-        // Vérifier le format du numéro de téléphone
-
-        if (!telephone1.getText().matches("\\d{8}")) {
-            telephoneE1.setText("Le téléphone doit contenir 8 chiffres");
-            telephoneHbox1.setVisible(true);
-            return;
-        }
-
-        // Vérifier si la commande existe
-        if (commande != null) {
-            try {
-                // Appeler la méthode de mise à jour dans votre service ou gestionnaire de données
-                commandeService.modifierCommande(commande, id);
-                System.out.println(" commande modifier");
-
-                Alert alert = new Alert(Alert.AlertType.INFORMATION);
-                alert.setTitle("Success");
-                alert.setContentText("Commande modifiée");
-                alert.showAndWait();
-
-            } catch (SQLException e) {
-                System.out.println("Erreur lors de la mise à jour de la commande : " + e.getMessage());
-                // Vous pouvez également afficher une boîte de dialogue ou une alerte pour informer l'utilisateur de l'erreur.
-            }
-        } else {
-            System.out.println("Impossible de modifier la commande car elle est null.");
-        }
-    }
-
-
-    @FXML
-    void imprimer(MouseEvent event) throws SQLException {
-
-        // Sélectionner l'emplacement de sauvegarde du fichier PDF
-        FileChooser fileChooser = new FileChooser();
-        fileChooser.setTitle("Enregistrer le fichier PDF");
-        fileChooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("Fichiers PDF", "*.pdf"));
-        File selectedFile = fileChooser.showSaveDialog(((Node) event.getSource()).getScene().getWindow());
-
-        if (selectedFile != null) {
-            // Récupérer les données de la commande
-            int commandeId = MainFX.GlobalData.globalLong;
-            commande c = commandeService.getOneCommmande(commandeId);
-
-            try {
-                // Créer le document PDF
-                Document document = new Document();
-                PdfWriter.getInstance(document, new FileOutputStream(selectedFile));
-                document.open();
-
-                // Créer une instance de l'image
-                Image image = Image.getInstance("C:\\Users\\Mon Pc\\IdeaProjects\\fronte office\\src\\main\\resources\\assets\\img\\logo.png");
-
-
-                // Positionner l'image en haut à gauche
-                image.setAbsolutePosition(450, document.getPageSize().getHeight() -120);
-
-                // Modifier la taille de l'image
-                image.scaleAbsolute(100, 100);
-
-                // Ajouter l'image au document
-                document.add(image);
-
-                Paragraph title = new Paragraph("FACTURE",  FontFactory.getFont(FontFactory.TIMES_BOLD, 20));
-                title.setAlignment(Element.ALIGN_CENTER);
-                title.setSpacingBefore(50); // Ajouter une marge avant le titre pour l'éloigner de l'image
-                title.setSpacingAfter(20);
-                document.add(title);
-
-
-                // Ajouter le logo en haut à gauche
-                //Image logo = Image.getInstance("chemin/vers/votre/logo.png");
-                //logo.scaleAbsolute(150, 150);
-               // document.add(logo);
-
-                // Ajouter les informations de la société (lieu, date)
-                Paragraph companyInfo = new Paragraph();
-                companyInfo.add(new Chunk("Votre société\n", FontFactory.getFont(FontFactory.TIMES_BOLD, 16)));
-                companyInfo.add("Pole Technologie , Ghazela\n");
-                companyInfo.add("Ariana,Tunisie\n\n");
-                companyInfo.add("Tél : +70 800 000\n");
-                companyInfo.add("Email :TapNeat@gmail.con\n\n");
-                companyInfo.add("Date : " + LocalDate.now().toString() + "\n\n");
-                document.add(companyInfo);
-
-                // Ajouter les informations du client
-                Paragraph clientInfo = new Paragraph();
-                clientInfo.add(new Chunk("Client:\n", FontFactory.getFont(FontFactory.TIMES_BOLD, 14)));
-                clientInfo.add("Prénom Nom: " + c.getPrenom() + " " + c.getNom() + "\n");
-                clientInfo.add("Adresse: " + c.getAdresse() + "\n");
-                clientInfo.add("Tél: " + c.getTelephone() + "\n");
-                clientInfo.add("Email: " + c.getEmail() + "\n\n");
-                document.add(clientInfo);
 
 
 
-                // Créer la table des produits
-                PdfPTable table = new PdfPTable(4);
-                table.setWidthPercentage(100);
-                table.setWidths(new float[] { 2, 4, 2, 2 }); // Définir la largeur des colonnes
 
-                // En-têtes de colonnes
-                    addTableHeader(table, "ID_Commande", "ID_Produit", "Prix unitaire", "Quantité");
-               panierService panierService =new panierService();
-                // Ajouter les produits à la table
-                addRows(table, panierService.getAllProductsForCommand(commandeId));
-
-                // Ajouter la table au document
-                document.add(table);
-
-                // Calculer le total
-                double total = calculateTotal(panierService.getAllProductsForCommand(commandeId));
-
-                // Ajouter le total
-                document.add(new Paragraph("\nTotal: " + total, FontFactory.getFont(FontFactory.TIMES_BOLD, 14)));
-
-                // Fermer le document
-                document.close();
-
-                System.out.println("Le fichier PDF de la facture a été généré avec succès.");
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-        }
-    }
-
-    // Méthode pour ajouter les en-têtes de colonnes à la table
-    private void addTableHeader(PdfPTable table, String... headers) {
-        for (String header : headers) {
-            PdfPCell cell = new PdfPCell();
-            cell.setPadding(5);
-            cell.setPhrase(new Phrase(header));
-            table.addCell(cell);
-        }
-    }
-
-    // Méthode pour ajouter les lignes de produits à la table
-
-    // Méthode pour ajouter les lignes de produits à la table
-    private void addRows(PdfPTable table, List<panier> paniers) {
-        for (panier p : paniers) {
-            table.addCell(String.valueOf(p.getId_commande()));
-            table.addCell(String.valueOf(p.getId_produit())); // ID du produit
-            table.addCell(String.valueOf(p.getPrix_u())); // Prix unitaire
-            table.addCell(String.valueOf(p.getQuantite())); // Quantité
-        }
-    }
-
-
-    // Méthode pour calculer le total
-    private double calculateTotal(List<panier> paniers) {
-        double total = 0;
-        for (panier p : paniers) {
-            total += p.getPrix_u() * p.getQuantite();
-        }
-        return total;
-    }
 
 }
 

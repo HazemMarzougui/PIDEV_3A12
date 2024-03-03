@@ -80,13 +80,12 @@ public class AdminListCommandController implements Initializable {
                     int Row = 1;
 
                       // Vous avez commenté cette ligne
-                    commandModel.setVisible(true);
+                    //commandModel.setVisible(true);
                 AdminListCommandItem adminListCommandItem = new AdminListCommandItem();
                         List<panier> paniers = MainFX.GlobalData.PanierProCom; // Supposons que getId() retourne l'ID de la commande
                         for (int i = 0; i < paniers.size(); i++) {
 
                             commandModel.setVisible(true);
-
                             AdminProduitCommanderController adminProduitCommanderController = new AdminProduitCommanderController();
                             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/AdminProduitCommander.fxml"));
                             fxmlLoader.setController(adminProduitCommanderController);

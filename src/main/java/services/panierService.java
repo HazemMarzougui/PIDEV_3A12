@@ -1,15 +1,13 @@
 package services;
 
+import entities.Produit;
+import entities.panier;
 import test.MainFX;
 import utils.MyDB;
 
 import java.sql.*;
-
-import entities.panier;
-
 import java.util.ArrayList;
 import java.util.List;
-import entities.produit;
 public class panierService implements IServiceP<panier> {
 
     private Connection con;
@@ -20,9 +18,10 @@ public class panierService implements IServiceP<panier> {
 
 
     @Override
-    public void ajouterProduitPanier(panier p) throws SQLException {
-        String req = "insert into panier (id_produit,id_commande,prix_u,quantite)" +
-                "values ('" + p.getId_produit() + "','" + p.getId_commande() + "','" + p.getPrix_u() + "','" + p.getQuantite() + "')";
+    public void ajouterProduitPanier(panier p ) throws SQLException {
+        String req = "insert into panier (id_produit,id_commande,prix_u,quantite,id_user)" +
+                "values ('" + p.getId_produit() + "','" + p.getId_commande() + "','" + p.getPrix_u() + "','" + p.getQuantite() + "','" + p.getId_user() + "')";
+
         Statement ste = con.createStatement();
 
 
@@ -57,8 +56,8 @@ public class panierService implements IServiceP<panier> {
     }
 
 
-    public List<produit> getAllProducts() {
-        List<produit> panierList = new ArrayList<>();
+    public List<Produit> getAllProducts() {
+        List<Produit> panierList = new ArrayList<>();
         try {
             // Create a comma-separated string of product IDs for the SQL query
             StringBuilder idBuilder = new StringBuilder();
@@ -79,11 +78,13 @@ public class panierService implements IServiceP<panier> {
             ResultSet resultSet = preparedStatement.executeQuery();
 
             while (resultSet.next()) {
-                produit panier = new produit();
+                Produit panier = new Produit();
                 panier.setId_produit(resultSet.getInt("id_produit"));
-                panier.setNom(resultSet.getString("nom"));
+                panier.setNom_produit(resultSet.getString("nom_produit"));
                 panier.setQuantite(resultSet.getInt("quantite"));
                 panier.setPrix(resultSet.getInt("prix"));
+                panier.setImage(resultSet.getString("image"));
+                panier.setId_categorie(resultSet.getInt("id_categorie"));
                 panierList.add(panier);
             }
             preparedStatement.close();
@@ -150,5 +151,6 @@ public class panierService implements IServiceP<panier> {
         }
 
 
-    }
+
+}
 

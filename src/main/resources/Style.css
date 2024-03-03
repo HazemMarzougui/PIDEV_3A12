@@ -1097,3 +1097,13 @@
   -fx-background-color: #cb1212;
   -fx-cursor: hand;
 }
+.cart-vbox {
+  -fx-background-color: #f5f5f5; /* Set the background color for the cart */
+  -fx-border-color: #f5f5f5;
+  -fx-background-radius: 30px;
+  -fx-border-radius: 30px;
+  -fx-padding: 10; /* Add some padding to the cart */
+
+  /* Add a more blurry drop shadow to the VBox */
+  -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.2), 5, 0, 5, 5);
+}

@@ -2,25 +2,38 @@ package entities;
 
 public class panier  {
 
-    int id_panier,id_produit,quantite,id_commande;
+    int id_panier,id_produit,quantite,id_commande , id_user;
     float prix_u;
+
 
     public panier(){
     }
 
-    public panier(int id_panier, int id_produit, int quantite, float prix_u,int id_commande) {
+    public panier(int id_panier, int id_produit, int quantite, float prix_u,int id_commande,int id_user) {
         this.id_panier = id_panier;
         this.id_produit = id_produit;
         this.quantite = quantite;
         this.prix_u = prix_u;
         this.id_commande=id_commande;
+        this.id_user=id_user;
     }
-    public panier( int id_produit,int id_commande, int quantite, float prix_u) {
+    public panier( int id_produit,int id_commande, int quantite, float prix_u,int id_user) {
 
         this.id_produit = id_produit;
         this.quantite = quantite;
         this.prix_u = prix_u;
         this.id_commande=id_commande;
+        this.id_user=id_user;
+    }
+
+
+
+    public int getId_user() {
+        return id_user;
+    }
+
+    public void setId_user(int id_user) {
+        this.id_user = id_user;
     }
 
     public int getId_panier() {
@@ -70,6 +83,7 @@ public class panier  {
                 ", id_produit=" + id_produit +
                 ", quantite=" + quantite +
                 ", id_commande=" + id_commande +
+                ", id_user=" + id_user +
                 ", prix_u=" + prix_u +
                 '}';
     }

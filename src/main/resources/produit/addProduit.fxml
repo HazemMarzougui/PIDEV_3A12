@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="addProduitPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" styleClass="background1" stylesheets="@Style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.produit.addProduitController">
+    <children>
+
+
+        <VBox layoutX="603.0" layoutY="109.0" prefHeight="252.0" prefWidth="200.0" spacing="10.0">
+            <!-- Titre du chatbot -->
+            <Text fill="#1b65c6" text="ChatBot" textAlignment="CENTER" wrappingWidth="202.8173828125">
+                <font>
+                    <Font size="18.0" />
+                </font>
+            </Text>
+            <!-- Zone d'écriture personnalisée pour le chatbot -->
+            <TextField fx:id="chatInput" prefWidth="200" promptText="Message SmartStepsBot" />
+            <!-- Ajout de la zone d'écriture pour le chatbot -->
+            <TextArea fx:id="chatOutput" editable="false" prefHeight="162.0" prefWidth="200.0" />
+        </VBox>
+        <Label layoutX="171.0" layoutY="130.0" prefHeight="17.0" prefWidth="57.0" styleClass="label-ajout" stylesheets="@hello-view.css" text="Nom :" />
+        <Label layoutX="171.0" layoutY="172.0" prefHeight="17.0" prefWidth="57.0" styleClass="label-ajout" stylesheets="@hello-view.css" text="Prix :" />
+        <Label layoutX="171.0" layoutY="213.0" prefHeight="17.0" prefWidth="57.0" styleClass="label-ajout" stylesheets="@hello-view.css" text="Quantite :" />
+        <Label layoutX="171.0" layoutY="253.0" prefHeight="18.0" prefWidth="86.0" styleClass="label-ajout" stylesheets="@hello-view.css" text="Description :" />
+        <TextField fx:id="textNomProd" layoutX="273.0" layoutY="126.0" prefHeight="26.0" prefWidth="216.0" promptText="Nom Produit" styleClass="textfield" stylesheets="@hello-view.css" />
+        <TextField fx:id="textPrixProd" layoutX="273.0" layoutY="168.0" prefHeight="26.0" prefWidth="216.0" promptText="Prix Produit" styleClass="textfield" stylesheets="@hello-view.css" />
+        <TextField fx:id="textQuantiteProd" layoutX="273.0" layoutY="209.0" prefHeight="26.0" prefWidth="216.0" promptText="Quantite Produit" styleClass="textfield" stylesheets="@hello-view.css" />
+        <Label layoutX="171.0" layoutY="453.0" prefHeight="18.0" prefWidth="86.0" styleClass="label-ajout" stylesheets="@hello-view.css" text="Categorie :" />
+        <TextArea fx:id="textDescriptionProd" layoutX="272.0" layoutY="253.0" prefHeight="60.0" prefWidth="216.0" promptText="Description Produit" styleClass="textarea" stylesheets="@hello-view.css" />
+        <Button fx:id="btnAddProd" layoutX="401.0" layoutY="547.0" mnemonicParsing="false" onAction="#AjoutProduit" prefHeight="34.0" prefWidth="66.0" styleClass="btn" stylesheets="@hello-view.css" text="Add" />
+        <Button fx:id="btnClearProd" layoutX="280.0" layoutY="547.0" mnemonicParsing="false" onAction="#clearFieldsProduit" prefHeight="34.0" prefWidth="77.0" styleClass="btn" stylesheets="@hello-view.css" text="Clear" />
+        <Label layoutX="171.0" layoutY="325.0" prefHeight="18.0" prefWidth="86.0" styleClass="label-ajout" stylesheets="@hello-view.css" text="Image :" />
+        <Label layoutX="257.0" layoutY="8.0" prefHeight="52.0" prefWidth="216.0" text="Ajouter un Produit" textFill="#011300">
+            <font>
+                <Font name="System Bold Italic" size="24.0" />
+            </font></Label>
+        <Button fx:id="btnReturnProd" layoutX="20.0" layoutY="14.0" mnemonicParsing="false" onAction="#return_ListProduit" prefHeight="38.0" prefWidth="44.0" styleClass="btn" stylesheets="@hello-view.css">
+        </Button>
+        <Button fx:id="btnImportProd" layoutX="422.0" layoutY="321.0" mnemonicParsing="false" onAction="#ajouterImage" prefHeight="9.0" prefWidth="66.0" styleClass="import-btn" stylesheets="@hello-view.css" textFill="#aeabab">
+        </Button>
+        <Label layoutX="275.0" layoutY="326.0" prefHeight="18.0" prefWidth="143.0" text="Choisir l'image du produit">
+        </Label>
+        <Label layoutX="171.0" layoutY="493.0" prefHeight="18.0" prefWidth="86.0" styleClass="label-ajout" stylesheets="@hello-view.css" text="Offre :" />
+        <ComboBox fx:id="txtCategorieProd" layoutX="275.0" layoutY="450.0" prefHeight="26.0" prefWidth="216.0" promptText="Selectionnez Categorie" styleClass="comboBox" stylesheets="@hello-view.css" />
+        <ComboBox fx:id="txtOffreProd" layoutX="275.0" layoutY="490.0" prefHeight="26.0" prefWidth="216.0" promptText="Selectionnez Offre" styleClass="comboBox" stylesheets="@hello-view.css" />
+        <ImageView fx:id="imgProduitInput" fitHeight="78.0" fitWidth="216.0" layoutX="271.0" layoutY="353.0" pickOnBounds="true" preserveRatio="true" />
+        <ImageView fitHeight="120.0" fitWidth="150.0" layoutX="593.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@assets/img/logooo.png" />
+            </image>
+        </ImageView>
+        <ImageView fitHeight="26.0" fitWidth="26.0" layoutX="29.0" layoutY="20.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@assets/img/back.png" />
+            </image>
+        </ImageView>
+      <Button fx:id="Submit" layoutX="684.0" layoutY="374.0" mnemonicParsing="false" onAction="#Submit" text="Button" />
+
+    </children>
+</AnchorPane>

@@ -6,7 +6,7 @@ import java.sql.SQLException;
 public class MyDB {
 
 
-    public final String URL = "jdbc:mysql://localhost:3306/java";
+    public final String URL = "jdbc:mysql://localhost:3306/pidev";
     public final String USERNAME = "root";
     public final String PWD = "";
     //2 creer une variable de m type que la classe

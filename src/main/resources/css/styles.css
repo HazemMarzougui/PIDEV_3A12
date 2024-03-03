@@ -1,12 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
+* {
+    -fx-font-family: "Fira Sans", sans-serif;
+}
 
-
-/*.bg
+.bg
 {
-    -fx-background-image: url(C:/Users/Mon Pc/IdeaProjects/fronte office/src/main/resources/assets/img/background.png);
+    -fx-background-image: url(../uploads/bg.png);
     -fx-background-repeat: no-repeat;
-}*/
+}
 
 .dash__side-bar {
     -fx-padding: 16px 18px;
@@ -14,7 +16,7 @@
 }
 
 .text {
-    -fx-font-size: 16px;
+    -fx-font-size: 15px;
     -fx-font-weight: 800;
 }
 .nav-links {
@@ -27,7 +29,9 @@
 .nav-links:hover {
     -fx-background-color: rgba(45, 100, 33, 0.38);
 }
-
+.nav-links:pressed {
+    -fx-background-color: rgba(25, 56, 17, 0.38);
+}
 .activeLink,
 .activeLink:hover {
     -fx-background-color: #defee6;
@@ -65,121 +69,64 @@
     -fx-border-radius: 30px;
 }
 
+.product-card {
+    -fx-background-color: #fff;
+    -fx-background-radius: 30px;
+    -fx-border-radius: 30px;
+}
+
+.product-card-scrollPane {
+    -fx-background: #fff;
+    -fx-background-color: transparent;
+}
+
+.scroll-bar:vertical {
+    -fx-background-color: #fff;
+    -fx-border-color: #fff;
+}
+
+.scroll-bar:vertical .track {
+    -fx-background-color: #defee6;
+    -fx-border-color: #fff;
+    -fx-background-radius: 30px;
+    -fx-pref-width: 24px;
+}
+
 .ha
 {
     -fx-font-size: 25px;
 }
 
-.table-view {
-    -fx-background-color: transparent;
+.dash__container-card {
+    -fx-background-color: #fff;
+    -fx-background-radius: 30px;
+    -fx-border-radius: 30px;
 }
 
-.table-view .column-header-background .filler {
-    -fx-background-color: transparent;
+.fadi{
+    -fx-background: #fff;
+    -fx-background-color: #b5e8c9;
+    -fx-border-radius: 50px;
+    -fx-background-radius: 10px;
 }
-.table-view .column-header-background{
-    -fx-background-color: linear-gradient(to bottom, #1dbbdd44, #93f9b944);
-    -fx-background-radius: 7px 7px 7px 7px;
-    -fx-background-insets: 0 0px 0 0;
-    -fx-padding: 0 0 5px 0;
-}
-.table-view .column-header {
-    -fx-background-color: transparent;
-}
-.table-view .table-cell{
-    -fx-border-color: transparent;
-    -fx-padding: 2 0 2 10px;
-}
-.table-row-cell:odd{
-    -fx-background-color: #93f9b911;
-    -fx-background-insets: 0, 0 0 1 0;
-    -fx-padding: 0.0em;
-}
-.table-row-cell:even{
-    -fx-background-color: #1dbbdd11;
-    -fx-background-insets: 0, 0 0 1 0;
-    -fx-padding: 0.0em;
-}
-.table-view .virtual-flow .scroll-bar:vertical,
-.table-view .virtual-flow .scroll-bar:vertical .track,
-.table-view .virtual-flow .scroll-bar:vertical .track-background,
-.table-view .virtual-flow .scroll-bar:horizontal,
-.table-view .virtual-flow .scroll-bar:horizontal .track,
-.table-view .virtual-flow .scroll-bar:horizontal .track-background {
-    -fx-background-color: transparent;
-}
-.table-view .virtual-flow .scroll-bar .increment-button,
-.table-view .virtual-flow .scroll-bar .decrement-button {
-    -fx-opacity: 0;
-    -fx-padding: 2;
-}
-.table-view .virtual-flow .scroll-bar:vertical .thumb{
-    -fx-background-color:  linear-gradient(to bottom, #1dbbdd44, #93f9b944);
-}
-.table-view .virtual-flow .scroll-bar:horizontal .thumb {
-    -fx-background-color:  linear-gradient(to right, #1dbbdd44, #93f9b944);
-}
-/*.table-row-cell:highlighted {
-    -fx-background-color: #81c483;
-    -fx-background-radius: 15px;
-}*/
-
-.hbox
-{
-    -fx-background-color: #cad2c5;
+.nav-linksbtn {
+    -fx-background-color : #54cb92;
+    -fx-background-radius: 30px;
+    -fx-border-radius: 30px;
+    -fx-transition: all 2s ease;
+    -fx-cursor: hand;
 }
 
+.nav-linksbtn:hover {
+    -fx-background-color : #1c9b57;
+}
+.nav-linksbtn:pressed {
+    -fx-background-color : #064b1c;
+}
 .btn_action_add
 {
-    -fx-background-color: #498d4a;
-    -fx-border-color: #498d4a;
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
     -fx-background-radius: 30px;
     -fx-border-radius: 30px;
-    -fx-effect: dropshadow(three-pass-box,#AAAAAA,3,0,0,3);
-}
-.btn_action_annuler
-{
-    -fx-background-color: #cb1212;
-    -fx-border-color: #cb1212;
-    -fx-background-radius: 30px;
-    -fx-border-radius: 30px;
-    -fx-effect: dropshadow(three-pass-box,#AAAAAA,3,0,0,3);
-}
-
-.conseilItem {
-    /*-fx-background-color: #fff;*/
-    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.09), 25, 0, 2, 3);
-    -fx-background-radius: 1000px;
-    /*-fx-padding: 10px 18px;*/
-}
-
-.text-field {
-    -fx-background-color: rgb(250, 250, 250);
-    -fx-background-radius: 500px;
-    -fx-font-size:16px ;
-}
-
-.label_upload
-{
-    -fx-background-color: #FFFFFF;
-    -fx-border-color: #FFFFFF;
-    -fx-background-radius: 30px;
-    -fx-border-radius: 30px;
-}
-
-.add_conseil_container {
-    -fx-background-radius: 600px;
-    -fx-border-radius: 30px;
-}
-
-.btn_action_refresh
-{
-    -fx-background-color: #5b7cea;
-    -fx-border-color: #5b7cea;
-    -fx-background-radius: 30px;
-    -fx-border-radius: 30px;
-}
-
-{
-    -fx-effect: dropshadow(three-pass-box, #AAAAAA, 3, 0, 0, 3)
 }
