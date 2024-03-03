@@ -106,7 +106,7 @@
                   <Insets top="10.0" />
                </VBox.margin>
                <children>
-                  <ComboBox fx:id="combo_menu" layoutX="47.0" layoutY="8.0" prefHeight="35.0" prefWidth="182.0" />
+                  <ComboBox fx:id="combo_menu" layoutX="47.0" layoutY="8.0" prefHeight="35.0" prefWidth="182.0" promptText="Gestion Conseils" styleClass="text" stylesheets="@css/ComboStyle.css" />
                   <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="4.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@uploads/conseil.png" />

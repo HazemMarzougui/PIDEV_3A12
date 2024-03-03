@@ -6,11 +6,18 @@ import Entities.Review;
 import Services.CategorieService;
 import Services.ConseilService;
 import Services.ProduitService;
+import com.google.zxing.BarcodeFormat;
+import com.google.zxing.WriterException;
+import com.google.zxing.client.j2se.MatrixToImageWriter;
+import com.google.zxing.common.BitMatrix;
+import com.google.zxing.qrcode.QRCodeWriter;
+import javafx.embed.swing.SwingFXUtils;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.geometry.Pos;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.control.*;
@@ -24,8 +31,10 @@ import javafx.scene.media.MediaView;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import javafx.util.Duration;
+import org.controlsfx.control.Notifications;
 import org.controlsfx.control.Rating;
 
+import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
@@ -53,6 +62,12 @@ public class ItemDetailsController implements Initializable {
     private VBox cartVBox;
 
     @FXML
+    private Label comments_empty;
+    @FXML
+    private Label titre_empty;
+
+
+    @FXML
     private GridPane commentsListContainer;
 
     @FXML
@@ -66,6 +81,11 @@ public class ItemDetailsController implements Initializable {
 
     @FXML
     private Pane content_area;
+
+    @FXML
+    private ImageView qrCodeImg;
+    @FXML
+    private HBox qrCodeImgModel;
 
     @FXML
     private Text description;
@@ -87,6 +107,12 @@ public class ItemDetailsController implements Initializable {
 
     @FXML
     private ScrollPane scrollPaneReview;
+
+    @FXML
+    private ImageView img_fav;
+
+    @FXML
+    private Button btn_fav;
 
     @FXML
     private HBox content_review;
@@ -145,9 +171,11 @@ public class ItemDetailsController implements Initializable {
     private Media media;
     private MediaPlayer mediaPlayer;
 
+    private Conseil seletedConseil ;
+
     public void setConseil(Conseil conseil) throws SQLException, IOException {
 
-
+        this.seletedConseil = conseil ;
         // nom_conseil.setText(conseil.getNom_conseil());
         System.out.println("Nom_conseil: " + conseil.getNom_conseil());
         nom_conseil.setText(conseil.getNom_conseil());
@@ -163,10 +191,7 @@ public class ItemDetailsController implements Initializable {
         type_conseil.setText(categoryName);
 
 
-
-
         List<Review> reviewList = conseilService.getAllComments(conseil.getId_conseil());
-
         if (!reviewList.isEmpty()) {
             averageReview.setText(String.format("%.1f", conseilService.getAverageRatingForConseil(conseil.getId_conseil())));
             average_rev.setText(String.format("%.1f", conseilService.getAverageRatingForConseil(conseil.getId_conseil())));
@@ -226,12 +251,69 @@ public class ItemDetailsController implements Initializable {
         } catch (SQLException | IOException e) {
             throw new RuntimeException(e);
         }
-
+        titre_empty.setVisible(false);
+        comments_empty.setVisible(false);
         dark_hbox_review.setVisible(false);
-
         Image image = new Image(String.valueOf(getClass().getResource("/uploads/jouerr.png")));
         icon_player.setImage(image);
+    }
 
+
+    @FXML
+    void addReview(ActionEvent event) {
+        dark_hbox_review.setVisible(true);
+    }
+
+
+
+    @FXML
+    void add_revieww(ActionEvent event) throws SQLException, IOException {
+        if (seletedConseil != null) {
+            Conseil conseil = conseilService.getconseilByID(seletedConseil.getId_conseil());
+
+            String Titre = tf_title.getText().trim();
+            String Comments = tf_comments.getText().trim();
+            int Value = (int) valiue_stars.getRating();
+
+            if (Titre.isEmpty()) {
+                titre_empty.setVisible(true);
+            }
+            if (Comments.isEmpty()) {
+                comments_empty.setVisible(true);
+            }
+            conseilService.addReview(new Review(Titre, Comments, Value, conseil.getId_conseil()));
+
+            List<Review> reviewList = conseilService.getAllComments(conseil.getId_conseil());
+
+            if (!reviewList.isEmpty()) {
+                averageReview.setText(String.format("%.1f", conseilService.getAverageRatingForConseil(conseil.getId_conseil())));
+                average_rev.setText(String.format("%.1f", conseilService.getAverageRatingForConseil(conseil.getId_conseil())));
+
+                Review review = reviewList.get(0);
+                System.out.println("Setting Conseil in ItemDetailsCardController: " + conseil);
+
+                getReviewsNumberByConseil(conseil);
+                countReviewByConseil(conseil);
+                totalConseilByStars(conseil, review);
+                System.out.println("DEBUG : " + review.getValue());
+                gridReview(conseil);
+            }
+            Image originalImage = new Image(String.valueOf(getClass().getResource("/uploads/verifie.png")));
+            double targetWidth = 50; // Set the desired width
+            double targetHeight = 50; // Set the desired height
+            Image resizedImage = new Image(originalImage.getUrl(), targetWidth, targetHeight, true, true);
+            Notifications notification = Notifications.create();
+            notification.graphic(new ImageView(resizedImage));
+            notification.text("Conseil est ajouté avec Succés");
+            notification.title("Ajout Effectué");
+            notification.hideAfter(Duration.seconds(4));
+            notification.position(Pos.BOTTOM_RIGHT);
+            notification.darkStyle();
+            notification.show();
+        }
+        else {
+            System.out.println("No Conseil selected!");
+        }
     }
 
 
@@ -263,28 +345,9 @@ public class ItemDetailsController implements Initializable {
         totalStarsAverage.setRating(starCount);
     }
 
-
-
-
-
-    @FXML
-    void addReview(ActionEvent event) {
-
-    }
-
-    @FXML
-    void add_revieww(ActionEvent event) {
-
-    }
-
-
-
-
     @FXML
     void annuler(ActionEvent event) {
-        Node source = (Node) event.getSource();
-        Stage stage = (Stage) source.getScene().getWindow();
-        stage.close();
+        dark_hbox_review.setVisible(false);
     }
 
 
@@ -383,5 +446,38 @@ public class ItemDetailsController implements Initializable {
         return String.format("%02d:%02d:%02d / %02d:%02d:%02d", hours, minutes, seconds,
                 totalSeconds / 3600, (totalSeconds % 3600) / 60, totalSeconds % 60);
     }
+
+    @FXML
+    void QR_Code(ActionEvent event) {
+        if (seletedConseil != null) {
+            System.out.println("ID Conseil : " + seletedConseil.getId_conseil());
+            String phoneNumber = "54231907"; // The phone number to call
+            String phoneNumberUri = "tel:" + phoneNumber;
+
+            String text = phoneNumberUri; // Just the phone number URI
+
+            QRCodeWriter qrCodeWriter = new QRCodeWriter();
+            BitMatrix bitMatrix;
+            try {
+                bitMatrix = qrCodeWriter.encode(text, BarcodeFormat.QR_CODE, 200, 200);
+                BufferedImage bufferedImage = MatrixToImageWriter.toBufferedImage(bitMatrix);
+                ImageView qrCodeImg = (ImageView) ((Node) event.getSource()).getScene().lookup("#qrCodeImg");
+                qrCodeImg.setImage(SwingFXUtils.toFXImage(bufferedImage, null));
+                HBox qrCodeImgModel = (HBox) ((Node) event.getSource()).getScene().lookup("#qrCodeImgModel");
+                qrCodeImgModel.setVisible(true);
+            } catch (WriterException e) {
+                e.printStackTrace();
+            }
+        } else {
+            System.out.println("No art selected."); // or handle this case appropriately
+        }
+    }
+
+
+    @FXML
+    void addFavorite(ActionEvent event) {
+
+    }
+
 
 }

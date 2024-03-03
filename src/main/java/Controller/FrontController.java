@@ -3,12 +3,15 @@ package Controller;
 import Entities.Conseil;
 import Services.ConseilService;
 import Test.MainFX;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.geometry.Insets;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TextField;
 import javafx.scene.input.KeyEvent;
@@ -35,6 +38,10 @@ public class FrontController implements Initializable {
 
     @FXML
     private GridPane gridPane;
+
+    @FXML
+    private ComboBox<String> combo_tri;
+
 
 
     @FXML
@@ -123,6 +130,19 @@ public class FrontController implements Initializable {
             }
         });
 
+        ObservableList<String> list = FXCollections.observableArrayList("TypeConseil" , "Les Plus Notés");
+        combo_tri.setItems(list);
+
+        combo_tri.setOnAction(event ->
+        {
+            String selectedItem = combo_tri.getSelectionModel().getSelectedItem();
+            try {
+                navigateSort(selectedItem);
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            }
+        });
+
     }
 
     private void updateUIWithConseils(List<Conseil> conseils) {
@@ -154,6 +174,23 @@ public class FrontController implements Initializable {
     @FXML
     void searchConseil(KeyEvent event) {
 
+    }
+
+
+    public void navigateSort(String selectedSort) throws SQLException {
+        switch (selectedSort) {
+            case "Type Conseil":
+                List<Conseil> conseilList = conseilService.sortConseilByNom();
+                updateUIWithConseils(conseilList);
+
+                break;
+            case "Les Plus Notés":
+
+                break;
+            default:
+                // Handle unknown selection
+                System.out.println("Unknown selection");
+        }
     }
 
 

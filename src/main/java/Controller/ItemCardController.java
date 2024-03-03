@@ -123,6 +123,7 @@ public class ItemCardController extends Node implements Initializable{
                 throw new RuntimeException(e);
             }
         });
+        disableRating();
     }
 
    @FXML
@@ -158,4 +159,10 @@ public class ItemCardController extends Node implements Initializable{
         video.setVisible(false);
         id_produit.setVisible(false);
     }
+
+
+    public void disableRating() {
+        valiue_stars.setDisable(true);
+    }
+
 }

@@ -63,6 +63,18 @@
                               <Insets top="20.0" />
                            </HBox.margin>
                         </Text>
+                        <Button fx:id="btn_fav" maxHeight="30.0" maxWidth="30.0" minHeight="30.0" minWidth="30.0" mnemonicParsing="false" onAction="#addFavorite" prefHeight="30.0" prefWidth="30.0" styleClass="btn_action_add" stylesheets="@css/styles.css">
+                           <HBox.margin>
+                              <Insets left="170.0" top="20.0" />
+                           </HBox.margin>
+                           <graphic>
+                              <ImageView fx:id="img_fav" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@uploads/inactiveLike.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
                      </children>
                   </HBox>
                   <HBox prefHeight="32.0" prefWidth="253.0">
@@ -121,9 +133,9 @@
                               <Font name="Fira Sans Bold" size="15.0" />
                            </font>
                         </Text>
-                        <Text fill="#32594a" strokeType="OUTSIDE" strokeWidth="0.0" text=" verified reviews">
+                        <Text fill="#32594a" strokeType="OUTSIDE" strokeWidth="0.0" text="avis vérifiés">
                            <HBox.margin>
-                              <Insets top="5.0" />
+                              <Insets left="5.0" top="4.0" />
                            </HBox.margin>
                            <font>
                               <Font name="Fira Sans Bold" size="15.0" />
@@ -187,7 +199,35 @@
                         </HBox>
                      </children>
                      <VBox.margin>
-                        <Insets top="30.0" />
+                        <Insets top="15.0" />
+                     </VBox.margin>
+                  </HBox>
+
+
+                  <HBox maxWidth="100.0" minWidth="100.0" prefHeight="53.0" prefWidth="100.0">
+                     <children>
+                        <Button maxHeight="50.0" maxWidth="149.0" mnemonicParsing="false" onAction="#QR_Code" prefHeight="47.0" prefWidth="100.0" styleClass="btn_play_front" stylesheets="@css/styles.css" text="QR Code" textFill="WHITE">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Button>
+                     </children>
+                     <VBox.margin>
+                        <Insets top="50.0" />
+                     </VBox.margin>
+                  </HBox>
+
+
+                  <HBox fx:id="qrCodeImgModel" maxHeight="150.0" maxWidth="150.0" minHeight="150.0" minWidth="150.0" prefHeight="150.0" prefWidth="150.0">
+                     <children>
+                        <ImageView fx:id="qrCodeImg" fitHeight="153.0" fitWidth="153.0" pickOnBounds="true" preserveRatio="true">
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                        </ImageView>
+                     </children>
+                     <VBox.margin>
+                        <Insets left="200.0" top="-100.0" />
                      </VBox.margin>
                   </HBox>
                </children>
@@ -224,12 +264,12 @@
             <Insets top="10.0" />
          </VBox.margin>
          <children>
-            <Text fill="#43882b" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="activeText" text="Verified Clients Reviews" textAlignment="CENTER" wrappingWidth="283.32226562500006">
+            <Text fill="#43882b" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="activeText" text="Avis clients vérifiés" textAlignment="CENTER" wrappingWidth="283.32226562500006">
                <font>
                   <Font name="Fira Sans Bold" size="22.0" />
                </font>
             </Text>
-            <Button fx:id="btn_rev" maxHeight="50.0" maxWidth="149.0" mnemonicParsing="false" onAction="#addReview" prefHeight="50.0" prefWidth="149.0" styleClass="btn_play_front" stylesheets="@css/styles.css" text="Add Review" textFill="WHITE">
+            <Button fx:id="btn_rev" maxHeight="50.0" maxWidth="149.0" mnemonicParsing="false" onAction="#addReview" prefHeight="50.0" prefWidth="149.0" styleClass="btn_play_front" stylesheets="@css/styles.css" text="Ajouter Avis" textFill="WHITE">
                <HBox.margin>
                   <Insets left="650.0" />
                </HBox.margin>
@@ -284,12 +324,12 @@
                               <Insets left="85.0" top="10.0" />
                            </HBox.margin>
                         </Text>
-                        <Text fill="#32594a" strokeType="OUTSIDE" strokeWidth="0.0" text=" verified reviews">
+                        <Text fill="#32594a" strokeType="OUTSIDE" strokeWidth="0.0" text="avis vérifiés">
                            <font>
                               <Font name="Fira Sans Bold" size="15.0" />
                            </font>
                            <HBox.margin>
-                              <Insets top="10.0" />
+                              <Insets left="5.0" top="9.0" />
                            </HBox.margin>
                         </Text>
                      </children>

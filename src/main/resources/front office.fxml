@@ -164,15 +164,15 @@
                   <String fx:value="PaneFront" />
                </styleClass>
             </ScrollPane>
-            <Text fill="#43882b" layoutX="27.0" layoutY="57.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="activeText" text="Nos Conseils" wrappingWidth="284.0">
+            <Text fill="#43882b" layoutX="27.0" layoutY="48.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="activeText" text="Nos Conseils" wrappingWidth="284.0">
                <font>
                   <Font name="Fira Sans Bold" size="40.0" />
                </font>
             </Text>
-            <ComboBox layoutX="954.0" layoutY="15.0" prefWidth="150.0" promptText="Tri Par" styleClass="combo-box" stylesheets="@css/styles.css" />
-            <Text layoutX="56.0" layoutY="106.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text" text="Il ya " />
-            <Text fx:id="nbreConseils" fill="#397425" layoutX="96.0" layoutY="106.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text" text="10" />
-            <Text layoutX="114.0" layoutY="106.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text" text="Conseils" />
+            <ComboBox fx:id="combo_tri" layoutX="954.0" layoutY="15.0" prefWidth="150.0" promptText="Tri Par" styleClass="combo-box" stylesheets="@css/ComboStyle.css" />
+            <Text layoutX="56.0" layoutY="95.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text" text="Il ya " />
+            <Text fx:id="nbreConseils" fill="#397425" layoutX="96.0" layoutY="95.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text" text="10" />
+            <Text layoutX="123.0" layoutY="95.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text" text="Conseils" />
          </children></Pane>
       <ImageView fitHeight="115.0" fitWidth="128.0" layoutX="6.0" pickOnBounds="true" preserveRatio="true">
          <image>

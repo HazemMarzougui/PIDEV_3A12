@@ -294,7 +294,7 @@ public class ConseilService  implements IService<Conseil>{
 
     public void addReview(Review review) {
         try {
-            String req = "INSERT INTO `review`(`title`, `comments`,`value`, `id_conseil` ) VALUES (?,?,?,?)";
+            String req = "INSERT INTO `review`(`titile`, `comments`,`value`, `id_conseil` ) VALUES (?,?,?,?)";
             PreparedStatement ps = connection.prepareStatement(req);
             ps.setString(1, review.getTitle());
             ps.setString(2, review.getComments());

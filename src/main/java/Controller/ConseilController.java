@@ -3,6 +3,7 @@ package Controller;
 import Entities.Conseil;
 import Services.CategorieService;
 import Services.ConseilService;
+import javafx.animation.FadeTransition;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -170,7 +171,7 @@ public class ConseilController implements Initializable {
     }
 
     @FXML
-     void add_conseil(ActionEvent event) {
+    void add_conseil(ActionEvent event) {
         try {
             // Load the "Ajouter Conseil" form
             FXMLLoader addConseilLoader = new FXMLLoader(getClass().getResource("/AjouterConseil.fxml"));
@@ -181,6 +182,12 @@ public class ConseilController implements Initializable {
             Stage addConseilStage = new Stage();
             addConseilStage.setScene(addConseilScene);
             addConseilStage.setTitle("Ajouter Conseil");
+
+            // Add fade-in animation
+            FadeTransition fadeTransition = new FadeTransition(Duration.seconds(0.5), addConseilRoot);
+            fadeTransition.setFromValue(0.0);
+            fadeTransition.setToValue(1.0);
+            fadeTransition.play();
 
             // Show the "Ajouter Conseil" form as a dialog
             addConseilStage.showAndWait();
@@ -214,6 +221,11 @@ public class ConseilController implements Initializable {
         UpdateConseilController updateConseilController = updateConseilLoader.getController();
         updateConseilController.setConseil(selectedConseil);
         updateConseilController.setConseilController(this);
+
+        FadeTransition fadeTransition = new FadeTransition(Duration.seconds(0.5), updateConseilRoot);
+        fadeTransition.setFromValue(0.0);
+        fadeTransition.setToValue(1.0);
+        fadeTransition.play();
 
         Stage updateConseilStage = new Stage();
         updateConseilStage.setScene(new Scene(updateConseilRoot));
@@ -368,6 +380,33 @@ public class ConseilController implements Initializable {
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
+    }
+
+
+    @FXML
+    void excel(ActionEvent event) throws IOException {
+
+        ExcelHandler handler = new ExcelHandler();
+        String filePath = "Conseils.xlsx";
+        handler.writeExcelFile(filePath);
+        try {
+            handler.readExcelFile(filePath);
+            Image originalImage = new Image(String.valueOf(getClass().getResource("/uploads/verifie.png")));
+            double targetWidth = 50; // Set the desired width
+            double targetHeight = 50; // Set the desired height
+            Image resizedImage = new Image(originalImage.getUrl(), targetWidth, targetHeight, true, true);
+            Notifications notification = Notifications.create();
+            notification.graphic(new ImageView(resizedImage));
+            notification.text("Fichier Excel est enregistré");
+            notification.title("Succés");
+            notification.hideAfter(Duration.seconds(4));
+            notification.position(Pos.BOTTOM_RIGHT);
+            notification.darkStyle();
+            notification.show();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+
     }
 
 }
