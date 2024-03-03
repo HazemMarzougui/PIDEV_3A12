@@ -102,7 +102,7 @@ public class add_offre {
                 alert.showAndWait();
 
                 // Load the "offre_admin.fxml" file
-                FXMLLoader loader = new FXMLLoader(getClass().getResource("/admin/event/admin_event.fxml.fxml"));
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("/admin/event/admin_event.fxml"));
                 Parent root = loader.load();
                 // If your controller needs to be set up with any data, you can do it here
 

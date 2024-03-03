@@ -18,7 +18,8 @@ public class cardtemplate {
     @FXML
     private Label id_date_fin;
 
-
+    @FXML
+    private Button id_event_name_backend_offre;
 
     @FXML
     private Label id_description;
@@ -34,6 +35,32 @@ public class cardtemplate {
     private Evenement event;
     @FXML
     private Button id_delete;
+
+    @FXML
+    void go_to_backend_offre(ActionEvent event) {
+
+        try{
+            Parent root= loadRootLayoutt();
+            id_event_name_backend_offre.getScene().setRoot(root);
+        } catch (SQLException | IOException e) {
+            throw new RuntimeException(e);
+        }catch (Exception e)
+        {
+            e.printStackTrace();
+        }
+
+    }
+
+    private Parent loadRootLayoutt() throws Exception {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/admin/offre/offre_admin.fxml"));
+        admin_offre controller = new admin_offre();
+        loader.setController(controller);
+        System.out.println(event);
+        controller.setData(event); // Add data to the controller
+        Parent root = loader.load();
+
+        return root;
+    }
 
     @FXML
     void update_event(ActionEvent event) {
@@ -61,7 +88,7 @@ public class cardtemplate {
     public void setData(Evenement event)
     {
         id_event.setText(""+event.getId_evenement());
-        id_nom.setText(event.getNom_event());
+        id_event_name_backend_offre.setText(""+event.getNom_event());
         id_description.setText(""+event.getDescription());
         id_date_deb.setText(""+event.getDate_debut());
         id_date_fin.setText(""+event.getDate_fin());

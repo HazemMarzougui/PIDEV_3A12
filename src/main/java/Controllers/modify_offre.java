@@ -78,7 +78,7 @@ public class modify_offre {
         Date SQLdate2 = new Date(offre.getDate_fin().getTime());
         id_date_fin_offre.setValue(SQLdate2.toLocalDate());
         id_prix_remise_offre.setText(String.valueOf(offre.getMontant_remise()));
-        id_nom_prod.setText(p.getNom_produit());
+        //id_nom_prod.setText(p.getNom_produit());
         this.offre=offre;
         this.produit=p;
     }

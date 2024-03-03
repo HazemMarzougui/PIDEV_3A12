@@ -43,6 +43,9 @@ public class client_offre {
 
     }
 
+    @FXML
+    void add_offre(ActionEvent event) {
+    }
 
     @FXML
     void initialize() {

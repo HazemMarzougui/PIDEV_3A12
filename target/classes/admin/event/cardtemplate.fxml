@@ -13,11 +13,11 @@
             <Font size="14.0" />
          </font>
       </Label>
-      <Label fx:id="id_nom" lineSpacing="10.0" prefHeight="20.0" prefWidth="109.0" text="BLACK FRIDAY">
+      <Button fx:id="id_event_name_backend_offre" mnemonicParsing="false" onAction="#go_to_backend_offre" style="-fx-background-color: #55dd4b;" text="Black Friday" textFill="WHITE">
          <font>
-            <Font name="System Bold" size="14.0" />
+            <Font name="System Bold Italic" size="13.0" />
          </font>
-      </Label>
+      </Button>
       <Label fx:id="id_date_deb" prefHeight="20.0" prefWidth="79.0" text="13/01/2024">
          <font>
             <Font name="System Bold" size="14.0" />
@@ -25,16 +25,22 @@
       </Label>
       <Label fx:id="id_date_fin" prefHeight="20.0" prefWidth="81.0" text="17/01/2024">
          <font>
-            <Font size="14.0" />
+            <Font name="System Bold" size="14.0" />
          </font>
       </Label>
       <Label fx:id="id_description" text="Sample description">
          <font>
-            <Font size="14.0" />
+            <Font name="System Bold" size="14.0" />
          </font>
       </Label>
-      <Button fx:id="id_update" mnemonicParsing="false" onAction="#update_event" style="-fx-background-color: #44FF33;" text="update" />
-      <Button fx:id="id_delete" mnemonicParsing="false" onAction="#delete_event" style="-fx-background-color: #44FF33;" text="delete" />
+      <Button fx:id="id_update" mnemonicParsing="false" onAction="#update_event" style="-fx-background-color: #44FF33;" text="update">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Button>
+      <Button fx:id="id_delete" mnemonicParsing="false" onAction="#delete_event" style="-fx-background-color: #44FF33;" text="delete">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Button>
    </children>
    <padding>
       <Insets left="20.0" />

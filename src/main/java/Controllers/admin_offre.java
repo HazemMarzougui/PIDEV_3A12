@@ -78,35 +78,40 @@ public class admin_offre {
     }
     @FXML
     void initialize() {
-        try {
-            ObservableList<Offre> observableList = FXCollections.observableList(so.afficher());
-            // Filter the list based on the search text
-            List<Offre> filteredList = observableList.stream()
-                    .filter(e -> e.getId_evenement_offre() == current_event.getId_evenement())
-                    .collect(Collectors.toList());
-
-            for (int i = 0; i < filteredList.size(); i++) {
-                int prodId = filteredList.get(i).getId_produit_offre();
-
-                /////prod
-                ObservableList<Produit> prodList = FXCollections.observableList(sp.afficher());
+        if (current_event != null) {
+            try {
+                ObservableList<Offre> observableList = FXCollections.observableList(so.afficher());
                 // Filter the list based on the search text
-                List<Produit> filteredprodList = prodList.stream()
-                        .filter(e -> e.getId_produit() == prodId)
+                List<Offre> filteredList = observableList.stream()
+                        .filter(e -> e.getId_evenement_offre() == current_event.getId_evenement())
                         .collect(Collectors.toList());
 
+                for (int i = 0; i < filteredList.size(); i++) {
+                    int prodId = filteredList.get(i).getId_produit_offre();
 
-                FXMLLoader fxmlLoader = new FXMLLoader();
-                fxmlLoader.setLocation(getClass().getResource("/admin/offre/cardprod.fxml"));
-                VBox cardBox = fxmlLoader.load();
-                cardprod cardProd = fxmlLoader.getController();
+                    /////prod
+                    ObservableList<Produit> prodList = FXCollections.observableList(sp.afficher());
+                    // Filter the list based on the search text
+                    List<Produit> filteredprodList = prodList.stream()
+                            .filter(e -> e.getId_produit() == prodId)
+                            .collect(Collectors.toList());
 
-                cardProd.setData(filteredprodList.get(0),current_event);
-                id_vbox_offre.getChildren().add(cardBox);
+
+                    FXMLLoader fxmlLoader = new FXMLLoader();
+                    fxmlLoader.setLocation(getClass().getResource("/admin/offre/cardprod.fxml"));
+                    VBox cardBox = fxmlLoader.load();
+                    cardprod cardProd = fxmlLoader.getController();
+
+                    cardProd.setData(filteredprodList.get(0),current_event);
+                    id_vbox_offre.getChildren().add(cardBox);
+                }
+            } catch (SQLException | IOException e) {
+                e.printStackTrace();
             }
-        } catch (SQLException | IOException e) {
-            e.printStackTrace();
+        } else {
+            System.out.println("current_event is null. Make sure to set its value before calling initialize.");
         }
     }
+
 
 }

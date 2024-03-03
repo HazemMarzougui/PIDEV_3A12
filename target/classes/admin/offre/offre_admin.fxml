@@ -189,7 +189,7 @@
                      </font>
                   </Label>
                   <ImageView fitHeight="41.0" fitWidth="154.0" pickOnBounds="true" preserveRatio="true" />
-                  <Button fx:id="id_add_offre" mnemonicParsing="false" onAction="#add_offre" prefHeight="65.0" prefWidth="163.0" style="-fx-background-color: #55dd4b;" text="+" textFill="#119728">
+                     <Button fx:id="id_add_offre" mnemonicParsing="false" onAction="#add_offre" prefHeight="65.0" prefWidth="163.0" style="-fx-background-color: #55dd4b;" text="+" textFill="#119728">
                      <font>
                         <Font size="30.0" />
                      </font>
