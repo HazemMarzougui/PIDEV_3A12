@@ -37,8 +37,7 @@ public class DashboardController implements Initializable {
 
     @FXML
     private ImageView adminIMG;
-    @FXML
-    private ImageView adminIMG1;
+ 
 
     @FXML
     private Button btnOrders;
@@ -89,8 +88,8 @@ public class DashboardController implements Initializable {
 
 
     public void initialize(URL location, ResourceBundle resources) {
-        System.out.println(SupAdmin);
 
+        System.out.println(SupAdmin);
         System.out.println(MainFx.m);
         if (MainFx.m == 1){
             pnItems.getChildren().clear();
@@ -449,12 +448,11 @@ public class DashboardController implements Initializable {
                     nodes[0].setStyle("-fx-background-color : #177c4d");
                 });*/
         pnItems.getChildren().add(nodes[0]);
-
-
     }
 
     @FXML
     void btnOverview(ActionEvent event) throws IOException {
+
         MainFx.m=0;
         Parent root = FXMLLoader.load(getClass().getResource("/testing.fxml"));
         // Get the current scene and set the new scene

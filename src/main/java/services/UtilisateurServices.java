@@ -28,6 +28,7 @@ public class UtilisateurServices implements ICRUD<Utilisateur>{
 
     @Override
     public Utilisateur getUserByEmail(String email) throws SQLException {
+
         String req = "SELECT * FROM `utilisateur` WHERE `email` = ?";
         PreparedStatement pstmt = conx.prepareStatement(req);
         pstmt.setString(1, email);
